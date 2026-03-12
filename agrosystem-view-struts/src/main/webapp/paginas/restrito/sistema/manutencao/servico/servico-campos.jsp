@@ -1,0 +1,186 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
+
+<!-- CAMPOS DE CADASTRO -->
+<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: -30px; margin-bottom: -15px;">
+		<h1 class="page-header cabecalho_pagina">
+			<i class="fa fa-graduation-cap" style="font-size: 26px;"></i>
+			Cadastrar Serviços
+			<small class="sub_cabecalho_pagina">
+				<i class="fa fa-angle-double-right"></i>
+				Cadastro das Serviços
+			</small>
+		</h1>
+	</div>
+	<!-- /.col-lg-12 -->
+</div>
+
+<jsp:include page="../../../../errors/alerts-sucesso_erro.jsp"></jsp:include>
+
+<div class="row">
+	<!-- Define o tamanho geral da servico -->
+	<div class="col-md-offset-1 col-lg-offset-2 col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		<html:form styleId="form_servico" action="restrito/sistema/servico" method="post">
+			<html:hidden property="method" value="empty" />
+
+			<div class="panel sombra">
+
+				<!-- INICIO FORMULARIO -->
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+							<div class="row">
+
+								<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<label>Nome</label>
+									<html:text styleClass="form-control input-sm focoInicial" styleId="nome" property="servico.nome" name="servicoForm" />
+								</div>
+								
+								<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+									<label>Observação</label>
+									<h6 class="pull-right" id="count_observacao"></h6>
+									<html:textarea styleClass="form-control input-sm" styleId="observacao" property="servico.observacao" name="servicoForm" rows="4" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer">
+					<div class="row">
+						<!-- BOTOES -->
+						<logic:notPresent property="servico.id" name="servicoForm">
+							<logic:equal name="servicoForm" value="true" property="acessoPermitido(${usuarioSessaoPOJO.usuario.id}.servico.inserir)">
+								<div class="form-group col-xs-12 col-sm-3 col-md-4 col-lg-4" style="margin-bottom: 0px;">
+									<button type="submit" id="inserir" class="btn btn-success btn-sm cor-sistema btn-block">
+										<i class="fa fa-save"></i>
+										Inserir
+									</button>
+								</div>
+							</logic:equal>
+						</logic:notPresent>
+						<logic:present property="servico.id" name="servicoForm">
+							<logic:equal name="servicoForm" value="true" property="acessoPermitido(${usuarioSessaoPOJO.usuario.id}.servico.alterar)">
+								<div class="form-group col-xs-12 col-sm-3 col-md-4 col-lg-4" style="margin-bottom: 0px;">
+									<button type="submit" id="alterar" class="btn btn-success btn-sm cor-sistema btn-block">
+										<i class="fa fa-edit"></i>
+										Alterar
+									</button>
+								</div>
+							</logic:equal>
+						</logic:present>
+
+						<div class="form-group ol-xs-12 col-sm-3 col-md-4 col-lg-4" style="margin-bottom: 0px;">
+							<button type="button" id="limpar" class="btn btn-success btn-sm cor-sistema btn-block">
+								<i class="glyphicon glyphicon-erase"></i>
+								Limpar
+							</button>
+						</div>
+
+						<logic:equal name="servicoForm" value="true" property="acessoPermitido(${usuarioSessaoPOJO.usuario.id}.servico.filtrar)">
+							<div class="form-group col-xs-12 col-sm-3 col-md-4 col-lg-4" style="margin-bottom: 0px;">
+								<button type="button" id="listagem" class="btn btn-success btn-sm cor-sistema btn-block">
+									<i class="fa fa-search"></i>
+									Listagem
+								</button>
+							</div>
+						</logic:equal>
+
+					</div>
+				</div>
+				<!-- TERMINO FORMULARIO -->
+				<!-- /.panel-body -->
+
+			</div>
+			<!-- /.panel -->
+		</html:form>
+	</div>
+	<!-- /.col-lg-12 -->
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		/* Foco inicial */
+		$( ".focoInicial" ).focus();
+
+		/* Setando NOTNULL nos campos*/
+		$("#nome").addClass("obrigatorio");
+
+		/* Setando os tamanhos maximos dos campos baseando-se no PO*/
+		$("#nome").prop("maxlength", 255);
+		$("#observacao").prop("maxlength", 255);
+
+		/* Setando os placeholder dos campos*/
+		$("#nome").prop("placeholder", "Nome");
+		$("#observacao").prop("placeholder", "Descrição");
+
+		/* EVENTOS */
+
+		// Desliga o auto-complete da pagina
+		$("#form_servico").prop("autocomplete", "off");
+
+		$('#form_servico').on('submit', function(e) {
+			abrirModalProcessando();
+		});
+
+		$('#inserir').click(function() {
+			executar('form_servico', 'inserir');
+		});
+
+		$('#alterar').click(function() {
+			executar('form_servico', 'alterar');
+		});
+
+		$('#limpar').click(function() {
+			abrirModalProcessando();
+			executarComSubmit('form_servico', 'limpar');
+		});
+
+		$('#listagem').click(function() {
+			abrirModalProcessando();
+			executarComSubmit('form_servico', 'abrirListagem');
+		});
+		
+		var count_observacao_max = 255;
+		$('#count_observacao').html(count_observacao_max + ' restantes');
+		$('#observacao').keyup(function() {
+			gerenciarContadorCaracteresObservacao();
+		});
+		function gerenciarContadorCaracteresObservacao() {
+			var text_length = $('#observacao').val().length;
+			var text_remaining = count_observacao_max - text_length;
+			$('#count_observacao').html(text_remaining + ' restantes');
+		}
+
+		gerenciarContadorCaracteresObservacao();
+				
+		$('#nome').autocomplete({
+			minChars : 2,
+			noCache : true,
+			paramName : 'servico.nome',
+			/* params : {
+				'saidaGrao.safra.id' : function() {
+					return $('#safraSelecionada').val();
+				}
+			}, */
+			serviceUrl : '${contextPath}/restrito/sistema/servico.src?method=selecionarServicoAutoComplete',
+			onSelect : function(suggestion) {
+				
+			},
+			/* formatResult : function(suggestion, currentValue) {
+				var valorExibir = suggestion.value + " - " + suggestion.variedade;
+				return valorExibir;
+			}, */
+			onSearchComplete : function(query, suggestions) {
+				if (suggestions == null || suggestions == '') {
+					
+				}
+			}
+		});
+	});
+</script>

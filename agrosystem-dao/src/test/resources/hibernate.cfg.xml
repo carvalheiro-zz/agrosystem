@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+	
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.autocommit">false</property>
+
+		<property name="hibernate.jdbc.batch_size">50</property>
+
+		<!-- quem vai gerenciar a minha nuvem e uma thread -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- C3P0 -->
+		<!-- <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property> <property name="c3p0.min_size">10</property> <property name="c3p0.max_size">31</property> <property name="c3p0.timeout">144000</property> <property 
+			name="c3p0.acquire_increment">5</property> <property name="c3p0.max_statements">31</property> <property name="c3p0.idle_test_period">3000</property> -->
+
+		<!-- Impressão da SQL na Saida padrão -->
+		<property name="show_sql">false</property>
+		<property name="format_sql">false</property>
+
+		<property name="hbm2ddl.auto">update</property>
+		<!-- <property name="hbm2ddl.auto">create-drop</property> --><!-- Apenas atualiza a estrutura. Obs: Usado quando em Desenvolvimento -->
+
+		<!-- INICIO MODULO SAFRA -->
+		<mapping class="br.com.srcsoftware.sistema.safra.cultura.CulturaPO" />
+		<mapping class="br.com.srcsoftware.sistema.safra.setor.SetorPO" />
+		<mapping class="br.com.srcsoftware.sistema.safra.setorsafra.SetorSafraPO" />
+		<mapping class="br.com.srcsoftware.sistema.safra.SafraPO" />
+		<!-- FIM MODULO SAFRA -->
+
+		<mapping class="br.com.srcsoftware.sistema.aplicacao.aplicacao.AplicacaoPO" />
+		<mapping class="br.com.srcsoftware.sistema.aplicacao.item.ItemPO" />
+
+		<mapping class="br.com.srcsoftware.sistema.cupom.CupomPO" />
+		<mapping class="br.com.srcsoftware.sistema.cupom.item.ItemCupomPO" />
+		<!-- <mapping class="br.com.srcsoftware.sistema.estoque.estoque.EstoquePO" /> -->
+
+		<mapping class="br.com.srcsoftware.sistema.manutencao.imovel.ImovelPO" />
+		<mapping class="br.com.srcsoftware.sistema.manutencao.implemento.ImplementoPO" />
+		<mapping class="br.com.srcsoftware.sistema.manutencao.manutencao.ManutencaoPO" />
+		<mapping class="br.com.srcsoftware.sistema.manutencao.servico.ServicoPO" />
+		<mapping class="br.com.srcsoftware.sistema.manutencao.veiculo.VeiculoPO" />
+		<mapping class="br.com.srcsoftware.sistema.notafiscal.direta.item.ItemNotaFiscalVendaDiretaPO" />
+		<mapping class="br.com.srcsoftware.sistema.notafiscal.direta.NotaFiscalVendaDiretaPO" />
+		<mapping class="br.com.srcsoftware.sistema.notafiscalcupom.NotaFiscalCupomPO" />
+		<mapping class="br.com.srcsoftware.sistema.pessoa.fornecedor.juridico.FornecedorJuridicoPO" />
+		<mapping class="br.com.srcsoftware.sistema.pedido.itempedido.ItemPedidoPO" />
+		<mapping class="br.com.srcsoftware.sistema.pedido.notafiscal.simplesremessa.ItemNotaFiscalSimplesRemessaPO" />
+		<mapping class="br.com.srcsoftware.sistema.pedido.notafiscal.simplesremessa.NotaFiscalSimplesRemessaPO" />
+		<mapping class="br.com.srcsoftware.sistema.pedido.notafiscal.venda.ItemNotaFiscalVendaPO" />
+		<mapping class="br.com.srcsoftware.sistema.pedido.notafiscal.venda.NotaFiscalVendaPO" />
+		<mapping class="br.com.srcsoftware.sistema.pedido.pedido.PedidoPO" />
+		<mapping class="br.com.srcsoftware.sistema.produto.marca.MarcaPO" />
+		<mapping class="br.com.srcsoftware.sistema.produto.produto.ProdutoPO" />
+		<mapping class="br.com.srcsoftware.sistema.produto.tipo.TipoPO" />
+		<mapping class="br.com.srcsoftware.sistema.produto.unidademedida.UnidadeMedidaPO" />
+
+		<mapping class="br.com.srcsoftware.sistema.combustivel.abastecimento.AbastecimentoPO" />
+
+		<mapping class="br.com.srcsoftware.sistema.notafiscal.rateio.NotaFiscalRateioPO" />
+		<mapping class="br.com.srcsoftware.sistema.notafiscal.rateio.centrocusto.CentroCustoPO" />
+		<mapping class="br.com.srcsoftware.sistema.notafiscal.rateio.itemnotafiscalrateio.ItemNotaFiscalRateioPO" />
+
+
+		<mapping class="br.com.srcsoftware.sistema.silo.entrada.EntradaGraoPO" />
+		<mapping class="br.com.srcsoftware.sistema.silo.saida.SaidaGraoPO" />
+
+	</session-factory>
+</hibernate-configuration>

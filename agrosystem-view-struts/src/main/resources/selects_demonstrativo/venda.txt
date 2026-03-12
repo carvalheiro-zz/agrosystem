@@ -1,0 +1,70 @@
+SELECT
+        producao.cultura as cultura,
+        COALESCE(producao.quantidadeProduzida+sobraClassificacao.quantidadeSobra-quebraClassificacao.quantidadeQuebra,0) as quantidadeProduzida,
+        COALESCE(vendida.quantidadeVendida,0) as quantidadeVendida,
+        COALESCE(entregue.quantidadeEntregue,0) as quantidadeEntregue,
+        COALESCE((vendida.quantidadeVendida-entregue.quantidadeEntregue),0) as quantidadeRestante,
+        COALESCE((producao.quantidadeProduzida-vendida.quantidadeVendida),0) as saldo  
+    FROM
+        (SELECT
+            c.nome as cultura,
+            COALESCE(sum(eg.pesoLiquido),0) as quantidadeProduzida        
+        FROM
+            esafra.sistema_entradasgrao eg,
+            esafra.sistema_variedades v,
+            esafra.sistema_culturas c      
+        where
+            1=1             
+            and c.id = :idCulturaParam  
+            and eg.data between :dataInicialParam and :dataFinalParam                  
+            and v.idCultura = c.id             
+            and eg.idVariedade = v.id       
+        ) as producao ,
+            
+        (SELECT 
+            c.nome as cultura, 
+            COALESCE(sum( cv.quantidade),0) as quantidadeVendida      
+        FROM
+            esafra.sistema_contratovendas cv,
+            esafra.sistema_culturas c         
+        where
+            1=1          
+            and c.id = :idCulturaParam             
+            and c.id = cv.idCultura
+            and cv.data between :dataInicialParam and :dataFinalParam
+            ) as vendida,
+                    
+        (SELECT
+            c.nome as cultura ,
+            COALESCE(sum(sg.pesoLiquido),0) as quantidadeEntregue      
+        FROM
+            esafra.sistema_saidasgrao sg,
+            esafra.sistema_culturas c      
+        where
+            1=1          
+            and c.id = :idCulturaParam          
+            and sg.data between :dataInicialParam and :dataFinalParam             
+            and c.id = sg.idCultura) as entregue,        
+
+        (SELECT 
+            c.nome as cultura ,COALESCE(sum(COALESCE(aj.quantidade,0)),0) as quantidadeSobra
+        FROM 
+            esafra.sistema_ajustes aj,
+            esafra.sistema_culturas c
+        WHERE 1=1
+            AND aj.idCultura = 2
+            and aj.data between :dataInicialParam and :dataFinalParam 
+            AND aj.tipo = 'Sobra de Classificação'
+            and aj.idCultura = c.id) as sobraClassificacao,
+            
+        (SELECT 
+            c.nome as cultura ,COALESCE(sum(COALESCE(aj.quantidade,0)),0) as quantidadeQuebra
+        FROM 
+            esafra.sistema_ajustes aj,
+            esafra.sistema_culturas c
+        WHERE 1=1
+            AND aj.idCultura = 2
+            and aj.data between :dataInicialParam and :dataFinalParam 
+            AND aj.tipo = 'Quebra de Classificação'
+            and aj.idCultura = c.id) as quebraClassificacao 
+where COALESCE(producao.quantidadeProduzida,0) > 0 or COALESCE(vendida.quantidadeVendida,0) > 0

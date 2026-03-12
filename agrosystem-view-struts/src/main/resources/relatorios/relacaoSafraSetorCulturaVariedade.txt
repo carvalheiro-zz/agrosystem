@@ -1,0 +1,21 @@
+SELECT 
+    safra.nome as Safra,
+    setor.nomeCompleto as Setor,
+    variedade.nome as Variedade,
+    cultura.nome as Cultura,
+    sum(setorSafra.area) as Area_em_Alqueires
+FROM 
+    esafra.sistema_safras safra,
+    esafra.sistema_setores setor,
+    esafra.sistema_setoressafra setorSafra,
+    esafra.sistema_culturas cultura,
+    esafra.sistema_variedades variedade
+WHERE 1=1
+AND safra.nome = :nomeSafraParam
+AND cultura.nome like :nomeCulturaParam
+AND setorSafra.idSafra = safra.id
+AND setorSafra.idSetor = setor.id
+AND setorSafra.idVariedade = variedade.id
+AND variedade.idCultura = cultura.id
+GROUP BY variedade.id
+ORDER BY cultura.nome

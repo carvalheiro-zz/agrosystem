@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+"http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+	<definition name="templateSistema" path="/templates/adm/template.jsp">
+		<put name="header" value="header.jsp" />
+		<put name="menuzinho" value="menuzinho.jsp" />
+		<put name="menu" value="menu.jsp" />
+		<put name="body" value="" />
+	</definition>
+
+	<definition name="templateSemMenuSistema" path="/templates/adm/template_sem_menu.jsp">
+		<put name="header" value="header.jsp" />
+		<put name="body" value="" />
+	</definition>
+
+	<definition name="templateSemMenuSemModalSistema" path="/templates/adm/template_sem_menu_sem_modal.jsp">
+		<put name="header" value="header.jsp" />
+		<put name="body" value="" />
+	</definition>
+	
+	<definition name="templateVenda" path="/templates/template_comanda.jsp">
+		<put name="header" value="header_comanda.jsp" />
+		<put name="lateral" value="lateral_comanda.jsp" />
+		<put name="body" value="" />
+	</definition>
+
+	<!--============================================================================================= -->
+	<!--= INICIO ==================================================================================== -->
+	<!--============================================================================================= -->
+	
+	<definition name=".variedadeCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/cultura/variedade/variedade-campos.jsp" />
+	</definition>
+	<definition name=".variedadeLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/cultura/variedade/variedade-lista.jsp" />
+	</definition>
+	
+	<definition name=".culturaCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/cultura/cultura-campos.jsp" />
+	</definition>
+	<definition name=".culturaLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/cultura/cultura-lista.jsp" />
+	</definition>	
+	
+	<definition name=".setorCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/setor/setor-campos.jsp" />
+	</definition>
+	<definition name=".setorLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/setor/setor-lista.jsp" />
+	</definition>		
+	
+	<definition name=".safraCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/safra/safra-campos.jsp" />
+	</definition>
+	<definition name=".safraLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/safra/safra-lista.jsp" />
+	</definition>	
+	
+	
+	
+	<definition name=".marcaCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/marca/marca-campos.jsp" />
+	</definition>
+	<definition name=".marcaLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/marca/marca-lista.jsp" />
+	</definition>
+	
+	<definition name=".tipoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/tipo/tipo-campos.jsp" />
+	</definition>
+	<definition name=".tipoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/tipo/tipo-lista.jsp" />
+	</definition>
+	
+	<definition name=".unidadeMedidaCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/unidademedida/unidademedida-campos.jsp" />
+	</definition>
+	<definition name=".unidadeMedidaLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/unidademedida/unidademedida-lista.jsp" />
+	</definition>
+	
+	<definition name=".produtoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/produto/produto-campos.jsp" />
+	</definition>
+	<definition name=".produtoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/produto/produto/produto-lista.jsp" />
+	</definition>
+	
+	<definition name=".entradaGraoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/entrada/entradagrao-campos.jsp" />
+	</definition>
+	<definition name=".entradaGraoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/entrada/entradagrao-lista.jsp" />
+	</definition>
+	
+	<definition name=".saidaGraoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/saida/saidagrao-campos.jsp" />
+	</definition>
+	<definition name=".saidaGraoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/saida/saidagrao-lista.jsp" />
+	</definition>
+	
+	<definition name=".imovelCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/imovel/imovel-campos.jsp" />
+	</definition>
+	<definition name=".imovelLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/imovel/imovel-lista.jsp" />
+	</definition>
+	
+	<definition name=".servicoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/servico/servico-campos.jsp" />
+	</definition>
+	<definition name=".servicoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/servico/servico-lista.jsp" />
+	</definition>
+	
+	<definition name=".implementoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/implemento/implemento-campos.jsp" />
+	</definition>
+	<definition name=".implementoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/implemento/implemento-lista.jsp" />
+	</definition>
+	
+	<definition name=".veiculoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/veiculo/veiculo-campos.jsp" />
+	</definition>
+	<definition name=".veiculoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/veiculo/veiculo-lista.jsp" />
+	</definition>
+	
+	<definition name=".estoqueLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/estoque/estoque/estoque-lista.jsp" />
+	</definition>
+	
+	<definition name=".abastecimentoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/combustivel/abastecimento/abastecimento-campos.jsp" />
+	</definition>
+	<definition name=".abastecimentoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/combustivel/abastecimento/abastecimento-lista.jsp" />
+	</definition>
+	
+	<definition name=".manutencaoImovelCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/manutencao/imovel/manutencaoimovel-campos.jsp" />
+	</definition>
+	<definition name=".manutencaoImovelLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/manutencao/imovel/manutencaoimovel-lista.jsp" />
+	</definition>
+	
+	<definition name=".manutencaoVeiculoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/manutencao/veiculo/manutencaoveiculo-campos.jsp" />
+	</definition>
+	<definition name=".manutencaoVeiculoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/manutencao/veiculo/manutencaoveiculo-lista.jsp" />
+	</definition>
+	
+	<definition name=".manutencaoImplementoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/manutencao/implemento/manutencaoimplemento-campos.jsp" />
+	</definition>
+	<definition name=".manutencaoImplementoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/manutencao/manutencao/implemento/manutencaoimplemento-lista.jsp" />
+	</definition>
+	
+	<definition name=".fornecedorJuridicoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/fornecedor/juridico/fornecedor-campos.jsp" />
+	</definition>
+	<definition name=".fornecedorJuridicoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/fornecedor/juridico/fornecedor-lista.jsp" />
+	</definition>
+	
+	<definition name=".aplicacaoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/aplicacao/aplicacao/aplicacao-campos.jsp" />
+	</definition>
+	<definition name=".aplicacaoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/aplicacao/aplicacao/aplicacao-lista.jsp" />
+	</definition>
+	
+	<definition name=".notaFiscalVendaDiretaCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/direta/notafiscalvendadireta-campos.jsp" />
+	</definition>
+	<definition name=".notaFiscalVendaDiretaLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/direta/notafiscalvendadireta-lista.jsp" />
+	</definition>
+	
+	<definition name=".cupomCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/cupom/cupom-campos.jsp" />
+	</definition>
+	<definition name=".cupomLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/cupom/cupom-lista.jsp" />
+	</definition>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<definition name=".itemImovelCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/item/imovel/itemimovel-campos.jsp" />
+	</definition>
+	<definition name=".itemImovelLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/item/imovel/itemimovel-lista.jsp" />
+	</definition>
+	
+	<definition name=".itemVeiculoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/item/veiculo/itemveiculo-campos.jsp" />
+	</definition>
+	<definition name=".itemVeiculoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/item/veiculo/itemveiculo-lista.jsp" />
+	</definition>
+	
+	<definition name=".itemImplementoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/item/implemento/itemimplemento-campos.jsp" />
+	</definition>
+	<definition name=".itemImplementoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/item/implemento/itemimplemento-lista.jsp" />
+	</definition>
+	
+	
+	<definition name=".notaFiscalCupomCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/cupom/notafiscalcupom-campos.jsp" />
+	</definition>
+	<definition name=".notaFiscalCupomLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/cupom/notafiscalcupom-lista.jsp" />
+	</definition>
+	
+	
+	
+	
+	
+	<definition name=".pedidoCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/pedido/pedido-campos.jsp" />
+	</definition>
+	<definition name=".pedidoLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/pedido/pedido-lista.jsp" />
+	</definition>
+	
+	
+	<definition name=".notaFiscalVendaCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/venda/notafiscalvenda-campos.jsp" />
+	</definition>
+	<definition name=".notaFiscalVendaLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/venda/notafiscalvenda-lista.jsp" />
+	</definition>
+	
+	<definition name=".notaFiscalSimplesRemessaCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/simplesremessa/notafiscalsimplesremessa-campos.jsp" />
+	</definition>
+	<definition name=".notaFiscalSimplesRemessaLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/simplesremessa/notafiscalsimplesremessa-lista.jsp" />
+	</definition>
+	
+	<definition name=".centroCustoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/rateio/centrocusto/centrocusto-campos.jsp" />
+	</definition>
+	<definition name=".centroCustoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/rateio/centrocusto/centrocusto-lista.jsp" />
+	</definition>
+	
+	<definition name=".notaFiscalRateioDespesaCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/rateio/despesa/notafiscalrateio-campos.jsp" />
+	</definition>
+	<definition name=".notaFiscalRateioDespesaLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/rateio/despesa/notafiscalrateio-lista.jsp" />
+	</definition>
+	
+	
+	<definition name=".notaFiscalRateioReceitaCampos" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/rateio/receita/notafiscalrateio-campos.jsp" />
+	</definition>
+	<definition name=".notaFiscalRateioReceitaLista" extends="templateSemMenuSistema">
+		<put name="body" value="/paginas/restrito/sistema/notafiscal/rateio/receita/notafiscalrateio-lista.jsp" />
+	</definition>
+	
+	<definition name=".prestadorServicoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/prestador/prestador-campos.jsp" />
+	</definition>
+	<definition name=".prestadorServicoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/prestador/prestador-lista.jsp" />
+	</definition>
+	
+	<definition name=".siloCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/silo/silo-campos.jsp" />
+	</definition>
+	<definition name=".siloLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/silo/silo-lista.jsp" />
+	</definition>
+	
+	<definition name=".naturezaOperacaoCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/naturezaoperacao/naturezaoperacao-campos.jsp" />
+	</definition>
+	<definition name=".naturezaOperacaoLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/naturezaoperacao/naturezaoperacao-lista.jsp" />
+	</definition>
+	
+	<definition name=".contratoVendaCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/contratovenda/contratovenda-campos.jsp" />
+	</definition>
+	<definition name=".contratoVendaLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/contratovenda/contratovenda-lista.jsp" />
+	</definition>
+	
+	<definition name=".horaExtraCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/funcionario/horaextra/horaextra-campos.jsp" />
+	</definition>
+	<definition name=".horaExtraLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/funcionario/horaextra/horaextra-lista.jsp" />
+	</definition>
+	
+	<definition name=".feriasCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/funcionario/ferias/ferias-campos.jsp" />
+	</definition>
+	<definition name=".feriasLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/pessoa/funcionario/ferias/ferias-lista.jsp" />
+	</definition>
+	
+	<definition name=".ajusteSiloCampos" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/ajustesilo/ajustesilo-campos.jsp" />
+	</definition>
+	<definition name=".ajusteSiloLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/silo/ajustesilo/ajustesilo-lista.jsp" />
+	</definition>
+	
+	<definition name=".relacaoSafraSetorCulturaVariedadeLista" extends="templateSistema">
+		<put name="body" value="/paginas/restrito/sistema/safra/relatorios/relacaoSafraSetorCulturaVariedade/relacao-lista.jsp" />
+	</definition>
+</tiles-definitions>

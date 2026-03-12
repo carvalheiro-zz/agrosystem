@@ -1,0 +1,128 @@
+SELECT
+	estoque.idproduto,
+	estoque.produto,
+	estoque.localizacao,
+	sum(COALESCE(estoque.saldo,0)) as saldo,
+	sum(COALESCE(estoque.custoTotal,0)) as custoTotal,
+	COALESCE(sum(COALESCE(estoque.custoTotal,0))/sum(COALESCE(estoque.saldo,0)),0) as custoMedio
+FROM
+(
+# MONTADA A PARTE DE ENTRADA
+SELECT
+	estoqueEntrada.idproduto,
+	estoqueEntrada.produto,
+	estoqueEntrada.localizacao,
+	sum(COALESCE(estoqueEntrada.saldo,0)) as saldo,
+	sum(COALESCE(estoqueEntrada.custoTotal,0)) as custoTotal,
+	COALESCE(sum(COALESCE(estoqueEntrada.custoTotal,0))/sum(COALESCE(estoqueEntrada.saldo,0)),0) as custoMedio
+FROM
+(
+# ENTRADA VIA NOTA FISCAL VENDA DIRETA
+SELECT
+		p.id as idproduto, p.nome as produto, p.localizacao as localizacao, sum(COALESCE(infvd.quantidade,0)) as saldo, sum(COALESCE(infvd.preco_custo*infvd.quantidade,0)) as custoTotal
+	FROM
+		agrosystem.produtos as p
+        LEFT JOIN agrosystem.itens_notas_fiscais_vendas_diretas as infvd ON p.id = infvd.id_produto
+		INNER JOIN agrosystem.notas_fiscais_vendas_diretas as nfvd ON infvd.id_nota_fiscal_venda_direta = nfvd.id
+   where  1=1
+		#and p.id = :id_produtoParam
+		group by p.id
+
+UNION ALL
+
+# ENTRADA VIA NOTA FISCAL VENDA ENTREGA PEDIDO
+SELECT 
+		p.id as idproduto, p.nome as produto, p.localizacao as localizacao, sum(COALESCE(infv.quantidade,0)) as saldo, sum(COALESCE(infv.preco_custo*infv.quantidade,0)) as custoTotal
+	FROM
+		agrosystem.produtos as p 
+        LEFT JOIN agrosystem.itens_pedidos as ip ON p.id = ip.id_produto
+        LEFT JOIN agrosystem.itens_notas_fiscais_vendas as infv ON ip.id = infv.id_item_pedido
+		INNER JOIN agrosystem.notas_fiscais_vendas as nfv ON infv.id_nota_entrega = nfv.id
+   where  1=1
+		and nfv.tipo = 'Venda'
+		#and p.id = :id_produtoParam
+		group by p.id
+        
+UNION ALL
+
+# ENTRADA VIA CUPOM
+SELECT 
+		p.id as idproduto, p.nome as produto, p.localizacao as localizacao, sum(COALESCE(ic.quantidade,0)) as saldo, sum(COALESCE(ic.preco_custo*ic.quantidade,0)) as custoTotal 
+	FROM 
+		agrosystem.produtos as p 
+		LEFT JOIN agrosystem.itens_cupons as ic ON p.id = ic.id_produto       
+   where  1=1
+		#and p.id = :id_produtoParam
+		group by p.id
+        
+UNION ALL
+
+# ENTRADA VIA NOTA FISCAL VENDA ENTREGA SIMPLES REMESSA
+SELECT
+		p.id as idproduto, p.nome as produto, p.localizacao as localizacao, sum(COALESCE(infsr.quantidade,0)) as saldo, sum(COALESCE(infsr.preco_custo*infsr.quantidade,0)) as custoTotal
+	FROM
+		agrosystem.produtos as p
+        LEFT JOIN agrosystem.itens_pedidos as ip ON p.id = ip.id_produto
+        LEFT JOIN agrosystem.itens_notas_fiscais_vendas as infv ON ip.id = infv.id_item_pedido
+		INNER JOIN agrosystem.itens_simples_remessas as infsr ON infv.id = infsr.id_item_nota_fiscal_venda       
+   where  1=1
+		#and p.id = :id_produtoParam
+		group by p.id
+        
+) as estoqueEntrada
+group by estoqueEntrada.idproduto
+
+
+UNION ALL ##################################################
+
+
+# MONTADA A PARTE DE SAIDA
+SELECT
+	estoqueSaida.idproduto,
+	estoqueSaida.produto,
+	estoqueSaida.localizacao,
+	sum(COALESCE(estoqueSaida.saldo,0)*-1) as saldo,
+	sum(COALESCE(estoqueSaida.custoTotal,0)*-1) as custoTotal,
+	COALESCE(sum(COALESCE(estoqueSaida.custoTotal,0))/sum(COALESCE(estoqueSaida.saldo,0))*-1,0) as custoMedio
+FROM
+(
+
+# SAIDA VIA APLICACAO
+SELECT
+		p.id as idproduto, p.nome as produto, p.localizacao as localizacao, sum(COALESCE(ap.quantidade,0)) as saldo, sum(COALESCE(ap.custoTotal,0)) as custoTotal
+	FROM
+		agrosystem.produtos as p
+        LEFT JOIN agrosystem.aplicacoes as ap ON p.id = ap.idProduto
+   where  1=1
+		#and p.id = :id_produtoParam
+		group by p.id
+
+UNION ALL
+
+# SAIDA VIA ABASTECIMENTO
+SELECT
+		p.id as idproduto, p.nome as produto, p.localizacao as localizacao, sum(COALESCE(ab.quantidade,0)) as saldo, sum(COALESCE(ab.custoTotal,0)) as custoTotal
+	FROM
+		agrosystem.produtos as p
+        LEFT JOIN agrosystem.abastecimentos as ab ON p.id = ab.idProduto
+   where  1=1
+		#and p.id = :id_produtoParam
+		group by p.id
+
+UNION ALL
+
+# SAIDA VIA ITENS
+SELECT
+		p.id as idproduto, p.nome as produto, p.localizacao as localizacao, sum(COALESCE(it.quantidade,0)) as saldo, sum(COALESCE(it.custoTotal,0)) as custoTotal
+	FROM
+		agrosystem.produtos as p
+        LEFT JOIN agrosystem.itens as it ON p.id = it.idProduto
+   where  1=1
+		#and p.id = :id_produtoParam
+		group by p.id
+
+) as estoqueSaida
+group by estoqueSaida.idproduto
+
+) as estoque
+group by estoque.idproduto

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="contrato_fisico" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" uuid="cd82f701-f237-4b8c-8159-2190a87ae5ee">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="ISO-8859-1"/>
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["C:\\JAVA\\PROJETOS\\PORTAL_ESCOLAR\\workspaceatlantis\\atlantis\\atlantis-view-struts\\src\\main\\webapp\\relatorios\\contrato_fisico\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IMAGEM_BANNER" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="VERSAO_SISTEMA" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="contrato.tipoContrato.nome" class="java.lang.String"/>
+	<field name="dadosContratante" class="java.lang.String"/>
+	<field name="contrato.dadosContratada" class="java.lang.String"/>
+	<field name="contrato.dadosRodape" class="java.lang.String"/>
+	<field name="nomeContratante" class="java.lang.String"/>
+	<field name="cpfContratante" class="java.lang.String"/>
+	<field name="contrato.nomeRepresentanteContratada" class="java.lang.String"/>
+	<field name="contrato.cpfRepresentanteContratada" class="java.lang.String"/>
+	<field name="nomeTestimunha1" class="java.lang.String"/>
+	<field name="cpfTestimunha1" class="java.lang.String"/>
+	<field name="nomeTestimunha2" class="java.lang.String"/>
+	<field name="cpfTestimunha2" class="java.lang.String"/>
+	<field name="contrato.cidade" class="java.lang.String"/>
+	<field name="data" class="java.lang.String"/>
+	<field name="contrato.clausulas" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="107" splitType="Stretch">
+			<image>
+				<reportElement key="image-1" x="157" y="0" width="200" height="59" uuid="d2b6742d-4f9d-449b-8617-1d1076d7d936"/>
+				<imageExpression><![CDATA[$P{IMAGEM_BANNER}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="63" width="535" height="20" uuid="c1a8df19-7629-45ef-9f0d-83fc5f8c321d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CONTRATO DE PRESTAÇÃO DE " + $F{contrato.tipoContrato.nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="236" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText-1" x="0" y="0" width="535" height="20" uuid="50a91624-785c-4413-8244-5e392194fe31"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[IDENTIFICAÇÃO DAS PARTES CONTRATANTES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" x="0" y="35" width="535" height="20" uuid="62269b14-f94c-415f-8c19-d24f36c6c67e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[CONTRATANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" positionType="Float" x="0" y="105" width="535" height="20" uuid="10eea1ab-f7cb-48a6-8f4a-5675da2d3ff6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[CONTRATADA]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="55" width="535" height="40" uuid="1d7c9323-2302-468e-be54-8956bf69303a"/>
+				<box leftPadding="20" bottomPadding="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dadosContratante}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" positionType="Float" x="0" y="125" width="535" height="40" uuid="c4b2f42b-6aab-42ce-b6e9-214a061bec60"/>
+				<box leftPadding="20" bottomPadding="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contrato.dadosContratada}]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true">
+				<reportElement key="subreport-1" positionType="Float" x="0" y="216" width="535" height="20" uuid="f576d8f2-a602-4694-9c4b-f930ebb773ba"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource( (List)$F{contrato.clausulas})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "contrato_fisico_subreport0.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement mode="Transparent" x="0" y="165" width="535" height="51" forecolor="#000000" backcolor="#FFFFFF" uuid="8bd1d639-bcff-4a62-9d5e-fbc89a1862b0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["As partes acima identificadas têm, entre si, justo e acertado o presente Contrato de " +$F{contrato.tipoContrato.nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="0" width="535" height="20" forecolor="#CCCCCC" uuid="bb69b5d2-70eb-4825-8b64-2517e222ff8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contrato.dadosRodape}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="208" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="105" width="213" height="15" uuid="a03b6073-95ee-4815-bd3c-ffa09d1f28a8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeContratante}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="90" width="213" height="15" uuid="b8633b3e-ed1d-4903-8cde-17dbed468656"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpfContratante}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="321" y="90" width="214" height="15" uuid="6bf6fe4e-6c00-44b1-bffc-7505369beef2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contrato.nomeRepresentanteContratada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" x="321" y="105" width="214" height="15" uuid="4e255b5c-234a-4bf3-83bf-962be5cd9915"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contrato.cpfRepresentanteContratada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" x="63" y="166" width="150" height="15" uuid="3b9d1e14-feb7-4e2b-a8ec-2fa6d693d789"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeTestimunha1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="63" y="151" width="150" height="15" uuid="554fbd2e-7d09-4954-8d2b-141742276d12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpfTestimunha1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField" x="320" y="166" width="150" height="15" uuid="525c6f59-fc37-4b65-bbc4-f2517d954526"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeTestimunha2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="320" y="151" width="150" height="15" uuid="66ce2f30-575a-498c-9d38-03aadcf79aa2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpfTestimunha2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="40" width="535" height="24" uuid="c37f46d0-7d87-49f1-b4d7-1514e052078f"/>
+				<box topPadding="10"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contrato.cidade} + " " + $F{data}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-5" x="0" y="0" width="535" height="40" uuid="fdeec701-1a1e-4fdc-8e42-5509aeed92c4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Por estarem assim justos e contratados, firmam o presente instrumento, em duas vias de igual teor, juntamente com 2 (duas) testemunhas.]]></text>
+			</staticText>
+			<line>
+				<reportElement key="line-1" x="0" y="89" width="214" height="1" uuid="a624e18b-6c0b-4c3c-b3e3-3a95c391673d"/>
+			</line>
+			<line>
+				<reportElement key="line-2" x="321" y="90" width="214" height="1" uuid="e440a8c6-0eb8-433a-8685-736723b31105"/>
+			</line>
+			<line>
+				<reportElement key="line-3" x="63" y="149" width="150" height="1" uuid="23535cd0-8fdb-42ff-80b7-12d89c3a7e3f"/>
+			</line>
+			<line>
+				<reportElement key="line-4" x="320" y="149" width="150" height="1" uuid="43b4d9a3-a2e3-45a7-b409-3466963a8c5a"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement key="textField-1" x="0" y="188" width="535" height="20" forecolor="#CCCCCC" uuid="f4039bbc-2dbf-43ba-bee3-b12662a7a155"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" pdfFontName="Times-Roman" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{contrato.dadosRodape}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

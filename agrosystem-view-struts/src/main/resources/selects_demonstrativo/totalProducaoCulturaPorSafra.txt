@@ -1,0 +1,42 @@
+SELECT saldo.idSafra, saldo.safra, saldo.cultura, sum(saldo.quantidade) as quantidade FROM (
+SELECT
+    s.id as idSafra, s.nome as safra, c.nome as cultura ,sum(eg.pesoLiquido) as quantidade
+FROM
+    esafra.sistema_entradasgrao eg, 
+    esafra.sistema_variedades v, 
+    esafra.sistema_culturas c, 
+    esafra.sistema_safras s 
+where 1=1 
+    and v.idCultura = :idCulturaParam
+    and s.id = :idSafraParam
+    and v.idCultura = c.id 
+    and eg.idVariedade = v.id 
+    and eg.idSafra = s.id
+group by eg.idSafra 
+UNION ALL
+SELECT 
+    s.id as idSafra, s.nome as safra, c.nome as cultura ,COALESCE(sum(COALESCE(aj.quantidade,0)),0) as quantidade
+FROM 
+    esafra.sistema_ajustes aj,
+    esafra.sistema_culturas c, 
+    esafra.sistema_safras s 
+WHERE 1=1
+    AND aj.idCultura = :idCulturaParam
+    AND aj.idSafra = :idSafraParam
+    AND aj.tipo = 'Sobra de Classificação'
+    and aj.idCultura = c.id 
+    and aj.idSafra = s.id    
+UNION ALL
+SELECT 
+    s.id as idSafra, s.nome as safra, c.nome as cultura ,COALESCE(sum(COALESCE(aj.quantidade,0)*-1),0) as quantidade
+FROM 
+    esafra.sistema_ajustes aj,
+    esafra.sistema_culturas c, 
+    esafra.sistema_safras s 
+WHERE 1=1
+    AND aj.idCultura = :idCulturaParam
+    AND aj.idSafra = :idSafraParam   
+    AND aj.tipo = 'Quebra de Classificação'
+    and aj.idCultura = c.id 
+    and aj.idSafra = s.id
+) as saldo

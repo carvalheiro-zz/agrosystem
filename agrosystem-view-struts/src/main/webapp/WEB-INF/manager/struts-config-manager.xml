@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="tipoUsuarioForm" type="br.com.srcsoftware.modular.manager.usuario.tipousuario.TipoUsuarioForm"></form-bean>
+		<form-bean name="usuarioForm" type="br.com.srcsoftware.modular.manager.usuario.usuario.UsuarioForm"></form-bean>
+		<form-bean name="loginForm" type="br.com.srcsoftware.modular.manager.usuario.login.LoginForm"></form-bean>
+		<form-bean name="desktopForm" type="br.com.srcsoftware.modular.manager.desktop.DesktopForm"></form-bean>
+		<form-bean name="parametrizacaoForm" type="br.com.srcsoftware.modular.manager.parametrizacao.ParametrizacaoForm"></form-bean>
+		<form-bean name="ativacaoForm" type="br.com.srcsoftware.modular.manager.ativacao.AtivacaoForm"></form-bean>
+
+		<form-bean name="empresaForm" type="br.com.srcsoftware.modular.manager.empresa.EmpresaForm"></form-bean>
+		<form-bean name="funcionarioForm" type="br.com.srcsoftware.modular.manager.pessoa.funcionario.FuncionarioForm"></form-bean>
+		<form-bean name="fornecedorForm" type="br.com.srcsoftware.modular.manager.pessoa.fornecedor.FornecedorForm"></form-bean>
+		<form-bean name="clienteForm" type="br.com.srcsoftware.modular.manager.pessoa.cliente.ClienteForm"></form-bean>
+
+		<form-bean name="tipoFormaPagamentoForm" type="br.com.srcsoftware.modular.financeiro.formapagamento.tipo.TipoFormaPagamentoForm"></form-bean>
+		<form-bean name="formaPagamentoForm" type="br.com.srcsoftware.modular.financeiro.formapagamento.FormaPagamentoForm"></form-bean>
+		<form-bean name="tituloPagarForm" type="br.com.srcsoftware.modular.financeiro.titulo.titulopagar.TituloPagarForm"></form-bean>
+		<form-bean name="tituloReceberForm" type="br.com.srcsoftware.modular.financeiro.titulo.tituloreceber.TituloReceberForm"></form-bean>
+		<form-bean name="despesaForm" type="br.com.srcsoftware.modular.financeiro.despesa.DespesaForm"></form-bean>
+		<form-bean name="receitaForm" type="br.com.srcsoftware.modular.financeiro.receita.ReceitaForm"></form-bean>
+
+		<form-bean name="controleCaixaForm" type="br.com.srcsoftware.modular.financeiro.caixa.aberturafechamento.ControleCaixaForm"></form-bean>
+
+		<form-bean name="queryForm" type="br.com.srcsoftware.modular.manager.query.QueryForm"></form-bean>
+		<form-bean name="queryViewForm" type="br.com.srcsoftware.modular.manager.query.manager.QueryViewForm"></form-bean>
+		<form-bean name="logViewerForm" type="br.com.srcsoftware.logviwer.LogViewerForm"></form-bean>
+	
+		<form-bean name="painelTestesMailForm"        type="br.com.srcsoftware.modular.manager.paineltestesemail.PainelTestesMailForm"></form-bean>
+		
+		<form-bean name="taxaForm" type="br.com.srcsoftware.modular.financeiro.taxa.TaxaForm"></form-bean>
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/restrito/admin/tipoUsuario" type="br.com.srcsoftware.modular.manager.usuario.tipousuario.TipoUsuarioAction" name="tipoUsuarioForm" scope="session" parameter="method">
+			<forward name="tipoUsuarioCampos" path=".tipoUsuarioCampos"></forward>
+			<forward name="tipoUsuarioLista" path=".tipoUsuarioLista"></forward>
+		</action>
+
+		<action path="/restrito/admin/usuario" type="br.com.srcsoftware.modular.manager.usuario.usuario.UsuarioAction" name="usuarioForm" scope="session" parameter="method">
+			<forward name="usuarioCampos" path=".usuarioCampos"></forward>
+			<forward name="usuarioLista" path=".usuarioLista"></forward>
+		</action>
+
+		<action path="/publico/admin/login" type="br.com.srcsoftware.modular.manager.usuario.login.LoginAction" name="loginForm" scope="session" parameter="method">
+			<forward name="login" path="/paginas/publico/admin/login.jsp"></forward>
+			<forward name="loginFornecedor" path="/paginas/publico/admin/login-fornecedor.jsp"></forward>
+			<forward name="desktop" path="/restrito/admin/desktop.src?method=abrir"></forward>
+			<forward name="empresaNaoIdentificada" path="/paginas/publico/admin/negado/acessonegado.jsp"></forward>
+		</action>
+
+		<action path="/restrito/admin/desktop" type="br.com.srcsoftware.modular.manager.desktop.DesktopAction" name="desktopForm" scope="session" parameter="method">
+			<forward name="desktop" path=".desktop"></forward>
+			<forward name="login" path="/publico/admin/login.src?method=abrir"></forward>
+			<forward name="parametrizacao" path="/restrito/admin/parametrizacao.src?method=abrirCadastro"></forward>
+			<forward name="ativacaoLicenca" path="/paginas/publico/admin/ativacao-licenca.jsp"></forward>
+			<forward name="painelProdutosFornecedor" path="/restrito/sistema/painelProdutosFornecedor.src?method=abrir"></forward>
+		</action>
+
+		<action path="/restrito/admin/parametrizacao" type="br.com.srcsoftware.modular.manager.parametrizacao.ParametrizacaoAction" name="parametrizacaoForm" scope="session" parameter="method">
+			<forward name="desktop" path="/restrito/admin/desktop.src?method=abrir"></forward>
+			<forward name="parametrizacaoCampos" path=".parametrizacaoCampos"></forward>
+		</action>
+
+		<action path="/restrito/admin/ativacao" type="br.com.srcsoftware.modular.manager.ativacao.AtivacaoAction" name="ativacaoForm" scope="session" parameter="method">
+			<forward name="desktop" path="/restrito/admin/desktop.src?method=abrir"></forward>
+			<forward name="ativacaoCampos" path=".ativacaoCampos"></forward>
+		</action>
+
+		<action path="/restrito/admin/empresa" type="br.com.srcsoftware.modular.manager.empresa.EmpresaAction" name="empresaForm" scope="session" parameter="method">
+			<forward name="empresaCampos" path=".empresaCampos"></forward>
+			<forward name="empresaLista" path=".empresaLista"></forward>
+		</action>
+
+		<action path="/restrito/admin/funcionario" type="br.com.srcsoftware.modular.manager.pessoa.funcionario.FuncionarioAction" name="funcionarioForm" scope="session" parameter="method">
+			<forward name="funcionarioCampos" path=".funcionarioCampos"></forward>
+			<forward name="funcionarioLista" path=".funcionarioLista"></forward>
+			<forward name="usuarioFuncionarioAjax" path="/paginas/restrito/adm/pessoa/funcionario/ajax/funcionario-usuario-ajax.jsp"></forward>			
+		</action>
+
+		<action path="/restrito/admin/fornecedor" type="br.com.srcsoftware.modular.manager.pessoa.fornecedor.FornecedorAction" name="fornecedorForm" scope="session" parameter="method">
+			<forward name="fornecedorCampos" path=".fornecedorCampos"></forward>
+			<forward name="fornecedorLista" path=".fornecedorLista"></forward>
+			<forward name="fornecedorModal" path="/paginas/restrito/adm/pessoa/fornecedor/modal/fornecedor-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/admin/cliente" type="br.com.srcsoftware.modular.manager.pessoa.cliente.ClienteAction" name="clienteForm" scope="session" parameter="method">
+			<forward name="clienteCampos" path=".clienteCampos"></forward>
+			<forward name="clienteLista" path=".clienteLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/tipoFormaPagamento" type="br.com.srcsoftware.modular.financeiro.formapagamento.tipo.TipoFormaPagamentoAction" name="tipoFormaPagamentoForm" scope="session" parameter="method">
+			<forward name="tipoFormaPagamentoCampos" path=".tipoFormaPagamentoCampos"></forward>
+			<forward name="tipoFormaPagamentoLista" path=".tipoFormaPagamentoLista"></forward>
+			<forward name="tipoFormaPagamentoModal" path="/paginas/restrito/modulos/financeiro/tipoformapagamento/modal/tipoformapagamento-modal.jsp"></forward>
+		</action>
+		<action path="/restrito/sistema/formaPagamento" type="br.com.srcsoftware.modular.financeiro.formapagamento.FormaPagamentoAction" name="formaPagamentoForm" scope="session" parameter="method">
+			<forward name="formaPagamentoCampos" path=".formaPagamentoCampos"></forward>
+			<forward name="formaPagamentoLista" path=".formaPagamentoLista"></forward>
+			<forward name="formaPagamentoModal" path="/paginas/restrito/modulos/financeiro/formapagamento/modal/formapagamento-modal.jsp"></forward>
+		</action>
+		<action path="/restrito/sistema/tituloPagar" type="br.com.srcsoftware.modular.financeiro.titulo.titulopagar.TituloPagarAction" name="tituloPagarForm" scope="session" parameter="method">
+			<forward name="tituloPagarLista" path=".tituloPagarLista"></forward>
+		</action>
+		<action path="/restrito/sistema/tituloReceber" type="br.com.srcsoftware.modular.financeiro.titulo.tituloreceber.TituloReceberAction" name="tituloReceberForm" scope="session" parameter="method">
+			<forward name="tituloReceberLista" path=".tituloReceberLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/despesa" type="br.com.srcsoftware.modular.financeiro.despesa.DespesaAction" name="despesaForm" scope="session" parameter="method">
+			<forward name="despesaCampos" path=".despesaCampos"></forward>
+			<forward name="despesaLista" path=".despesaLista"></forward>
+			<forward name="abaParcelaAjax" path="/paginas/restrito/modulos/financeiro/despesa/ajax/painel-parcelas-ajax.jsp"></forward>
+			<forward name="abaFinanceiroAjax" path="/paginas/restrito/modulos/financeiro/despesa/ajax/painel-financeiro-ajax.jsp"></forward>
+			<forward name="abaCabecalhoAjax" path="/paginas/restrito/modulos/financeiro/despesa/ajax/cabecalho-ajax.jsp"></forward>
+			<forward name="painelTaxaAjax" path="/paginas/restrito/modulos/financeiro/despesa/ajax/painel-taxas-ajax.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/receita" type="br.com.srcsoftware.modular.financeiro.receita.ReceitaAction" name="receitaForm" scope="session" parameter="method">
+			<forward name="receitaCampos" path=".receitaCampos"></forward>
+			<forward name="receitaLista" path=".receitaLista"></forward>
+			<forward name="abaParcelaAjax" path="/paginas/restrito/modulos/financeiro/receita/ajax/painel-parcelas-ajax.jsp"></forward>
+			<forward name="abaFinanceiroAjax" path="/paginas/restrito/modulos/financeiro/receita/ajax/painel-financeiro-ajax.jsp"></forward>
+			<forward name="abaCabecalhoAjax" path="/paginas/restrito/modulos/financeiro/receita/ajax/cabecalho-ajax.jsp"></forward>
+
+
+		</action>
+
+		<action path="/restrito/sistema/controleCaixa" type="br.com.srcsoftware.modular.financeiro.caixa.aberturafechamento.ControleCaixaAction" name="controleCaixaForm" scope="session" parameter="method">
+			<forward name="controleCaixaCampos" path=".controleCaixaCampos"></forward>
+			<forward name="controleCaixaLista" path=".controleCaixaLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/query" type="br.com.srcsoftware.modular.manager.query.QueryAction" name="queryForm" scope="session" parameter="method">
+			<forward name="queryCampos" path=".queryCampos"></forward>
+			<forward name="queryLista" path=".queryLista"></forward>
+			<forward name="usuariosQueryAjax" path="/paginas/restrito/adm/query/ajax/painel-usuarios-ajax.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/queryView" type="br.com.srcsoftware.modular.manager.query.manager.QueryViewAction" name="queryViewForm" scope="session" parameter="method">
+			<forward name="queryView" path=".queryView"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/logViewer" type="br.com.srcsoftware.logviwer.LogViewerAction" name="logViewerForm" scope="session" parameter="method">
+			<forward name="logViewer" path=".logViewer"></forward>
+		</action>
+		
+		<action path="/restrito/admin/painelTestesMail" type="br.com.srcsoftware.modular.manager.paineltestesemail.PainelTestesMailAction" name="painelTestesMailForm" scope="session" parameter="method">
+			<forward name="painelTestesEmailCampos" path=".painelTestesEmailCampos"></forward>
+		</action>
+		
+		
+		<action path="/restrito/sistema/taxa" type="br.com.srcsoftware.modular.financeiro.taxa.TaxaAction" name="taxaForm" scope="session" parameter="method">
+			<forward name="taxaCampos" path=".taxaCampos"></forward>
+			<forward name="taxaLista" path=".taxaLista"></forward>
+			<forward name="taxaModal" path="/paginas/restrito/modulos/financeiro/taxa/modal/taxa-modal.jsp"></forward>			
+		</action>
+	</action-mappings>
+
+	<!-- Usa-se quando for usar Tiles -->
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"></controller>
+	<!-- Informa ao Struts em qual arquivo estão as mensagens que serão usadas no Projeto -->
+	<message-resources parameter="application" />
+	<!-- Criação do plugin do Tiles. Faz isso quando for usar Tiles no projeto -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/manager/tiles-def-manager.xml,/WEB-INF/tiles-def.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+</struts-config>

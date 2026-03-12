@@ -1,0 +1,337 @@
+# 1ª Consulta
+# Parte 1 - pegar todos os lançamentos para o setor(SAFRA/SETOR) informado
+SELECT
+	t.nome nome, sum(custoTotal) custoTotal
+FROM
+	aplicacoes as a,
+	produtos as p,
+	tipos t,
+	setoressafras ss
+WHERE
+	a.idProduto = p.id
+	AND t.id = p.id_tipo
+	AND a.idSafra = ss.idSafra
+	AND a.idSetor = ss.idSetor
+	and a.tipo = 'Safra/Setor' #FIXO
+	and ss.idSafra = 4
+  and ss.idSetor = 13
+group by t.nome
+
+
+# 1ª Consulta
+# Parte 2 - pegar todos os lançamentos para a CULTURA que esta plantada no setor informado
+SELECT
+  #(tb_totalAplicadoCultura.totalAplicadoCultura/tb_totalAreaSetores.totalAreaSetores)*tb_areaSetor.areaSetor
+  tb_totalAplicadoCultura.nome nome, (tb_areaSetor.areaSetor/tb_totalAreaSetores.totalAreaSetores)*tb_totalAplicadoCultura.totalAplicadoCultura as custoTotal
+FROM
+  # Total dos valores aplicados na CULTURA plantada no setor informado
+	(SELECT
+	  t.nome nome, sum(aplicacao.custoTotal) totalAplicadoCultura
+	FROM
+	  aplicacoes aplicacao,
+	  sistema_culturas cultura,
+	  produtos as p,
+		tipos t
+	WHERE
+	  aplicacao.tipo = 'Cultura'
+    and aplicacao.idSafra = 4
+	  and aplicacao.idProduto = p.id
+		AND t.id = p.id_tipo
+	  AND aplicacao.idCultura = cultura.id
+	  and cultura.nome in  (SELECT
+							  distinct(c.nome)
+							FROM
+							  setoressafras ss,
+								setores setor,
+								safras safra,
+								sistema_culturas c
+							WHERE
+							  ss.idSetor = setor.id
+							  AND ss.idSafra = safra.id
+								AND ss.idCultura = c.id
+								and ss.idSafra = 4
+							  and ss.idSetor = 13)
+	group by t.nome) as tb_totalAplicadoCultura,
+  # Tamanho total dos SETORES que foram plantadas a CULTURA do Setor informado
+	(SELECT
+	  sum(safrasetor.area) totalAreaSetores
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4
+	  and cultura.nome in  (SELECT
+							  distinct(c.nome)
+							FROM
+							  setoressafras ss,
+								setores setor,
+								safras safra,
+								sistema_culturas c
+							WHERE
+							  ss.idSetor = setor.id
+							  AND ss.idSafra = safra.id
+								AND ss.idCultura = c.id
+							  And ss.idSafra = 4
+							  and ss.idSetor = 13)) as tb_totalAreaSetores,
+  # Tamanho total do SETOR informado
+	(SELECT
+	  safrasetor.area areaSetor
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4
+		and safrasetor.idSetor = 13) as tb_areaSetor
+
+
+
+
+# 1ª Consulta
+# Parte 3 - pegar todos os lançamentos para a TUDO e calcular o proporcional com o SETOR informado
+SELECT
+  tb_totalAplicadoTudo.nome nome, (tb_areaSetor.areaSetor/tb_totalAreaSetores.totalAreaSetores)*tb_totalAplicadoTudo.totalAplicadoCultura as custoTotal
+FROM
+  # Total dos valores aplicados na CULTURA plantada no setor informado
+	(SELECT
+	  t.nome nome, sum(aplicacao.custoTotal) totalAplicadoCultura
+	FROM
+	  aplicacoes aplicacao,
+	  produtos as p,
+		tipos t
+	WHERE
+	  aplicacao.tipo = 'Tudo'
+    and aplicacao.idSafra = 4
+	  and aplicacao.idProduto = p.id
+		AND t.id = p.id_tipo
+    group by t.nome) as tb_totalAplicadoTudo,
+  # Tamanho total dos SETORES que foram plantadas a CULTURA do Setor informado
+	(SELECT
+	  sum(safrasetor.area) totalAreaSetores
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4) as tb_totalAreaSetores,
+  # Tamanho total do SETOR informado
+	(SELECT
+	  safrasetor.area areaSetor
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4
+		and safrasetor.idSetor = 13) as tb_areaSetor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+################################################################ Resultado Juntando as 3
+# Resultado
+
+SELECT
+	td_FULL.nome nome, sum(td_FULL.custoTotal) custoTotal
+FROM
+
+(SELECT
+	t.nome nome, sum(custoTotal) custoTotal
+FROM
+	aplicacoes as a,
+	produtos as p,
+	tipos t,
+	setoressafras ss
+WHERE
+	a.idProduto = p.id
+	AND t.id = p.id_tipo
+	AND a.idSafra = ss.idSafra
+	AND a.idSetor = ss.idSetor
+	and a.tipo = 'Safra/Setor' #FIXO
+	and ss.idSafra = 4
+  and ss.idSetor = 13
+group by t.nome
+
+UNION ALL
+
+SELECT
+  tb_totalAplicadoCultura.nome nome, (tb_areaSetor.areaSetor/tb_totalAreaSetores.totalAreaSetores)*tb_totalAplicadoCultura.totalAplicadoCultura as custoTotal
+FROM
+  # Total dos valores aplicados na CULTURA plantada no setor informado
+	(SELECT
+	  t.nome nome, sum(aplicacao.custoTotal) totalAplicadoCultura
+	FROM
+	  aplicacoes aplicacao,
+	  sistema_culturas cultura,
+	  produtos as p,
+		tipos t
+	WHERE
+	  aplicacao.tipo = 'Cultura'
+    and aplicacao.idSafra = 4
+	  and aplicacao.idProduto = p.id
+		AND t.id = p.id_tipo
+	  AND aplicacao.idCultura = cultura.id
+	  and cultura.nome in  (SELECT
+							  distinct(c.nome)
+							FROM
+							  setoressafras ss,
+								setores setor,
+								safras safra,
+								sistema_culturas c
+							WHERE
+							  ss.idSetor = setor.id
+							  AND ss.idSafra = safra.id
+								AND ss.idCultura = c.id
+								and ss.idSafra = 4
+							  and ss.idSetor = 13)
+	group by t.nome) as tb_totalAplicadoCultura,
+  # Tamanho total dos SETORES que foram plantadas a CULTURA do Setor informado
+	(SELECT
+	  sum(safrasetor.area) totalAreaSetores
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4
+	  and cultura.nome in  (SELECT
+							  distinct(c.nome)
+							FROM
+							  setoressafras ss,
+								setores setor,
+								safras safra,
+								sistema_culturas c
+							WHERE
+							  ss.idSetor = setor.id
+							  AND ss.idSafra = safra.id
+								AND ss.idCultura = c.id
+							  And ss.idSafra = 4
+							  and ss.idSetor = 13)) as tb_totalAreaSetores,
+  # Tamanho total do SETOR informado
+	(SELECT
+	  safrasetor.area areaSetor
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4
+		and safrasetor.idSetor = 13) as tb_areaSetor
+
+UNION ALL
+
+SELECT
+  tb_totalAplicadoTudo.nome nome, (tb_areaSetor.areaSetor/tb_totalAreaSetores.totalAreaSetores)*tb_totalAplicadoTudo.totalAplicadoCultura as custoTotal
+FROM
+  # Total dos valores aplicados na CULTURA plantada no setor informado
+	(SELECT
+	  t.nome nome, sum(aplicacao.custoTotal) totalAplicadoCultura
+	FROM
+	  aplicacoes aplicacao,
+	  produtos as p,
+		tipos t
+	WHERE
+	  aplicacao.tipo = 'Tudo'
+    and aplicacao.idSafra = 4
+	  and aplicacao.idProduto = p.id
+		AND t.id = p.id_tipo
+    group by t.nome) as tb_totalAplicadoTudo,
+  # Tamanho total dos SETORES que foram plantadas a CULTURA do Setor informado
+	(SELECT
+	  sum(safrasetor.area) totalAreaSetores
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4) as tb_totalAreaSetores,
+  # Tamanho total do SETOR informado
+	(SELECT
+	  safrasetor.area areaSetor
+	FROM
+	  setoressafras safrasetor,
+		setores setor,
+		safras safra,
+		sistema_culturas cultura
+	WHERE
+	  safrasetor.idSetor = setor.id
+	  AND safrasetor.idSafra = safra.id
+		AND safrasetor.idCultura = cultura.id
+		and safrasetor.idSafra = 4
+		and safrasetor.idSetor = 13) as tb_areaSetor
+) as td_FULL
+group by td_FULL.nome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

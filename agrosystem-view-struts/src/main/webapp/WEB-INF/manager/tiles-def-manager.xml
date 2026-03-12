@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.3//EN"
+"http://struts.apache.org/dtds/tiles-config_1_3.dtd">
+
+<tiles-definitions>
+	<definition name="templateManager" path="/templates/adm/template.jsp">
+		<put name="header" value="header.jsp" />
+		<put name="menuzinho" value="menuzinho.jsp" />
+		<put name="menu" value="menu.jsp" />
+		<put name="body" value="" />
+	</definition>
+	
+	<definition name="templateSemMenuSistemaManager" path="/templates/adm/template_sem_menu.jsp">
+		<put name="header" value="header.jsp" />
+		<put name="body" value="" />
+	</definition>
+	
+	<!--============================================================================================= -->
+	<!--= INICIO ========================== USER MANAGER ==== NÃO ALTERAR =========================== -->
+	<!--============================================================================================= -->
+
+	<definition name=".desktop" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/desktop.jsp" />
+	</definition>
+	
+	<definition name=".tipoUsuarioCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/tipousuario/tipousuario-campos.jsp" />
+	</definition>
+	<definition name=".tipoUsuarioLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/tipousuario/tipousuario-lista.jsp" />
+	</definition>
+
+	<definition name=".usuarioCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/usuario/usuario-campos.jsp" />
+	</definition>
+	<definition name=".usuarioLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/usuario/usuario-lista.jsp" />
+	</definition>
+
+	<definition name=".parametrizacaoCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/parametrizacao/parametrizacao-campos.jsp" />
+	</definition>
+	
+	<definition name=".ativacaoCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/ativacao/ativacao-campos.jsp" />
+	</definition>
+	
+	<definition name=".empresaCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/empresa/empresa-campos.jsp" />
+	</definition>
+	<definition name=".empresaLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/empresa/empresa-lista.jsp" />
+	</definition>
+	
+	<definition name=".funcionarioCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/pessoa/funcionario/funcionario-campos.jsp" />
+	</definition>
+	<definition name=".funcionarioLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/pessoa/funcionario/funcionario-lista.jsp" />
+	</definition>
+	
+	<definition name=".fornecedorCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/pessoa/fornecedor/fornecedor-campos.jsp" />
+	</definition>
+	<definition name=".fornecedorLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/pessoa/fornecedor/fornecedor-lista.jsp" />
+	</definition>
+	
+	<definition name=".clienteCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/pessoa/cliente/cliente-campos.jsp" />
+	</definition>
+	<definition name=".clienteLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/pessoa/cliente/cliente-lista.jsp" />
+	</definition>
+
+
+	<definition name=".tipoFormaPagamentoCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/tipoformapagamento/tipoformapagamento-campos.jsp" />
+	</definition>
+	<definition name=".tipoFormaPagamentoLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/tipoformapagamento/tipoformapagamento-lista.jsp" />
+	</definition>
+	<definition name=".formaPagamentoCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/formapagamento/formapagamento-campos.jsp" />
+	</definition>
+	<definition name=".formaPagamentoLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/formapagamento/formapagamento-lista.jsp" />
+	</definition>
+	<definition name=".tituloPagarLista" extends="templateSemMenuSistemaManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/titulopagar/titulopagar-lista.jsp" />
+	</definition>
+	<definition name=".tituloReceberLista" extends="templateSemMenuSistemaManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/tituloreceber/tituloreceber-lista.jsp" />
+	</definition>
+	
+	<definition name=".despesaCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/despesa/despesa-campos.jsp" />
+	</definition>
+	<definition name=".despesaLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/despesa/despesa-lista.jsp" />
+	</definition>
+	
+	<definition name=".receitaCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/receita/receita-campos.jsp" />
+	</definition>
+	<definition name=".receitaLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/receita/receita-lista.jsp" />
+	</definition>
+	
+	<definition name=".controleCaixaCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/caixa/controlecaixa/controlecaixa-campos.jsp" />
+	</definition>
+	<definition name=".controleCaixaLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/caixa/controlecaixa/controlecaixa-lista.jsp" />
+	</definition>
+	
+	<definition name=".queryCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/query/query-campos.jsp" />
+	</definition>
+	<definition name=".queryLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/query/query-lista.jsp" />
+	</definition>
+	
+	<definition name=".queryView" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/query/telasgeradas/principal-campos.jsp" />
+	</definition>
+	
+	<definition name=".logViewer" extends="templateSemMenuSistemaManager">
+		<put name="body" value="/paginas/restrito/adm/logviewer/logviewer.jsp" />
+	</definition>
+	
+	<definition name=".painelTestesEmailCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/adm/paineltestesemail/paineltestesmail-campos.jsp" />
+	</definition>
+	
+	<definition name=".taxaCampos" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/taxa/taxa-campos.jsp" />
+	</definition>
+	<definition name=".taxaLista" extends="templateManager">
+		<put name="body" value="/paginas/restrito/modulos/financeiro/taxa/taxa-lista.jsp" />
+	</definition>
+</tiles-definitions>

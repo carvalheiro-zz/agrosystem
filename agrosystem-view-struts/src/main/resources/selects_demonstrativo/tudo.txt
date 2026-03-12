@@ -1,0 +1,57 @@
+ SELECT
+			 	td_FULL.nome nome, sum(td_FULL.custoTotal) custoTotal 
+			 FROM 
+			 (
+			 /* Total dos valores aplicados nas Culturas */
+			 SELECT
+			 	t.nome nome, sum(custoTotal) custoTotal
+			 FROM
+			 	sistema_aplicacoes as a,
+			 	sistema_produtos as p,
+			 	sistema_tipos as t
+			 WHERE
+				a.tipo = 'Cultura' /*FIXO*/
+			 	and a.idSafra = :idSafraParam
+				AND t.classificacao = :classificacaoParam
+			 	AND a.idProduto = p.id
+			 	AND t.id = p.idTipo			 	
+			 group by t.nome
+
+			 UNION ALL
+
+			/* Total dos valores aplicados nos Setores */
+			 SELECT
+			 	t.nome nome, sum(custoTotal) custoTotal
+			 FROM
+			 	sistema_aplicacoes as a,
+			 	sistema_produtos as p,
+			 	sistema_tipos as t,
+			 	(SELECT sss.idSafra,sss.idSetor,sum(sss.area) area from sistema_setoressafra sss, sistema_variedades vv where sss.idSafra = :idSafraParam and sss.idVariedade = vv.id group by sss.idSetor,vv.idCultura) as ss
+			 WHERE			 	
+				a.tipo = 'Safra/Setor' /*FIXO*/
+				and ss.idSafra = :idSafraParam
+				AND t.classificacao = :classificacaoParam
+				AND a.idProduto = p.id
+			 	AND t.id = p.idTipo
+			 	AND a.idSafra = ss.idSafra
+			 	AND a.idSetor = ss.idSetor			 	
+			 group by t.nome
+
+			 UNION ALL
+
+       /* Total dos valores aplicados em Tudo */
+			 SELECT
+			 	t.nome nome, sum(custoTotal) custoTotal
+			 FROM
+			 	sistema_aplicacoes as a,
+			 	sistema_produtos as p,
+			 	sistema_tipos as t
+			 WHERE
+				a.tipo = 'Tudo' /*FIXO*/
+			 	and a.idSafra = :idSafraParam
+				AND t.classificacao = :classificacaoParam
+			 	AND a.idProduto = p.id
+			 	AND t.id = p.idTipo			 	
+			 group by t.nome
+			 ) as td_FULL
+			 group by td_FULL.nome

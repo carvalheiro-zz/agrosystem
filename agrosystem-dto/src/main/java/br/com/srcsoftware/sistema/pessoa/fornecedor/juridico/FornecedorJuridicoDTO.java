@@ -1,0 +1,157 @@
+package br.com.srcsoftware.sistema.pessoa.fornecedor.juridico;
+
+import br.com.srcsoftware.abstracts.AbstractDTO;
+
+public final class FornecedorJuridicoDTO extends AbstractDTO implements Comparable< FornecedorJuridicoDTO >{
+
+	private String id;
+	private String nome;
+	//private String celular;
+	//private String fixo;
+	private String telefone;
+	private String endereco;
+	private String observacao;
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone( String telefone ) {
+		this.telefone = telefone;
+	}
+
+	public String getId() {
+		return this.id;
+	}
+
+	public void setId( String id ) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return this.nome;
+	}
+
+	public void setNome( String nome ) {
+		this.nome = nome;
+	}
+
+	/*public String getCelular() {
+		return this.celular;
+	}
+	
+	public void setCelular( String celular ) {
+		this.celular = celular;
+	}
+	
+	public String getFixo() {
+		return this.fixo;
+	}
+	
+	public void setFixo( String fixo ) {
+		this.fixo = fixo;
+	}*/
+
+	public String getEndereco() {
+		return this.endereco;
+	}
+
+	public void setEndereco( String endereco ) {
+		this.endereco = endereco;
+	}
+
+	public String getObservacao() {
+		return this.observacao;
+	}
+
+	public void setObservacao( String observacao ) {
+		this.observacao = observacao;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = ( prime * result ) + ( ( this.endereco == null ) ? 0 : this.endereco.hashCode() );
+		result = ( prime * result ) + ( ( this.nome == null ) ? 0 : this.nome.hashCode() );
+		result = ( prime * result ) + ( ( this.telefone == null ) ? 0 : this.telefone.hashCode() );
+		/*result = ( prime * result ) + ( ( this.celular == null ) ? 0 : this.celular.hashCode() );
+		result = ( prime * result ) + ( ( this.fixo == null ) ? 0 : this.fixo.hashCode() );*/
+		return result;
+	}
+
+	@Override
+	public boolean equals( Object obj ) {
+		if ( this == obj ) {
+			return true;
+		}
+		if ( obj == null ) {
+			return false;
+		}
+		if ( this.getClass() != obj.getClass() ) {
+			return false;
+		}
+		FornecedorJuridicoDTO other = (FornecedorJuridicoDTO) obj;
+		if ( this.endereco == null ) {
+			if ( other.endereco != null ) {
+				return false;
+			}
+		} else if ( !this.endereco.equals( other.endereco ) ) {
+			return false;
+		}
+		if ( this.nome == null ) {
+			if ( other.nome != null ) {
+				return false;
+			}
+		} else if ( !this.nome.equals( other.nome ) ) {
+			return false;
+		}
+		if ( this.telefone == null ) {
+			if ( other.telefone != null ) {
+				return false;
+			}
+		} else if ( !this.telefone.equals( other.telefone ) ) {
+			return false;
+		}
+		/*if ( this.celular == null ) {
+			if ( other.celular != null ) {
+				return false;
+			}
+		} else if ( !this.celular.equals( other.celular ) ) {
+			return false;
+		}
+		if ( this.fixo == null ) {
+			if ( other.fixo != null ) {
+				return false;
+			}
+		} else if ( !this.fixo.equals( other.fixo ) ) {
+			return false;
+		}*/
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append( "FornecedorJuridicoDTO [\n\tnome=" );
+		builder.append( nome );
+		builder.append( ",\n\ttelefone=" );
+		builder.append( telefone );
+		builder.append( ",\n\tendereco=" );
+		builder.append( endereco );
+		builder.append( ",\n\tobservacao=" );
+		builder.append( observacao );
+		builder.append( ",\n\tgetIdTemp()=" );
+		builder.append( getIdTemp() );
+		builder.append( ",\n\tgetId()=" );
+		builder.append( getId() );
+		builder.append( "]\n" );
+		return builder.toString();
+	}
+
+	@Override
+	public int compareTo( FornecedorJuridicoDTO o ) {
+		return this.getNome().compareToIgnoreCase( o.getNome() );
+	}
+
+}

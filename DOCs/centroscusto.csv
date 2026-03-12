@@ -1,0 +1,31 @@
+id,data_alteracao,data_criacao,usuario_alteracao,usuario_criacao,codigo,descricao,tipo
+3,NULL,"2018-05-23 18:55:01",NULL,adm,300_01,"Vendas de Produção",Receita
+4,NULL,"2018-05-23 18:55:17",NULL,adm,300_02,"Vendas Diversas",Receita
+5,NULL,"2018-05-23 18:55:55",NULL,adm,300_03,"Outras Receitas",Receita
+6,NULL,"2018-05-23 18:56:23",NULL,adm,301_01,"Salários e Encargos",Despesa
+7,NULL,"2018-05-23 18:56:50",NULL,adm,301_02,"Mão de obra Temporária",Despesa
+8,NULL,"2018-05-23 18:57:09",NULL,adm,301_03,Sementes,Despesa
+9,NULL,"2018-05-23 18:57:26",NULL,adm,301_04,"Adubos e Fertilizantes",Despesa
+10,NULL,"2018-05-23 18:58:08",NULL,adm,301_05,"Calcário e Gesso",Despesa
+11,NULL,"2018-05-23 18:58:33",NULL,adm,301_06,"Sindicato Rural",Despesa
+12,NULL,"2018-05-23 18:58:54",NULL,adm,301_07,"Plano de Saúde",Despesa
+13,NULL,"2018-05-23 18:59:12",NULL,adm,301_08,"Manutenção de Máquinas e Equipamentos",Despesa
+14,NULL,"2018-05-23 18:59:36",NULL,adm,301_09,"Manutenção de Benfeitorias",Despesa
+15,NULL,"2018-05-23 18:59:50",NULL,adm,301_10,Energia,Despesa
+16,NULL,"2018-05-23 19:00:08",NULL,adm,301_11,"Impostos e Taxas",Despesa
+17,NULL,"2018-05-23 19:00:26",NULL,adm,301_12,"Serviços Prestados por Terceiros",Despesa
+18,NULL,"2018-05-23 19:00:38",NULL,adm,301_13,"Plano de Seguro",Despesa
+19,NULL,"2018-05-23 19:00:52",NULL,adm,301_14,"Despesas Diversas",Despesa
+20,NULL,"2018-05-23 19:01:08",NULL,adm,301_15,"Despesas Financeiras",Despesa
+21,NULL,"2018-05-23 19:01:39",NULL,adm,301_16,"Assistência Agronômica",Despesa
+22,NULL,"2018-05-23 19:02:10",NULL,adm,301_17,"Defensivos Agrícolas",Despesa
+23,NULL,"2018-05-23 19:02:25",NULL,adm,301_18,Alimentação,Despesa
+24,"2018-05-23 19:07:57","2018-05-23 19:02:44",adm,adm,301_19,Combustíveis,Despesa
+25,NULL,"2018-05-23 19:03:02",NULL,adm,301_20,EPI,Despesa
+26,NULL,"2018-05-23 19:04:04",NULL,adm,301_21,Telefone,Despesa
+27,NULL,"2018-05-23 19:04:17",NULL,adm,301_22,"Material de Limpeza",Despesa
+28,NULL,"2018-05-23 19:04:30",NULL,adm,301_23,"Despesas Indiretas",Despesa
+29,NULL,"2018-05-23 19:04:53",NULL,adm,302_01,"Compra de Imóvel",Investimento
+30,NULL,"2018-05-23 19:05:12",NULL,adm,302_02,"Compra de Máquinas e Equipamentos",Investimento
+31,NULL,"2018-05-23 19:05:29",NULL,adm,302_03,"Benfeitorias e Contruções",Investimento
+32,NULL,"2018-05-23 19:06:01",NULL,adm,302_04,"Investimentos Indiretos",Investimento

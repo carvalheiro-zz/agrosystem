@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="DEBUG">
+	<Properties>
+		<Property name="basePath">${sys:catalina.home}</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="LogToConsole" target="SYSTEM_OUT">
+			<PatternLayout pattern="[E-SAFRA] --> [%-5level] %d{dd/MM/yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n" />
+		</Console>
+
+		<RollingFile name="LogToFile" fileName="${basePath}/logs/sistema/atlantis.log" filePattern="${basePath}/logs/sistema/atlantis-%d{yyyy-MM-dd}-%i.log">
+		
+			<PatternLayout>                                
+				<pattern>[E-SAFRA] --> [%-5level] %d{dd/MM/yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="1 MB" /><!-- TAMANHO MAXIMO DO ARQUIVO -->				
+				<CronTriggeringPolicy schedule="0 0 20 1/1 * ? *"/><!-- FAZ COM QUE SEJA GERADO A COPIA E RENOVAÇÃO DO ARQUIVO SEMPRE AS 20:00 DE TODOS OS DIAS -->
+			</Policies>
+			<DefaultRolloverStrategy max = "20" /><!-- QUANTIDADE MAXIMA DE ARQUIVOS GERADOS -->
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="br.com.srcsoftware" level="debug" additivity="true">
+			<appender-ref ref="LogToFile" level="debug" />
+		</Logger>
+		<Logger name="org.hibernate" level="INFO" additivity="true">
+			<appender-ref ref="LogToFile" level="INFO" />
+		</Logger>
+		<Logger name="org.apache" level="INFO">
+			<appender-ref ref="LogToFile" level="INFO" />
+		</Logger>		
+		<Root level="debug" additivity="false">
+			<appender-ref ref="LogToConsole" />
+		</Root>
+	</Loggers>
+
+</Configuration>
+<!-- OFF	0
+FATAL	100
+ERROR	200
+WARN	300
+INFO	400
+DEBUG	500
+TRACE	600
+ALL	Integer.MAX_VALUE -->

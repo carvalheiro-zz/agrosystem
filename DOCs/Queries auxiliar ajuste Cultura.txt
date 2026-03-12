@@ -1,0 +1,3 @@
+SELECT * FROM esafra.sistema_variedades v
+SELECT * FROM esafra.sistema_setoressafra ss,esafra.sistema_culturas c where c.id = 5 and ss.idCultura = c.id;
+SELECT * FROM esafra.sistema_setoressafra;

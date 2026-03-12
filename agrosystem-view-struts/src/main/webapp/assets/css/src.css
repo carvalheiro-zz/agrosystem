@@ -1,0 +1,186 @@
+/* ***************** UNIMED ***************** */
+.cor-sistema {
+	/*background-color: rgb(1, 133, 83) !important; Verde */
+	background-color: rgb(60, 118, 61) !important; /* Verde 2 */
+}
+
+.cor-sistema.btn:hover {
+	/* background-color: rgb(1, 68, 42) !important;  Verde*/
+	background-color: rgb(17, 56, 17) !important; /* Verde 2 */
+}
+
+.cor-menu-sistema {
+	/*background-color: rgba(1, 133, 83, 0.22) !important;  Verde*/
+	background-color: rgba(60, 118, 61, 0.22) !important; /* Verde 2 */
+}
+
+.cor-campos-composicao-sistema {
+	/*background-color: rgba(1, 133, 83, 0.18) !important;  Verde*/
+	background-color: rgba(60, 118, 61, 0.18) !important; /* Verde 2 */
+}
+/* ***************** UNIMED ***************** */
+
+/* ***************** AZUL ***************** */
+/* .cor-sistema {	
+	background-color: rgb(49, 112, 142) !important; Azul
+}
+.cor-sistema.btn:hover {
+	background-color: rgb(15, 65, 88) !important; Azul	
+}
+.cor-menu-sistema {	
+	background-color: rgba(49, 112, 142, 0.22) !important; Azul
+}
+.cor-campos-composicao-sistema {
+	background-color: rgba(49, 112, 142, 0.18) !important; Azul
+} */
+/* ***************** AZUL ***************** */
+
+.sombra {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+	border-color: #909090;
+}
+
+.obrigatorio {
+	border-color: #FFA500 !important;
+}
+
+.bloqueado {
+	background-color: #EEEEEE !important;
+	font-weight: bold !important;
+	cursor: not-allowed !important;
+}
+
+.bloqueado-font-normal {
+	background-color: #EEEEEE !important;
+	font-weight: normal !important;
+	cursor: not-allowed !important;
+}
+
+select[readonly] option, select[readonly] optgroup {
+	display: none;
+}
+
+.centralizado {
+	text-align: center;
+}
+
+#loading-indicator {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.icone-login {
+	/* padding: 0 3px; */
+	z-index: 2;
+	position: absolute;
+	/* top: 1px; */
+	bottom: 1px;
+	/* left: 3px; */
+	line-height: 28px;
+	/* display: inline-block; */
+	/* color: #909090; */
+	/* font-size: 16px; */
+}
+
+#loading-indicator {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+.text-white {
+	color: #FFF;
+}
+
+.text-green {
+	color: #006300;
+}
+
+.text-blue {
+	color: #02008E;
+}
+
+.text-red {
+	color: red;
+}
+
+.titulo_formulario {
+	color: #FFF;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+.cabecalho_pagina {
+	font-size: 24px;
+	font-weight: lighter;
+	color: #616060;
+}
+
+.sub_cabecalho_pagina {
+	margin: 0 6px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #8089a0;
+}
+
+textarea {
+	resize: none;
+}
+
+.btn-primary-login {
+	color: #fff;
+	background-color: #006496;
+	border-color: #1b5480;
+}
+
+.btn-primary-login:hover {
+	color: #fff;
+	background-color: #1b5480;
+	border-color: #fff;
+}
+
+.btn-success-login {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c
+}
+
+.btn-success-login:hover {
+	color: #fff;
+	background-color: #449d44;
+	border-color: #398439
+}
+
+td {
+	vertical-align: middle !important;
+	font-size: 12px !important;
+	font-weight: normal !important;
+}
+
+.textoVertical {
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg); /* Safari/Chrome */
+	-moz-transform: rotate(-90deg); /* Firefox */
+	-o-transform: rotate(-90deg); /* Opera */
+	-ms-transform: rotate(-90deg); /* IE 9 */
+	text-shadow: 0px 0px 1px #333;
+}
+
+.input-xs {
+	height: 22px;
+	padding: 2px 5px;
+	font-size: 12px;
+	line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+	border-radius: 3px;
+}
+
+.row-botoes {
+	margin-top: 15px;
+}
+
+.senha {
+    text-security:disc;
+    -webkit-text-security:disc;
+    -mox-text-security:disc;
+}

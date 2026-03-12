@@ -1,0 +1,152 @@
+ SELECT
+			 	td_FULL.nome nome, sum(td_FULL.custoTotal) custoTotal 
+			 FROM 
+			 (SELECT 
+			 	t.nome nome, sum(custoTotal) custoTotal 
+			 FROM 
+			 	sistema_aplicacoes as a,
+			 	sistema_produtos as p, 
+			 	sistema_tipos as t,
+			 	sistema_setoressafra as ss 
+			 WHERE 
+				ss.idSafra = :idSafraParam
+				and ss.idSetor = :idSetorParam
+				AND t.classificacao = :classificacaoParam
+				and a.tipo = 'Safra/Setor' /*FIXO*/
+			 	and a.idProduto = p.id 
+			 	AND t.id = p.idTipo 
+			 	AND a.idSafra = ss.idSafra 
+			 	AND a.idSetor = ss.idSetor
+			 group by t.nome 
+			 UNION ALL 
+			 SELECT 
+			   tb_totalAplicadoCultura.nome nome, (tb_areaSetor.areaSetor/tb_totalAreaSetores.totalAreaSetores)*tb_totalAplicadoCultura.totalAplicadoCultura as custoTotal 
+			 FROM
+			   /* Total dos valores aplicados na CULTURA plantada no setor informado */
+			 	(SELECT 
+					t.nome nome, sum(aplicacao.custoTotal) totalAplicadoCultura 
+			 	FROM 
+					sistema_aplicacoes aplicacao, 
+					sistema_culturas cultura, 
+					sistema_produtos as p, 
+					sistema_tipos t 
+			 	WHERE 
+					aplicacao.tipo = 'Cultura' 
+					AND t.classificacao = :classificacaoParam
+					and aplicacao.idSafra = :idSafraParam
+					and aplicacao.idProduto = p.id 
+			 		AND t.id = p.idTipo			 					 		
+					AND aplicacao.idCultura = cultura.id 
+					and cultura.nome in  (SELECT 
+			 							  distinct(c.nome) 
+			 							FROM 
+			 							  sistema_setoressafra ss, 
+			 								sistema_setores setor, 
+			 								sistema_safras safra, 
+			 								sistema_culturas c ,
+			 								sistema_variedades variedade
+			 							WHERE 
+			 							  ss.idSetor = setor.id 
+			 							  AND ss.idSafra = safra.id 
+			 							  AND ss.idVariedade = variedade.id 
+			 							  AND variedade.idCultura = c.id 
+			 							  and ss.idSafra = :idSafraParam
+			 							  and ss.idSetor = :idSetorParam)
+			 	group by t.nome) as tb_totalAplicadoCultura, 
+			   /* Tamanho total dos SETORES que foram plantadas a CULTURA do Setor informado */
+			 	(SELECT 
+					sum(safrasetor.area) totalAreaSetores 
+			 	FROM 
+					sistema_setoressafra safrasetor, 
+			 		sistema_setores setor, 
+			 		sistema_safras safra, 
+			 		sistema_culturas cultura,
+			 		sistema_variedades variedade
+			 	WHERE 
+					safrasetor.idSetor = setor.id 
+					AND safrasetor.idSafra = safra.id 
+			 		AND safrasetor.idVariedade = variedade.id 
+			 		AND variedade.idCultura = cultura.id 
+			 		and safrasetor.idSafra = :idSafraParam
+					and cultura.nome in  (SELECT 
+			 							  distinct(c.nome) 
+			 							FROM 
+			 							  sistema_setoressafra ss, 
+			 								sistema_setores setor, 
+			 								sistema_safras safra, 
+			 								sistema_culturas c,
+			 								sistema_variedades variedade 
+			 							WHERE 
+			 							  ss.idSetor = setor.id 
+			 							  AND ss.idSafra = safra.id 			 							  
+			 							  AND ss.idVariedade = variedade.id 
+			 							  AND variedade.idCultura = c.id 
+			 							  And ss.idSafra = :idSafraParam
+			 							  and ss.idSetor = :idSetorParam)) as tb_totalAreaSetores,
+			   /* Tamanho total do SETOR informado */
+			 	(SELECT 
+					safrasetor.area areaSetor 
+			 	FROM 
+					sistema_setoressafra safrasetor, 
+			 		sistema_setores setor, 
+			 		sistema_safras safra, 
+			 		sistema_culturas cultura,
+			 		sistema_variedades variedade 
+			 	WHERE 
+					safrasetor.idSetor = setor.id 
+					AND safrasetor.idSafra = safra.id 
+			 		AND safrasetor.idVariedade = variedade.id 
+			 		AND variedade.idCultura = cultura.id 
+			 		and safrasetor.idSafra = :idSafraParam
+			 		and safrasetor.idSetor = :idSetorParam) as tb_areaSetor
+			 UNION ALL 
+			 SELECT 
+				tb_totalAplicadoTudo.nome nome, (tb_areaSetor.areaSetor/tb_totalAreaSetores.totalAreaSetores)*tb_totalAplicadoTudo.totalAplicadoCultura as custoTotal 
+			 FROM 
+			   /* Total dos valores aplicados na CULTURA plantada no setor informado */
+			 	(SELECT 
+			 	  t.nome nome, sum(aplicacao.custoTotal) totalAplicadoCultura 
+			 	FROM 
+					sistema_aplicacoes aplicacao, 
+					sistema_produtos as p, 
+			 		sistema_tipos t 
+			 	WHERE 
+					aplicacao.tipo = 'Tudo' 
+					AND t.classificacao = :classificacaoParam
+					and aplicacao.idSafra = :idSafraParam
+					and aplicacao.idProduto = p.id 
+			 		AND t.id = p.idTipo 
+			     group by t.nome) as tb_totalAplicadoTudo, 
+			   /* Tamanho total dos SETORES que foram plantadas a CULTURA do Setor informado */
+			 	(SELECT 
+			 	  sum(safrasetor.area) totalAreaSetores 
+			 	FROM 
+			 	  sistema_setoressafra safrasetor, 
+			 		sistema_setores setor, 
+			 		sistema_safras safra, 
+			 		sistema_culturas cultura,
+			 		sistema_variedades variedade  
+			 	WHERE 
+					safrasetor.idSetor = setor.id 
+					AND safrasetor.idSafra = safra.id 
+			 		AND safrasetor.idVariedade = variedade.id 
+			 		AND variedade.idCultura = cultura.id 
+			 		and safrasetor.idSafra = :idSafraParam) as tb_totalAreaSetores,
+			   /* Tamanho total do SETOR informado */ 
+			 	(SELECT 
+					safrasetor.area areaSetor 
+			 	FROM 
+					sistema_setoressafra safrasetor,
+			 		sistema_setores setor, 
+			 		sistema_safras safra, 
+			 		sistema_culturas cultura,
+			 		sistema_variedades variedade
+			 	WHERE
+					safrasetor.idSetor = setor.id 
+					AND safrasetor.idSafra = safra.id 
+			 		AND safrasetor.idVariedade = variedade.id 
+			 		AND variedade.idCultura = cultura.id  
+			 		and safrasetor.idSafra = :idSafraParam
+			 		and safrasetor.idSetor = :idSetorParam) as tb_areaSetor
+			 ) as td_FULL 
+			 group by td_FULL.nome

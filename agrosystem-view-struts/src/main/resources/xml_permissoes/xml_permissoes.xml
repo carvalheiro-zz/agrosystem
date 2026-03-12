@@ -1,0 +1,559 @@
+<permissoes_usuario>
+	<telas>
+		<!-- ######################################################## SISTEMA MANAGER ######################################################## -->
+
+		<tela name="parametrizacao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="ativacao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>ALTERAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="usuario">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>GER_PERM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="tipoUsuario">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>GER_PERM</permissao>
+			</permissoes>
+		</tela>
+		<tela name="funcionario">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+		<tela name="empresa">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+		<tela name="query">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="cliente">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+		<!-- ######################################################## SISTEMA MANAGER ######################################################## -->
+
+		<!-- ######################################################### FINANCEIRO ######################################################### -->
+
+		<tela name="tituloReceber">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>QUITAR</permissao>
+				<permissao>ESTORNAR</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="tituloPagar">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>QUITAR</permissao>
+				<permissao>ESTORNAR</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="tipoFormaPagamento">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="formaPagamento">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="despesa">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="receita">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="controleCaixa">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>ABRIR</permissao>
+				<permissao>FECHAR</permissao>
+				<permissao>RELATORIO</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<!-- ######################################################### FINANCEIRO ######################################################### -->
+
+
+		<!-- ######################################################### SISTEMA ######################################################### -->
+		<tela name="marca">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+		<tela name="unidadeMedida">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="tipo">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="produto">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="fornecedorJuridico">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+
+		<tela name="pedido">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="estoque">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="notaFiscalVenda">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+		<tela name="notaFiscalSimplesRemessa">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+		<tela name="notaFiscalVendaDireta">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+		<tela name="cupom">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+		<tela name="notaFiscalCupom">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="setor">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="safra">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="aplicacao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="setorSafra">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="imovel">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+		<tela name="implemento">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="servico">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+		<tela name="veiculo">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+		<tela name="manutencao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+		<tela name="item">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="abastecimento">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="centroCusto">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="notaFiscalRateio">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+				<permissao>RELATORIO</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="cultura">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="variedade">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="entradaGrao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+		<tela name="saidaGrao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+				<permissao>LISTAGEM</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="prestadorServico">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="silo">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+		<tela name="naturezaOperacao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+		<tela name="contratoVenda">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+		<tela name="demonstrativoSafra">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+			</permissoes>
+		</tela>
+		<tela name="demonstrativoProducao">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+			</permissoes>
+		</tela>
+		<tela name="demonstrativoLivroPonto">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="horaExtra">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="ferias">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+
+		<tela name="ajusteSilo">
+			<permissoes>
+				<permissao>ACESSAR</permissao>
+				<permissao>INSERIR</permissao>
+				<permissao>ALTERAR</permissao>
+				<permissao>EXCLUIR</permissao>
+				<permissao>FILTRAR</permissao>
+			</permissoes>
+		</tela>
+		<!-- <tela name="migracao"> <permissoes> <permissao>ACESSAR</permissao> </permissoes> </tela> -->
+
+		<!-- ######################################################### SISTEMA ######################################################### -->
+
+	</telas>
+</permissoes_usuario>

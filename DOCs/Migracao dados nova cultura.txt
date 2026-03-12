@@ -1,0 +1,47 @@
+﻿Passos para a implementação
+
+- Atualize a verção
+- Apague todas as tabelas referentes ao financeiro, e as de RATEIO (notas e itens)
+- Apague a tabela consumos e comissões
+- Start o Servidor
+- Loga no sistema
+- Sair do sistema
+- Parar o Servidor
+- Cadastrar todas as Culturas existentes nas tabelas abaixo na tabela sistema_culturas
+	* aplicacoes
+	* itens
+	* setoressafras
+	* manutencoes
+
+## SELECT pra localizar as Culturas ja castradas
+	SELECT a.cultura FROM agrosystem.aplicacoes a
+	group by a.cultura
+	union
+	SELECT i.cultura FROM agrosystem.itens i
+	group by i.cultura
+	union
+	SELECT m.cultura FROM agrosystem.manutencoes m
+	group by m.cultura
+	union
+	SELECT s.cultura FROM agrosystem.setoressafras s
+	group by s.cultura
+
+## Culturas Cadastradas
+	1, 'Feijão', 'Campos Gerais'
+	2, 'Milho', 'Morgan 30A37'
+	3, 'Milho', 'P30F53E RM'
+	4, 'Milho', 'Fazenda'
+	5, 'Sorgo', 'Alvo'
+	6, 'Soja', 'BRS 284'
+	7, 'Soja', 'BRS 133'
+	8, 'Crotalária', 'Spectábilis'
+
+- Remova as colunas cultura e variedade das tabelas acima mencionadas
+- Remova a UK que tem idVeiculo da tabela manutencoes 
+- Logar com o CARGA / CARGA para criar as novas permissões
+	
+	
+
+
+
+	

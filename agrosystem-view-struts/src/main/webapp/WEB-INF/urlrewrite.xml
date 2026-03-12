@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+    PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+    "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<urlrewrite>
+	<!-- <rule>
+		<from>/sistema/(.+).html</from> Ex: localhost:8080/atlantis/002.html
+		<to type="forward">/publico/admin/login.src?method=abrir&amp;identificadorEmpresa=$1</to>
+	</rule>	
+	<rule>
+		<from>/adm/?$</from>Ex: localhost:8080/atlantis/adm
+		<to type="forward">/publico/admin/login.src?method=abrir&amp;identificadorEmpresa=24902962000102</to>
+	</rule>	 -->
+	
+
+	<rule>
+		<from>/esafra/?$</from>
+		<to type="forward">/publico/admin/login.src?method=abrir</to>
+	</rule>
+
+</urlrewrite>

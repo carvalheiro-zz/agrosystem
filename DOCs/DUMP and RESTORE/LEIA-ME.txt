@@ -1,0 +1,4 @@
+Deve criar a variavel de ambiente MYSQL-HOME
+Ex:
+MYSQL_HOME
+C:\"Program Files (x86)"\MySQL\"MySQL Server 5.0"

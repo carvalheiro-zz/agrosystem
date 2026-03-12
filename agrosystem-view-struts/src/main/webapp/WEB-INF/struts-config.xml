@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="culturaForm" type="br.com.srcsoftware.sistema.safra.cultura.CulturaForm"></form-bean>
+		<form-bean name="variedadeForm" type="br.com.srcsoftware.sistema.safra.cultura.variedade.VariedadeForm"></form-bean>
+		<form-bean name="setorForm" type="br.com.srcsoftware.sistema.safra.setor.SetorForm"></form-bean>
+		<form-bean name="safraForm" type="br.com.srcsoftware.sistema.safra.safra.SafraForm"></form-bean>
+
+		<form-bean name="marcaForm" type="br.com.srcsoftware.sistema.produto.marca.MarcaForm"></form-bean>
+		<form-bean name="tipoForm" type="br.com.srcsoftware.sistema.produto.tipo.TipoForm"></form-bean>
+		<form-bean name="unidadeMedidaForm" type="br.com.srcsoftware.sistema.produto.unidademedida.UnidadeMedidaForm"></form-bean>
+		<form-bean name="produtoForm" type="br.com.srcsoftware.sistema.produto.produto.ProdutoForm"></form-bean>
+
+		<form-bean name="entradaGraoForm" type="br.com.srcsoftware.sistema.silo.entrada.EntradaGraoForm"></form-bean>
+		<form-bean name="saidaGraoForm" type="br.com.srcsoftware.sistema.silo.saida.SaidaGraoForm"></form-bean>
+
+		<form-bean name="imovelForm" type="br.com.srcsoftware.sistema.manutencao.imovel.ImovelForm"></form-bean>
+		<form-bean name="servicoForm" type="br.com.srcsoftware.sistema.manutencao.servico.ServicoForm"></form-bean>
+		<form-bean name="implementoForm" type="br.com.srcsoftware.sistema.manutencao.implemento.ImplementoForm"></form-bean>
+		<form-bean name="veiculoForm" type="br.com.srcsoftware.sistema.manutencao.veiculo.VeiculoForm"></form-bean>
+
+		<form-bean name="estoqueForm" type="br.com.srcsoftware.sistema.estoque.estoque.EstoqueForm"></form-bean>
+
+		<form-bean name="abastecimentoForm" type="br.com.srcsoftware.sistema.combustivel.abastecimento.AbastecimentoForm"></form-bean>
+		<form-bean name="manutencaoImovelForm" type="br.com.srcsoftware.sistema.manutencao.manutencao.imovel.ManutencaoImovelForm"></form-bean>
+		<form-bean name="manutencaoVeiculoForm" type="br.com.srcsoftware.sistema.manutencao.manutencao.veiculo.ManutencaoVeiculoForm"></form-bean>
+		<form-bean name="manutencaoImplementoForm" type="br.com.srcsoftware.sistema.manutencao.manutencao.implemento.ManutencaoImplementoForm"></form-bean>
+
+		<form-bean name="fornecedorJuridicoForm" type="br.com.srcsoftware.sistema.pessoa.fornecedor.juridico.FornecedorForm"></form-bean>
+
+		<form-bean name="aplicacaoForm" type="br.com.srcsoftware.sistema.aplicacao.aplicacao.AplicacaoForm"></form-bean>
+
+		<form-bean name="notaFiscalVendaDiretaForm" type="br.com.srcsoftware.sistema.notafiscal.direta.NotaFiscalVendaDiretaForm"></form-bean>
+
+		<form-bean name="cupomForm" type="br.com.srcsoftware.sistema.cupom.CupomForm"></form-bean>
+
+
+		<form-bean name="itemImovelForm" type="br.com.srcsoftware.sistema.item.imovel.ItemImovelForm"></form-bean>
+		<form-bean name="itemVeiculoForm" type="br.com.srcsoftware.sistema.item.veiculo.ItemVeiculoForm"></form-bean>
+		<form-bean name="itemImplementoForm" type="br.com.srcsoftware.sistema.item.implemento.ItemImplementoForm"></form-bean>
+
+		<form-bean name="notaFiscalCupomForm" type="br.com.srcsoftware.sistema.notafiscal.cupom.NotaFiscalCupomForm"></form-bean>
+
+		<form-bean name="pedidoForm" type="br.com.srcsoftware.sistema.pedido.pedido.PedidoForm"></form-bean>
+
+		<form-bean name="notaFiscalVendaForm" type="br.com.srcsoftware.sistema.notafiscal.venda.NotaFiscalVendaForm"></form-bean>
+
+		<form-bean name="notaFiscalSimplesRemessaForm" type="br.com.srcsoftware.sistema.notafiscal.simplesremessa.NotaFiscalSimplesRemessaForm"></form-bean>
+
+		<form-bean name="centroCustoForm" type="br.com.srcsoftware.sistema.notafiscal.rateio.centrocusto.CentroCustoForm"></form-bean>
+		
+		<form-bean name="notaFiscalRateioDespesaForm" type="br.com.srcsoftware.sistema.notafiscal.rateio.despesa.NotaFiscalRateioDespesaForm"></form-bean>
+		
+		<form-bean name="notaFiscalRateioReceitaForm" type="br.com.srcsoftware.sistema.notafiscal.rateio.receita.NotaFiscalRateioReceitaForm"></form-bean>
+		
+		<form-bean name="demonstrativoSafraForm" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativosafra.DemonstrativoSafraForm"></form-bean>
+		<form-bean name="demonstrativoSafraSinteticoForm" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativosafra.sintetico.DemonstrativoSafraSinteticoForm"></form-bean>
+		
+		<form-bean name="demonstrativoProducaoForm" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativoproducao.DemonstrativoProducaoForm"></form-bean>
+		
+	
+		<form-bean name="prestadorServicoForm" type="br.com.srcsoftware.sistema.pessoa.prestadorservico.PrestadorServicoForm"></form-bean>
+		<form-bean name="siloForm" type="br.com.srcsoftware.sistema.silo.silo.SiloForm"></form-bean>
+		<form-bean name="naturezaOperacaoForm" type="br.com.srcsoftware.sistema.silo.naturezaoperacao.NaturezaOperacaoForm"></form-bean>
+		<form-bean name="contratoVendaForm" type="br.com.srcsoftware.sistema.silo.contratovenda.ContratoVendaForm"></form-bean>
+		
+		<form-bean name="horaExtraForm" type="br.com.srcsoftware.sistema.pessoa.funcionario.horaextra.HoraExtraForm"></form-bean>
+		<form-bean name="feriasForm" type="br.com.srcsoftware.sistema.pessoa.funcionario.ferias.FeriasForm"></form-bean>
+		
+		<form-bean name="demonstrativoLivroPontoForm" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativolivroponto.DemonstrativoLivroPontoForm"></form-bean>
+		<form-bean name="demonstrativoLivroPontoFeriasForm" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativolivroponto.ferias.DemonstrativoLivroPontoFeriasForm"></form-bean>
+		
+		<form-bean name="ajusteSiloForm" type="br.com.srcsoftware.sistema.silo.ajuste.AjusteSiloForm"></form-bean>
+		
+		<form-bean name="relacaoSafraSetorCulturaVariedadeForm" type="br.com.srcsoftware.sistema.gerenciamento.relatorios.relacaosafrasetorculturavariedade.RelacaoSafraSetorCulturaVariedadeForm"></form-bean>
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/restrito/sistema/variedade" type="br.com.srcsoftware.sistema.safra.cultura.variedade.VariedadeAction" name="variedadeForm" scope="session" parameter="method">
+			<forward name="variedadeCampos" path=".variedadeCampos"></forward>
+			<forward name="variedadeLista" path=".variedadeLista"></forward>
+			<forward name="variedadeModal" path="/paginas/restrito/sistema/safra/cultura/variedade/modal/variedade-modal.jsp"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/cultura" type="br.com.srcsoftware.sistema.safra.cultura.CulturaAction" name="culturaForm" scope="session" parameter="method">
+			<forward name="culturaCampos" path=".culturaCampos"></forward>
+			<forward name="culturaLista" path=".culturaLista"></forward>
+			<forward name="culturaModal" path="/paginas/restrito/sistema/safra/cultura/modal/cultura-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/setor" type="br.com.srcsoftware.sistema.safra.setor.SetorAction" name="setorForm" scope="session" parameter="method">
+			<forward name="setorCampos" path=".setorCampos"></forward>
+			<forward name="setorLista" path=".setorLista"></forward>
+			<forward name="setorModal" path="/paginas/restrito/sistema/safra/setor/modal/setor-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/safra" type="br.com.srcsoftware.sistema.safra.safra.SafraAction" name="safraForm" scope="session" parameter="method">
+			<forward name="safraCampos" path=".safraCampos"></forward>
+			<forward name="safraLista" path=".safraLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/marca" type="br.com.srcsoftware.sistema.produto.marca.MarcaAction" name="marcaForm" scope="session" parameter="method">
+			<forward name="marcaCampos" path=".marcaCampos"></forward>
+			<forward name="marcaLista" path=".marcaLista"></forward>
+			<forward name="marcaModal" path="/paginas/restrito/sistema/produto/marca/modal/marca-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/tipo" type="br.com.srcsoftware.sistema.produto.tipo.TipoAction" name="tipoForm" scope="session" parameter="method">
+			<forward name="tipoCampos" path=".tipoCampos"></forward>
+			<forward name="tipoLista" path=".tipoLista"></forward>
+			<forward name="tipoModal" path="/paginas/restrito/sistema/produto/tipo/modal/tipo-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/unidadeMedida" type="br.com.srcsoftware.sistema.produto.unidademedida.UnidadeMedidaAction" name="unidadeMedidaForm" scope="session" parameter="method">
+			<forward name="unidadeMedidaCampos" path=".unidadeMedidaCampos"></forward>
+			<forward name="unidadeMedidaLista" path=".unidadeMedidaLista"></forward>
+			<forward name="unidadeMedidaModal" path="/paginas/restrito/sistema/produto/unidademedida/modal/unidademedida-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/produto" type="br.com.srcsoftware.sistema.produto.produto.ProdutoAction" name="produtoForm" scope="session" parameter="method">
+			<forward name="produtoCampos" path=".produtoCampos"></forward>
+			<forward name="produtoLista" path=".produtoLista"></forward>
+			<forward name="produtoModal" path="/paginas/restrito/sistema/produto/produto/modal/produto-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/entradaGrao" type="br.com.srcsoftware.sistema.silo.entrada.EntradaGraoAction" name="entradaGraoForm" scope="session" parameter="method">
+			<forward name="entradaGraoCampos" path=".entradaGraoCampos"></forward>
+			<forward name="entradaGraoLista" path=".entradaGraoLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/saidaGrao" type="br.com.srcsoftware.sistema.silo.saida.SaidaGraoAction" name="saidaGraoForm" scope="session" parameter="method">
+			<forward name="saidaGraoCampos" path=".saidaGraoCampos"></forward>
+			<forward name="saidaGraoLista" path=".saidaGraoLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/imovel" type="br.com.srcsoftware.sistema.manutencao.imovel.ImovelAction" name="imovelForm" scope="session" parameter="method">
+			<forward name="imovelCampos" path=".imovelCampos"></forward>
+			<forward name="imovelLista" path=".imovelLista"></forward>
+			<forward name="imovelModal" path="/paginas/restrito/sistema/manutencao/imovel/modal/imovel-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/servico" type="br.com.srcsoftware.sistema.manutencao.servico.ServicoAction" name="servicoForm" scope="session" parameter="method">
+			<forward name="servicoCampos" path=".servicoCampos"></forward>
+			<forward name="servicoLista" path=".servicoLista"></forward>
+			<forward name="servicoModal" path="/paginas/restrito/sistema/manutencao/servico/modal/servico-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/implemento" type="br.com.srcsoftware.sistema.manutencao.implemento.ImplementoAction" name="implementoForm" scope="session" parameter="method">
+			<forward name="implementoCampos" path=".implementoCampos"></forward>
+			<forward name="implementoLista" path=".implementoLista"></forward>
+			<forward name="implementoModal" path="/paginas/restrito/sistema/manutencao/implemento/modal/implemento-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/veiculo" type="br.com.srcsoftware.sistema.manutencao.veiculo.VeiculoAction" name="veiculoForm" scope="session" parameter="method">
+			<forward name="veiculoCampos" path=".veiculoCampos"></forward>
+			<forward name="veiculoLista" path=".veiculoLista"></forward>
+			<forward name="veiculoModal" path="/paginas/restrito/sistema/manutencao/veiculo/modal/veiculo-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/estoque" type="br.com.srcsoftware.sistema.estoque.estoque.EstoqueAction" name="estoqueForm" scope="session" parameter="method">
+			<forward name="estoqueLista" path=".estoqueLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/abastecimento" type="br.com.srcsoftware.sistema.combustivel.abastecimento.AbastecimentoAction" name="abastecimentoForm" scope="session" parameter="method">
+			<forward name="abastecimentoCampos" path=".abastecimentoCampos"></forward>
+			<forward name="abastecimentoLista" path=".abastecimentoLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/manutencaoImovel" type="br.com.srcsoftware.sistema.manutencao.manutencao.imovel.ManutencaoImovelAction" name="manutencaoImovelForm" scope="session" parameter="method">
+			<forward name="manutencaoImovelCampos" path=".manutencaoImovelCampos"></forward>
+			<forward name="manutencaoImovelLista" path=".manutencaoImovelLista"></forward>
+		</action>
+		<action path="/restrito/sistema/manutencaoVeiculo" type="br.com.srcsoftware.sistema.manutencao.manutencao.veiculo.ManutencaoVeiculoAction" name="manutencaoVeiculoForm" scope="session" parameter="method">
+			<forward name="manutencaoVeiculoCampos" path=".manutencaoVeiculoCampos"></forward>
+			<forward name="manutencaoVeiculoLista" path=".manutencaoVeiculoLista"></forward>
+		</action>
+		<action path="/restrito/sistema/manutencaoImplemento" type="br.com.srcsoftware.sistema.manutencao.manutencao.implemento.ManutencaoImplementoAction" name="manutencaoImplementoForm" scope="session" parameter="method">
+			<forward name="manutencaoImplementoCampos" path=".manutencaoImplementoCampos"></forward>
+			<forward name="manutencaoImplementoLista" path=".manutencaoImplementoLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/fornecedorJuridico" type="br.com.srcsoftware.sistema.pessoa.fornecedor.juridico.FornecedorAction" name="fornecedorJuridicoForm" scope="session" parameter="method">
+			<forward name="fornecedorJuridicoCampos" path=".fornecedorJuridicoCampos"></forward>
+			<forward name="fornecedorJuridicoLista" path=".fornecedorJuridicoLista"></forward>
+			<forward name="fornecedorJuridicoModal" path="/paginas/restrito/sistema/pessoa/fornecedor/juridico/modal/fornecedor-modal.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/aplicacao" type="br.com.srcsoftware.sistema.aplicacao.aplicacao.AplicacaoAction" name="aplicacaoForm" scope="session" parameter="method">
+			<forward name="aplicacaoCampos" path=".aplicacaoCampos"></forward>
+			<forward name="aplicacaoLista" path=".aplicacaoLista"></forward>
+		</action>
+
+		<action path="/restrito/sistema/notaFiscalVendaDireta" type="br.com.srcsoftware.sistema.notafiscal.direta.NotaFiscalVendaDiretaAction" name="notaFiscalVendaDiretaForm" scope="session" parameter="method">
+			<forward name="notaFiscalVendaDiretaCampos" path=".notaFiscalVendaDiretaCampos"></forward>
+			<forward name="notaFiscalVendaDiretaLista" path=".notaFiscalVendaDiretaLista"></forward>
+			<forward name="painelItensAjax" path="/paginas/restrito/sistema/notafiscal/direta/ajax/itens-tabela.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/cupom" type="br.com.srcsoftware.sistema.cupom.CupomAction" name="cupomForm" scope="session" parameter="method">
+			<forward name="cupomCampos" path=".cupomCampos"></forward>
+			<forward name="cupomLista" path=".cupomLista"></forward>
+			<forward name="cupomItensTabelaAjax" path="/paginas/restrito/sistema/cupom/ajax/itens-tabela.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/itemImovel" type="br.com.srcsoftware.sistema.item.imovel.ItemImovelAction" name="itemImovelForm" scope="session" parameter="method">
+			<forward name="itemImovelCampos" path=".itemImovelCampos"></forward>
+			<forward name="itemImovelLista" path=".itemImovelLista"></forward>
+		</action>
+		<action path="/restrito/sistema/itemVeiculo" type="br.com.srcsoftware.sistema.item.veiculo.ItemVeiculoAction" name="itemVeiculoForm" scope="session" parameter="method">
+			<forward name="itemVeiculoCampos" path=".itemVeiculoCampos"></forward>
+			<forward name="itemVeiculoLista" path=".itemVeiculoLista"></forward>
+		</action>
+		<action path="/restrito/sistema/itemImplemento" type="br.com.srcsoftware.sistema.item.implemento.ItemImplementoAction" name="itemImplementoForm" scope="session" parameter="method">
+			<forward name="itemImplementoCampos" path=".itemImplementoCampos"></forward>
+			<forward name="itemImplementoLista" path=".itemImplementoLista"></forward>
+		</action>
+
+
+		<action path="/restrito/sistema/notaFiscalCupom" type="br.com.srcsoftware.sistema.notafiscal.cupom.NotaFiscalCupomAction" name="notaFiscalCupomForm" scope="session" parameter="method">
+			<forward name="notaFiscalCupomCampos" path=".notaFiscalCupomCampos"></forward>
+			<forward name="notaFiscalCupomLista" path=".notaFiscalCupomLista"></forward>
+			<forward name="campoTotalizadorAjax" path="/paginas/restrito/sistema/notafiscal/cupom/ajax/totalizador-ajax.jsp"></forward>
+
+		</action>
+
+
+		<action path="/restrito/sistema/pedido" type="br.com.srcsoftware.sistema.pedido.pedido.PedidoAction" name="pedidoForm" scope="session" parameter="method">
+			<forward name="pedidoCampos" path=".pedidoCampos"></forward>
+			<forward name="pedidoLista" path=".pedidoLista"></forward>
+			<forward name="itensTabela" path="/paginas/restrito/sistema/pedido/ajax/itens-tabela.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/notaFiscalVenda" type="br.com.srcsoftware.sistema.notafiscal.venda.NotaFiscalVendaAction" name="notaFiscalVendaForm" scope="session" parameter="method">
+			<forward name="notaFiscalVendaCampos" path=".notaFiscalVendaCampos"></forward>
+			<forward name="notaFiscalVendaLista" path=".notaFiscalVendaLista"></forward>
+			<forward name="itensEntreteguesNotaFiscalVendaTabela" path="/paginas/restrito/sistema/notafiscal/venda/ajax/itens-entregues-tabela.jsp"></forward>
+		</action>
+
+		<action path="/restrito/sistema/notaFiscalSimplesRemessa" type="br.com.srcsoftware.sistema.notafiscal.simplesremessa.NotaFiscalSimplesRemessaAction" name="notaFiscalSimplesRemessaForm" scope="session" parameter="method">
+			<forward name="notaFiscalSimplesRemessaCampos" path=".notaFiscalSimplesRemessaCampos"></forward>
+			<forward name="notaFiscalSimplesRemessaLista" path=".notaFiscalSimplesRemessaLista"></forward>
+			<forward name="itensEntreteguesNotaFiscalSimplesRemessaTabela" path="/paginas/restrito/sistema/notafiscal/simplesremessa/ajax/itensnotasimplesremessa-tabela.jsp"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/centroCusto" type="br.com.srcsoftware.sistema.notafiscal.rateio.centrocusto.CentroCustoAction" name="centroCustoForm" scope="session" parameter="method">
+			<forward name="centroCustoCampos" path=".centroCustoCampos"></forward>
+			<forward name="centroCustoLista" path=".centroCustoLista"></forward>
+			<forward name="centroCustoModal" path="/paginas/restrito/sistema/notafiscal/rateio/centrocusto/modal/centrocusto-modal.jsp"></forward>
+		</action>
+		
+		
+		<action path="/restrito/sistema/notaFiscalRateioDespesa" type="br.com.srcsoftware.sistema.notafiscal.rateio.despesa.NotaFiscalRateioDespesaAction" name="notaFiscalRateioDespesaForm" scope="session" parameter="method">
+			<forward name="notaFiscalRateioDespesaCampos" path=".notaFiscalRateioDespesaCampos"></forward>
+			<forward name="notaFiscalRateioDespesaLista" path=".notaFiscalRateioDespesaLista"></forward>
+			<forward name="painelItensAjax" path="/paginas/restrito/sistema/notafiscal/rateio/despesa/ajax/painel-itens-ajax.jsp"></forward>
+			<forward name="abaParcelaAjax" path="/paginas/restrito/sistema/notafiscal/rateio/despesa/ajax/painel-parcelas-ajax.jsp"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/notaFiscalRateioReceita" type="br.com.srcsoftware.sistema.notafiscal.rateio.receita.NotaFiscalRateioReceitaAction" name="notaFiscalRateioReceitaForm" scope="session" parameter="method">
+			<forward name="notaFiscalRateioReceitaCampos" path=".notaFiscalRateioReceitaCampos"></forward>
+			<forward name="notaFiscalRateioReceitaLista" path=".notaFiscalRateioReceitaLista"></forward>
+			<forward name="painelItensAjax" path="/paginas/restrito/sistema/notafiscal/rateio/receita/ajax/painel-itens-ajax.jsp"></forward>
+			<forward name="abaParcelaAjax" path="/paginas/restrito/sistema/notafiscal/rateio/receita/ajax/painel-parcelas-ajax.jsp"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/demonstrativoSafra" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativosafra.DemonstrativoSafraAction" name="demonstrativoSafraForm" scope="session" parameter="method">
+			<forward name="custoDiretoAjax" path="/paginas/restrito/sistema/demonstrativosafra/demonstrativo-safra.jsp"></forward>		
+			<forward name="excelTabelaModal" path="/paginas/restrito/sistema/demonstrativosafra/modalanalitico/tabela-excel-modal.jsp"></forward>	
+		</action>
+		
+		<action path="/restrito/sistema/demonstrativoSafraSintetico" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativosafra.sintetico.DemonstrativoSafraSinteticoAction" name="demonstrativoSafraSinteticoForm" scope="session" parameter="method">
+			<forward name="custoDiretoSinteticoAjax" path="/paginas/restrito/sistema/demonstrativosafra/sintetico/demonstrativo-safra-sintetico.jsp"></forward>			
+			<forward name="excelTabelaModalSintetica" path="/paginas/restrito/sistema/demonstrativosafra/sintetico/modalsintetico/tabela-excel-modal.jsp"></forward>	
+		</action>
+		
+		<action path="/restrito/sistema/demonstrativoProducao" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativoproducao.DemonstrativoProducaoAction" name="demonstrativoProducaoForm" scope="session" parameter="method">
+			<forward name="demonstrativoProducaoAjax" path="/paginas/restrito/sistema/demonstrativoproducao/demonstrativo-producao.jsp"></forward>		
+		</action>
+		
+		
+		<action path="/restrito/sistema/prestadorServico" type="br.com.srcsoftware.sistema.pessoa.prestadorservico.PrestadorServicoAction" name="prestadorServicoForm" scope="session" parameter="method">
+			<forward name="prestadorServicoCampos" path=".prestadorServicoCampos"></forward>
+			<forward name="prestadorServicoLista" path=".prestadorServicoLista"></forward>
+			<forward name="prestadorServicoModal" path="/paginas/restrito/sistema/pessoa/prestador/modal/prestador-modal.jsp"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/silo" type="br.com.srcsoftware.sistema.silo.silo.SiloAction" name="siloForm" scope="session" parameter="method">
+			<forward name="siloCampos" path=".siloCampos"></forward>
+			<forward name="siloLista" path=".siloLista"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/naturezaOperacao" type="br.com.srcsoftware.sistema.silo.naturezaoperacao.NaturezaOperacaoAction" name="naturezaOperacaoForm" scope="session" parameter="method">
+			<forward name="naturezaOperacaoCampos" path=".naturezaOperacaoCampos"></forward>
+			<forward name="naturezaOperacaoLista" path=".naturezaOperacaoLista"></forward>
+			<forward name="naturezaOperacaoModal" path="/paginas/restrito/sistema/silo/naturezaoperacao/modal/naturezaoperacao-modal.jsp"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/contratoVenda" type="br.com.srcsoftware.sistema.silo.contratovenda.ContratoVendaAction" name="contratoVendaForm" scope="session" parameter="method">
+			<forward name="contratoVendaCampos" path=".contratoVendaCampos"></forward>
+			<forward name="contratoVendaLista" path=".contratoVendaLista"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/horaExtra" type="br.com.srcsoftware.sistema.pessoa.funcionario.horaextra.HoraExtraAction" name="horaExtraForm" scope="session" parameter="method">
+			<forward name="horaExtraCampos" path=".horaExtraCampos"></forward>
+			<forward name="horaExtraLista" path=".horaExtraLista"></forward>
+			<forward name="horaExtraModal" path="/paginas/restrito/sistema/pessoa/funcionario/horaextra/modal/horaextra-modal.jsp"></forward>
+		</action>
+		
+		<action path="/restrito/sistema/ferias" type="br.com.srcsoftware.sistema.pessoa.funcionario.ferias.FeriasAction" name="feriasForm" scope="session" parameter="method">
+			<forward name="feriasCampos" path=".feriasCampos"></forward>
+			<forward name="feriasLista" path=".feriasLista"></forward>
+			<forward name="feriasModal" path="/paginas/restrito/sistema/pessoa/funcionario/ferias/modal/ferias-modal.jsp"></forward>
+		</action>
+		
+		
+		<action path="/restrito/sistema/demonstrativoLivroPonto" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativolivroponto.DemonstrativoLivroPontoAction" name="demonstrativoLivroPontoForm" scope="session" parameter="method">
+			<forward name="demonstrativoLivroPontoAjax" path="/paginas/restrito/sistema/demonstrativolivroponto/demonstrativo-livroponto.jsp"></forward>
+			<forward name="excelTabelaModalHoraExtra"   path="/paginas/restrito/sistema/demonstrativolivroponto/modalanalitico-horaextra/tabela-excel-modal.jsp"></forward>			
+		</action>
+		
+		<action path="/restrito/sistema/demonstrativoLivroPontoFerias" type="br.com.srcsoftware.sistema.gerenciamento.demonstrativolivroponto.ferias.DemonstrativoLivroPontoFeriasAction" name="demonstrativoLivroPontoFeriasForm" scope="session" parameter="method">
+			<forward name="demonstrativoLivroPontoFeriasAjax" path="/paginas/restrito/sistema/demonstrativolivroponto/ferias/demonstrativo-livroponto.jsp"></forward>		
+		</action>
+		
+		<action path="/restrito/sistema/ajusteSilo" type="br.com.srcsoftware.sistema.silo.ajuste.AjusteSiloAction" name="ajusteSiloForm" scope="session" parameter="method">
+			<forward name="ajusteSiloCampos" path=".ajusteSiloCampos"></forward>
+			<forward name="ajusteSiloLista" path=".ajusteSiloLista"></forward>
+		</action>
+		
+		
+		<action path="/restrito/sistema/relacaoSafraSetorCulturaVariedade" type="br.com.srcsoftware.sistema.gerenciamento.relatorios.relacaosafrasetorculturavariedade.RelacaoSafraSetorCulturaVariedadeAction" name="relacaoSafraSetorCulturaVariedadeForm" scope="session" parameter="method">
+			<forward name="relacaoSafraSetorCulturaVariedadeLista" path=".relacaoSafraSetorCulturaVariedadeLista"></forward>
+		</action>
+	</action-mappings>
+
+	<!-- Usa-se quando for usar Tiles -->
+	<controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"></controller>
+	<!-- Informa ao Struts em qual arquivo estão as mensagens que serão usadas no Projeto -->
+	<message-resources parameter="application" />
+</struts-config>

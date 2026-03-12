@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.src.srcsoftware</groupId>
+	<artifactId>agrosystem</artifactId>
+	<version>7.0.0.0_b</version>
+	<packaging>pom</packaging>
+	<name>agrosystem</name>
+	<description>Módulo principal do Gestao</description>
+	<modules>
+		<module>agrosystem-po</module>
+		<module>agrosystem-utilidades</module>
+		<module>agrosystem-dto</module>
+		<module>agrosystem-email</module>
+		<module>agrosystem-report</module>
+		<module>agrosystem-business</module>
+		<module>agrosystem-view-struts</module>
+		<module>agrosystem-dao</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.test.failure.ignore>true</maven.test.failure.ignore>
+		
+		<!-- DOS PROJETOS -->
+		<agrosystem.groupId>br.com.src.srcsoftware</agrosystem.groupId>
+
+		<agrosystem-utilidades.version>7.0.0.0_b</agrosystem-utilidades.version>
+		<agrosystem-dto.version>7.0.0.0_b</agrosystem-dto.version>
+		<agrosystem-po.version>7.0.0.0_b</agrosystem-po.version>
+		<agrosystem-dao.version>7.0.0.0_b</agrosystem-dao.version>
+		<agrosystem-report.version>7.0.0.0_b</agrosystem-report.version>
+		<agrosystem-email.version>7.0.0.0_b</agrosystem-email.version>
+		<agrosystem-struts.version>7.0.0.0_b</agrosystem-struts.version>
+		<agrosystem-business.version>7.0.0.0_b</agrosystem-business.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>br.com.src.srcsoftware.framework</groupId>
+			<artifactId>src-framework-dist</artifactId>
+			<version>7.0.0.4_b</version>
+		</dependency>
+
+	</dependencies>
+
+</project>
