@@ -36,7 +36,7 @@ public class HoraExtraDTO extends AuditoriaAbstractDTOComEmpresa implements Comp
 		if(feriado == null) {
 			return "---";
 		}
-		return feriado.equalsIgnoreCase("false") ? "N�o" : "Sim";
+		return feriado.equalsIgnoreCase("false") ? "Não" : "Sim";
 	}
 
 	public String getId() {
@@ -108,8 +108,41 @@ public class HoraExtraDTO extends AuditoriaAbstractDTOComEmpresa implements Comp
 	public void setQuantidadeDomingoFeriado(String quantidadeDomingoFeriado) {
 		this.quantidadeDomingoFeriado = quantidadeDomingoFeriado;
 	}
-
 	
+	
+	public String getQuantidadeDomingo() {
+		if("false".equalsIgnoreCase( getFeriado() )) {
+			return quantidadeDomingoFeriado.replace(",00", "");			
+		}		
+		return "0";
+	}
+	
+	public String getQuantidadeFeriado() {
+		if("true" .equalsIgnoreCase(getFeriado() )) {
+			return quantidadeDomingoFeriado.replace(",00", "");			
+		}		
+		return "0";
+	}	
+	
+	public String getQuantidadeDomingoToString() {
+		if("false".equalsIgnoreCase( getFeriado() )) {
+			return quantidadeDomingoFeriado.replace(",00", "");			
+		}
+		
+		return "0";
+	}
+	
+	public String getQuantidadeFeriadoToString() {
+		if("true".equalsIgnoreCase( getFeriado() )) {
+			return quantidadeDomingoFeriado.replace(",00", "");			
+		}
+		
+		return "0";
+	}
+	
+	
+
+		
 
 	@Override
 	public String toString() {

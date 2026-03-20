@@ -9,8 +9,8 @@ public class SaldoHoraExtraPOJO implements Comparable< SaldoHoraExtraPOJO >{
 	private String idColaborador;
 	private FuncionarioDTO colaborador;
 	private BigDecimal lancamento;
-	// TODO private BigDecimal pagamento;// Não sera usado por enquanto
-	// TODO private BigDecimal saldo;// Não sera usado por enquanto
+	// TODO private BigDecimal pagamento;// Nï¿½o sera usado por enquanto
+	// TODO private BigDecimal saldo;// Nï¿½o sera usado por enquanto
 	
 	private BigDecimal quantidade50Porcento;
 	private BigDecimal quantidade100Porcento;

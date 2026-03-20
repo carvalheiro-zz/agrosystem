@@ -378,6 +378,28 @@ public final class HoraExtraAction extends AbstractCRUDAction< HoraExtraForm >{
 		return null;
 	}
 
+	public ActionForward gerarPDF( ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response ) {
+		try {
+			HoraExtraForm meuForm = this.getCastingForm( form, request );
+
+			HashMap< String, String > camposOrdenacao = new HashMap<>();
+			camposOrdenacao.put( "data", "DESC" );
+
+			HoraExtraFacade.getInstance().gerarPDF( response, camposOrdenacao, meuForm.getHoraExtra(), meuForm.getDataInicial(), meuForm.getDataFinal() );
+
+		} catch ( ApplicationException e ) {
+			this.addErrors( request, Messages.createMessagesErrors( "falha", new String[ ] { e.getMessage() } ) );
+			logger.error( e.getMessage(), e );
+			e.printStackTrace();
+		} catch ( Exception e ) {
+			this.addErrors( request, Messages.createMessagesErrors( "falha", new String[ ] { e.getMessage() } ) );
+			logger.error( "Erro inesperado" + System.lineSeparator() + e.getMessage().trim(), e );
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+	
 	/*@SuppressWarnings( "unchecked" )
 	public ActionForward filtrarSaldo( ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response ) {
 		try {

@@ -26,10 +26,10 @@
 			name="c3p0.acquire_increment">5</property> <property name="c3p0.max_statements">31</property> <property name="c3p0.idle_test_period">3000</property> -->
 
 		<!-- Impressão da SQL na Saida padrão -->
-		<property name="show_sql">true</property>
+		<property name="show_sql">false</property>
 		<property name="format_sql">false</property>
 
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">none</property>
 		<!-- <property name="hbm2ddl.auto">create-drop</property> --><!-- Apenas atualiza a estrutura. Obs: Usado quando em Desenvolvimento -->
 
 <!-- INICIO MODULO FINANCEIRO -->

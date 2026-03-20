@@ -74,21 +74,28 @@
 										</button>
 									</div>
 								</logic:equal>
-								<div class="form-group col-xs-12 col-sm-3 col-md-4 col-lg-4" style="margin-bottom: 0px;">
+								<div class="form-group col-xs-12 col-sm-3 col-md-3 col-lg-3" style="margin-bottom: 0px;">
 									<button type="button" id="limparPesquisa" class="btn btn-success btn-sm cor-sistema btn-block">
 										<i class="glyphicon glyphicon-erase"></i>
 										Limpar
 									</button>
 								</div>
 								<logic:equal name="loginForm" value="true" property="acessoPermitido(${usuarioSessaoPOJO.usuario.id}.horaExtra.inserir)">
-									<div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4" style="margin-bottom: 0px;">
+									<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3" style="margin-bottom: 0px;">
 										<button type="button" id="novo" class="btn btn-success btn-sm cor-sistema btn-block">
 											<i class="fa fa-file-o"></i>
 											Lançar
 										</button>
 									</div>
 								</logic:equal>
-
+								<logic:notEmpty name="horaExtraForm" property="horaExtras">
+									<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-2" style="margin-bottom: 0px;">
+										<button type="button" id="gerarPDF" class="btn btn-primary btn-sm btn-block">
+											<i class="fa fa-file-pdf-o"></i>
+											Gerar PDF
+										</button>
+									</div>								
+								</logic:notEmpty>
 							</div>
 						</html:form>
 					</div>
@@ -120,7 +127,9 @@
 										<th style="width: 80px;">Horas</th>
 										<th style="width: 80px;">50%</th>
 										<th style="width: 80px;">100%</th>
-										<th style="width: 80px;">Dom./Fer.</th>
+										<th style="width: 80px;">Dom/Fer</th>
+										<th style="width: 80px;">Domingo</th>
+										<th style="width: 80px;">Feriado</th>
 										<th class="text-center" style="width: 80px;">Opções</th>
 									</tr>
 								</thead>
@@ -139,6 +148,8 @@
 											<td onclick="selecionar('${contextPath}/restrito/sistema/horaExtra.src?method=selecionar&horaExtra.id=${horaExtraCorrente.id}')">${horaExtraCorrente.quantidade50Porcento}</td>
 											<td onclick="selecionar('${contextPath}/restrito/sistema/horaExtra.src?method=selecionar&horaExtra.id=${horaExtraCorrente.id}')">${horaExtraCorrente.quantidade100Porcento}</td>
 											<td onclick="selecionar('${contextPath}/restrito/sistema/horaExtra.src?method=selecionar&horaExtra.id=${horaExtraCorrente.id}')">${horaExtraCorrente.quantidadeDomingoFeriadoToString}&nbsp;dias</td>
+											<td onclick="selecionar('${contextPath}/restrito/sistema/horaExtra.src?method=selecionar&horaExtra.id=${horaExtraCorrente.id}')">${horaExtraCorrente.quantidadeDomingoToString}&nbsp;dias</td>
+											<td onclick="selecionar('${contextPath}/restrito/sistema/horaExtra.src?method=selecionar&horaExtra.id=${horaExtraCorrente.id}')">${horaExtraCorrente.quantidadeFeriadoToString}&nbsp;dias</td>
 
 											<td class="text-center" style="min-width: 80px; vertical-align: middle;">
 												<logic:equal name="loginForm" value="true" property="acessoPermitido(${usuarioSessaoPOJO.usuario.id}.horaExtra.excluir)">
@@ -260,6 +271,10 @@
 		$( '#novo' ).click(function() {
 			abrirModalProcessando();
 			executarComSubmit('form_horaExtra_consulta','abrirCadastro');
+		});
+		
+		$('#gerarPDF').click(function() {
+			gerarRelatorio('form_horaExtra_consulta', 'gerarPDF');
 		});
 		
 		$('#colaborador').keyup(function(e) {

@@ -31,7 +31,7 @@ public class HoraExtraPO extends AuditoriaAbstractPOComEmpresa implements Compar
 	private BigDecimal quantidadeHoras;
 
 	@Column( nullable = false, length = 10 )
-	private String tipo; // Lançamento / Pagamento
+	private String tipo; // Lanï¿½amento / Pagamento
 	
 	@Column( nullable = false, precision = 5, scale = 2 )
 	private BigDecimal quantidade50Porcento;
