@@ -30,7 +30,7 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">none</property>
 		
 		<mapping class="br.com.srcsoftware.modular.manager.licenceobserver.LicenceObserverPO"/>
 	</session-factory>

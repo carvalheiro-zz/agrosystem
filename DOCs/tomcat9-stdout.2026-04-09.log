@@ -1,0 +1,474 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-04-09 12:29:28.090  INFO 4148 --- [           main] b.c.s.s.BatchDumpDatabaseApplication     : Starting BatchDumpDatabaseApplication v1.0.0 using Java 11.0.23 on SRV-01 with PID 4148 (E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\batch-dump-database\WEB-INF\classes started by SERVIÇO LOCAL in E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93)
+2026-04-09 12:29:28.106  INFO 4148 --- [           main] b.c.s.s.BatchDumpDatabaseApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-04-09 12:29:29.245  INFO 4148 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1108 ms
+2026-04-09 12:29:30.852  INFO 4148 --- [           main] b.c.s.s.BatchDumpDatabaseApplication     : Started BatchDumpDatabaseApplication in 3.379 seconds (JVM running for 6.864)
+2026-04-09 12:29:30.867  INFO 4148 --- [           main] b.c.s.s.scheduler.BackupScheduler        : Executando backup inicial...
+2026-04-09 12:29:35.859  INFO 4148 --- [           main] b.c.src.srcsoftware.service.ZipService   : Compactando arquivo: esafra-backup-db14993676508123130215.sql -> esafra-backup-db14993676508123130215.zip
+2026-04-09 12:29:36.624  INFO 4148 --- [           main] b.c.s.s.scheduler.BackupScheduler        : Verificando existencia da pasta OneDrive: [C:\Windows\ServiceProfiles\LocalService/OneDrive/backup-bds]
+2026-04-09 12:29:36.624  INFO 4148 --- [           main] b.c.s.s.scheduler.BackupScheduler        : Iniciando upload do arquivo compactado...
+2026-04-09 12:29:36.624  INFO 4148 --- [           main] b.c.s.s.scheduler.BackupScheduler        : Backup copiado para a pasta OneDrive: C:\Windows\ServiceProfiles\LocalService\OneDrive\backup-bds\esafra-backup-db14993676508123130215.zip
+2026-04-09 12:29:36.624  INFO 4148 --- [           main] b.c.s.s.scheduler.BackupScheduler        : Iniciando upload do arquivo compactado...
+2026-04-09 12:29:36.655  INFO 4148 --- [           main] b.c.s.s.scheduler.BackupScheduler        : Backup movido para a pasta LOCAL: C:\backup-bds\esafra-backup-db14993676508123130215.zip
+2026-04-09 12:29:36.655  INFO 4148 --- [           main] b.c.s.s.scheduler.BackupScheduler        : Arquivos temporários removidos.
+2026-04-09 12:29:40,820 main DEBUG Apache Log4j Core 2.11.2 initializing configuration XmlConfiguration[location=E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml]
+2026-04-09 12:29:40,820 main DEBUG Installed 1 script engine
+2026-04-09 12:29:41,023 main DEBUG Oracle Nashorn version: 11.0.23, language: ECMAScript, threading: Not Thread Safe, compile: true, names: [nashorn, Nashorn, js, JS, JavaScript, javascript, ECMAScript, ecmascript], factory class: jdk.nashorn.api.scripting.NashornScriptEngineFactory
+2026-04-09 12:29:41,038 main DEBUG PluginManager 'Core' found 117 plugins
+2026-04-09 12:29:41,038 main DEBUG PluginManager 'Level' found 0 plugins
+2026-04-09 12:29:41,038 main DEBUG Building Plugin[name=property, class=org.apache.logging.log4j.core.config.Property].
+2026-04-09 12:29:41,054 main DEBUG PluginManager 'TypeConverter' found 26 plugins
+2026-04-09 12:29:41,054 main DEBUG createProperty(name="basePath", value="E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93")
+2026-04-09 12:29:41,054 main DEBUG Building Plugin[name=properties, class=org.apache.logging.log4j.core.config.PropertiesPlugin].
+2026-04-09 12:29:41,070 main DEBUG configureSubstitutor(={basePath=E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93}, Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml))
+2026-04-09 12:29:41,070 main DEBUG PluginManager 'Lookup' found 13 plugins
+2026-04-09 12:29:41,070 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2026-04-09 12:29:41,070 main DEBUG PatternLayout$Builder(pattern="[E-SAFRA] --> [%-5level] %d{dd/MM/yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n", PatternSelector=null, Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2026-04-09 12:29:41,070 main DEBUG PluginManager 'Converter' found 44 plugins
+2026-04-09 12:29:41,085 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.ConsoleAppender].
+2026-04-09 12:29:41,101 main DEBUG ConsoleAppender$Builder(target="SYSTEM_OUT", follow="null", direct="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout([E-SAFRA] --> [%-5level] %d{dd/MM/yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n), name="LogToConsole", Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Filter=null, ={})
+2026-04-09 12:29:41,101 main DEBUG Starting OutputStreamManager SYSTEM_OUT.false.false
+2026-04-09 12:29:41,101 main DEBUG Building Plugin[name=layout, class=org.apache.logging.log4j.core.layout.PatternLayout].
+2026-04-09 12:29:41,101 main DEBUG PatternLayout$Builder(pattern="[E-SAFRA] --> [%-5level] %d{dd/MM/yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n", PatternSelector=null, Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Replace=null, charset="null", alwaysWriteExceptions="null", disableAnsi="null", noConsoleNoAnsi="null", header="null", footer="null")
+2026-04-09 12:29:41,101 main DEBUG Building Plugin[name=SizeBasedTriggeringPolicy, class=org.apache.logging.log4j.core.appender.rolling.SizeBasedTriggeringPolicy].
+2026-04-09 12:29:41,116 main DEBUG createPolicy(size="1 MB")
+2026-04-09 12:29:41,116 main DEBUG Building Plugin[name=CronTriggeringPolicy, class=org.apache.logging.log4j.core.appender.rolling.CronTriggeringPolicy].
+2026-04-09 12:29:41,116 main DEBUG createPolicy(Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), evaluateOnStartup="null", schedule="0 0 20 1/1 * ? *")
+2026-04-09 12:29:41,116 main DEBUG Building Plugin[name=Policies, class=org.apache.logging.log4j.core.appender.rolling.CompositeTriggeringPolicy].
+2026-04-09 12:29:41,116 main DEBUG createPolicy(={SizeBasedTriggeringPolicy(size=1048576), CronTriggeringPolicy(schedule=0 0 20 1/1 * ? *)})
+2026-04-09 12:29:41,116 main DEBUG Building Plugin[name=DefaultRolloverStrategy, class=org.apache.logging.log4j.core.appender.rolling.DefaultRolloverStrategy].
+2026-04-09 12:29:41,116 main DEBUG DefaultRolloverStrategy$Builder(max="20", min="null", fileIndex="null", compressionLevel="null", ={}, stopCustomActionsOnError="null", tempCompressedFilePattern="null", Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml))
+2026-04-09 12:29:41,116 main DEBUG Building Plugin[name=appender, class=org.apache.logging.log4j.core.appender.RollingFileAppender].
+2026-04-09 12:29:41,116 main DEBUG RollingFileAppender$Builder(fileName="E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93/logs/sistema/atlantis.log", filePattern="E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93/logs/sistema/atlantis-%d{yyyy-MM-dd}-%i.log", append="null", locking="null", Policies(CompositeTriggeringPolicy(policies=[SizeBasedTriggeringPolicy(size=1048576), CronTriggeringPolicy(schedule=0 0 20 1/1 * ? *)])), DefaultRolloverStrategy(DefaultRolloverStrategy(min=1, max=20, useMax=true)), advertise="null", advertiseUri="null", createOnDemand="null", filePermissions="null", fileOwner="null", fileGroup="null", bufferedIo="null", bufferSize="null", immediateFlush="null", ignoreExceptions="null", PatternLayout([E-SAFRA] --> [%-5level] %d{dd/MM/yyyy HH:mm:ss.SSS} [%t] %c{1} - %msg%n), name="LogToFile", Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Filter=null, ={})
+2026-04-09 12:29:41,132 main DEBUG Returning file creation time for E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\logs\sistema\atlantis.log
+2026-04-09 12:29:41,132 main DEBUG Starting RollingFileManager E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93/logs/sistema/atlantis.log
+2026-04-09 12:29:41,132 main DEBUG PluginManager 'FileConverter' found 2 plugins
+2026-04-09 12:29:41,132 main DEBUG Setting prev file time to 2024-08-10T19:00:38.770-0300
+2026-04-09 12:29:41,132 main DEBUG Initializing triggering policy CompositeTriggeringPolicy(policies=[SizeBasedTriggeringPolicy(size=1048576), CronTriggeringPolicy(schedule=0 0 20 1/1 * ? *)])
+2026-04-09 12:29:41,132 main DEBUG Initializing triggering policy SizeBasedTriggeringPolicy(size=1048576)
+2026-04-09 12:29:41,132 main DEBUG Initializing triggering policy CronTriggeringPolicy(schedule=0 0 20 1/1 * ? *)
+2026-04-09 12:29:41,132 main DEBUG LastRollForFile 2024-08-09T20:00:00.000-0300, LastRegularRole 2026-04-08T20:00:00.000-0300
+2026-04-09 12:29:41,132 main DEBUG Setting prev file time to 2026-04-08T20:00:00.000-0300
+2026-04-09 12:29:41,148 main DEBUG Log4j2 ConfigurationScheduler starting 2 threads
+2026-04-09 12:29:41,148 main DEBUG Log4j2 ConfigurationScheduler scheduled cron expression 0 0 20 1/1 * ? * to fire at 2026-04-09T20:00:00.000-0300
+2026-04-09 12:29:41,148 main DEBUG ConfigurationScheduler [name=Log4j2 ConfigurationScheduler, [java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@42491d97[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@315ab221[Wrapped task = CronRunnable{0 0 20 1/1 * ? * - Thu Apr 09 20:00:00 BRT 2026]]]
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=appenders, class=org.apache.logging.log4j.core.config.AppendersPlugin].
+2026-04-09 12:29:41,148 main DEBUG createAppenders(={LogToConsole, LogToFile})
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2026-04-09 12:29:41,148 main DEBUG createAppenderRef(ref="LogToFile", level="DEBUG", Filter=null)
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2026-04-09 12:29:41,148 main DEBUG createLogger(additivity="true", level="DEBUG", name="br.com.srcsoftware", includeLocation="null", ={LogToFile}, ={}, Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Filter=null)
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2026-04-09 12:29:41,148 main DEBUG createAppenderRef(ref="LogToFile", level="INFO", Filter=null)
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2026-04-09 12:29:41,148 main DEBUG createLogger(additivity="true", level="INFO", name="org.hibernate", includeLocation="null", ={LogToFile}, ={}, Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Filter=null)
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2026-04-09 12:29:41,148 main DEBUG createAppenderRef(ref="LogToFile", level="INFO", Filter=null)
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=logger, class=org.apache.logging.log4j.core.config.LoggerConfig].
+2026-04-09 12:29:41,148 main DEBUG createLogger(additivity="true", level="INFO", name="org.apache", includeLocation="null", ={LogToFile}, ={}, Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Filter=null)
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=appender-ref, class=org.apache.logging.log4j.core.config.AppenderRef].
+2026-04-09 12:29:41,148 main DEBUG createAppenderRef(ref="LogToConsole", level="null", Filter=null)
+2026-04-09 12:29:41,148 main DEBUG Building Plugin[name=root, class=org.apache.logging.log4j.core.config.LoggerConfig$RootLogger].
+2026-04-09 12:29:41,148 main DEBUG createLogger(additivity="false", level="DEBUG", includeLocation="null", ={LogToConsole}, ={}, Configuration(E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml), Filter=null)
+2026-04-09 12:29:41,163 main DEBUG Building Plugin[name=loggers, class=org.apache.logging.log4j.core.config.LoggersPlugin].
+2026-04-09 12:29:41,163 main DEBUG createLoggers(={br.com.srcsoftware, org.hibernate, org.apache, root})
+2026-04-09 12:29:41,163 main DEBUG Configuration XmlConfiguration[location=E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml] initialized
+2026-04-09 12:29:41,163 main DEBUG Starting configuration XmlConfiguration[location=E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml]
+2026-04-09 12:29:41,163 main DEBUG Started configuration XmlConfiguration[location=E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml] OK.
+2026-04-09 12:29:41,163 main DEBUG Shutting down OutputStreamManager SYSTEM_OUT.false.false-1
+2026-04-09 12:29:41,163 main DEBUG Shut down OutputStreamManager SYSTEM_OUT.false.false-1, all resources released: true
+2026-04-09 12:29:41,163 main DEBUG Appender DefaultConsole-1 stopped with status true
+2026-04-09 12:29:41,163 main DEBUG Stopped org.apache.logging.log4j.core.config.DefaultConfiguration@64b5c54d OK
+2026-04-09 12:29:41,163 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7
+2026-04-09 12:29:41,163 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=StatusLogger
+2026-04-09 12:29:41,163 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=ContextSelector
+2026-04-09 12:29:41,179 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=Loggers,name=
+2026-04-09 12:29:41,179 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=Loggers,name=br.com.srcsoftware
+2026-04-09 12:29:41,179 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=Loggers,name=org.hibernate
+2026-04-09 12:29:41,179 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=Loggers,name=org.apache
+2026-04-09 12:29:41,179 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=Appenders,name=LogToConsole
+2026-04-09 12:29:41,179 main DEBUG Registering MBean org.apache.logging.log4j2:type=3c809ee7,component=Appenders,name=LogToFile
+2026-04-09 12:29:41,179 main DEBUG org.apache.logging.log4j.core.util.SystemClock supports precise timestamps.
+2026-04-09 12:29:41,179 main DEBUG Reconfiguration complete for context[name=3c809ee7] at URI E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\esafra\WEB-INF\classes\log4j2.xml (org.apache.logging.log4j.core.LoggerContext@411a5128) with optional ClassLoader: null
+2026-04-09 12:29:41,179 main DEBUG Shutdown hook enabled. Registering a new one.
+2026-04-09 12:29:41,179 main DEBUG LoggerContext[name=3c809ee7, org.apache.logging.log4j.core.LoggerContext@411a5128] started OK.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-04-09 12:29:43.597  INFO 4148 --- [           main] br.com.sendmail.api.SendMailApplication  : Starting SendMailApplication v0.0.4-SNAPSHOT using Java 11.0.23 on SRV-01 with PID 4148 (E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\sendmail\WEB-INF\classes started by SERVIÇO LOCAL in E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93)
+2026-04-09 12:29:43.597 DEBUG 4148 --- [           main] br.com.sendmail.api.SendMailApplication  : Running with Spring Boot v2.7.18, Spring v5.3.31
+2026-04-09 12:29:43.597  INFO 4148 --- [           main] br.com.sendmail.api.SendMailApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-04-09 12:29:44.439 DEBUG 4148 --- [           main] faultConfiguringBeanFactoryPostProcessor : SpEL function '#xpath' isn't registered: there is no spring-integration-xml.jar on the classpath.
+2026-04-09 12:29:44.455  INFO 4148 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-04-09 12:29:44.470 DEBUG 4148 --- [           main] faultConfiguringBeanFactoryPostProcessor : The '#jsonPath' SpEL function cannot be registered: there is no jayway json-path.jar on the classpath.
+2026-04-09 12:29:44.470  INFO 4148 --- [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-04-09 12:29:44.767  INFO 4148 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1139 ms
+2026-04-09 12:29:46.608 DEBUG 4148 --- [           main] faultConfiguringBeanFactoryPostProcessor : 
+Spring Integration global properties:
+
+spring.integration.channels.autoCreate=true
+spring.integration.channels.error.requireSubscribers=true
+spring.integration.taskScheduler.poolSize=10
+spring.integration.readOnly.headers=
+spring.integration.channels.maxUnicastSubscribers=2147483647
+spring.integration.endpoints.noAutoStartup=
+spring.integration.channels.error.ignoreFailures=true
+spring.integration.messagingTemplate.throwExceptionOnLateReply=false
+spring.integration.channels.maxBroadcastSubscribers=2147483647
+
+2026-04-09 12:29:46.608 DEBUG 4148 --- [           main] .s.i.c.GlobalChannelInterceptorProcessor : No global channel interceptors.
+2026-04-09 12:29:46.608  INFO 4148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-04-09 12:29:46.608  INFO 4148 --- [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'SendMail.errorChannel' has 1 subscriber(s).
+2026-04-09 12:29:46.608  INFO 4148 --- [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-04-09 12:29:46.623  INFO 4148 --- [           main] br.com.sendmail.api.SendMailApplication  : Started SendMailApplication in 3.49 seconds (JVM running for 22.627)
+[E-SAFRA] --> [DEBUG] 09/04/2026 12:30:14.929 [http-nio-8080-exec-2] logging - Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2026-04-09 12:30:14,939 http-nio-8080-exec-2 DEBUG AsyncLogger.ThreadNameStrategy=UNCACHED (user specified null, default is UNCACHED)
+2026-04-09 12:30:14,939 http-nio-8080-exec-2 DEBUG org.apache.logging.log4j.core.util.SystemClock supports precise timestamps.
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.092 [http-nio-8080-exec-2] Version - HHH000412: Hibernate Core {5.2.17.Final}
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.094 [http-nio-8080-exec-2] Environment - HHH000206: hibernate.properties not found
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.554 [http-nio-8080-exec-2] Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.669 [http-nio-8080-exec-2] ConnectionProviderInitiator - HHH000130: Instantiating explicit connection provider: org.hibernate.connection.C3P0ConnectionProvider
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.674 [http-nio-8080-exec-2] C3P0ConnectionProvider - HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://localhost/esafra?createDatabaseIfNotExist=true
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.674 [http-nio-8080-exec-2] C3P0ConnectionProvider - HHH10001001: Connection properties: {password=****, autocommit=false, user=root}
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.674 [http-nio-8080-exec-2] C3P0ConnectionProvider - HHH10001003: Autocommit mode: false
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:15.822 [http-nio-8080-exec-2] C3P0ConnectionProvider - HHH10001007: JDBC isolation level: <unknown>
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.144 [http-nio-8080-exec-2] Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK13905204
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc11733d7
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb5ad4de9
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK15dc4020
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKadbc355e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4a30115d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc2bc9625
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKef455c56
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.852 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6528fe0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe6c34075
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK41a52bf3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK5620f31a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbb0ddc53
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK7a747ae0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK7203a69f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK7569a858
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK9c3aa8a4
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4f4f5858
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb7308537
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1f11b216
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK86f2def5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc0b50c0c
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3a801d36
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK83e7c286
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKebc8ef65
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK53aa1c44
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbb8b4923
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKeb1e29ba
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.854 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfe70c881
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb5ba1a6e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKea545a38
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK35dc4847
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK248b9e9f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKab3d52c5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2282e584
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4bc01919
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2610a8d2
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK15197343
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6412234
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK71f335f3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2954d035
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK559eadec
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK359a73f6
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKcba112fc
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa999391d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe2d85ed0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3bb5c6b0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2f359ea1
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd07e3013
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa93bd895
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3a544591
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK535f6fe1
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.857 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKdabd9170
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK41fe40f5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKab8fcccc
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa3579520
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK41771f5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6328a220
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd94f0642
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb20caec4
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK68c91648
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2989338d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK140a7bec
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa6278e2f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKed6b58e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1ef055d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1fc1700f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4200a797
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd9beee9d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe29f842f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6c1eafe0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.859 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK57cc8ab
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKeea88512
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc7662d94
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK35780a0a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK379dc808
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKff426105
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb80de7fd
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc14cade3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK9493ef2f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe247e7f3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa8b464bb
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK9b9c18a9
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbd1bb227
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK324439fb
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK54448ed2
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK836eb921
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKaf0d2474
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc057b4fa
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2d5fe32
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa7da7895
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.862 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6cc0ac1d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK80982117
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK69fb28cd
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1bc83fb8
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa82df3d8
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3fd7c09d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKcbfdf0f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfc561273
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbac80a08
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2a8c19ea
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfd295e1c
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbe880830
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd8ea260a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd7933280
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6df1114
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK413b7bde
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa91ca8bd
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfe3375ac
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.864 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK31a62622
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.867 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK99875301
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.867 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK22dde385
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.867 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKf0800289
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.867 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4a203b03
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.867 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKaeb2ef22
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.867 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKfeb2f67c
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK63215567
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKa6341ea
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK38f8c2bd
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK8806067a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK2749f54b
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKb3fc525a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKd784b1c7
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKe24101
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKf83222f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK9bc82a92
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKc3651c49
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKc789a95d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKad7f2cc7
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK988bd48e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.869 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKd7a87e0e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK46a266ac
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK5f115c2
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKf6069e7c
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK57725542
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK490ec83f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK16432ce4
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK9fd7ad0d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK6f326e46
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK3081a1b7
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK1264150a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK13ec0b67
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKdb6824ab
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK3f8f2266
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK55edd72b
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKc9073128
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK1a2616fc
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKca10bbb0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK14c7db26
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKaebd7ea8
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK13f9c972
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK887b20d0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UKa45e5eda
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK28604d6f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.872 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as UNIQUE KEYs - UNIQUE KEY name: UK41a52bf3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK13905204
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc11733d7
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb5ad4de9
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK15dc4020
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKadbc355e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4a30115d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc2bc9625
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKef455c56
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6528fe0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.874 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe6c34075
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK41a52bf3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK5620f31a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbb0ddc53
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK7a747ae0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK7203a69f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK7569a858
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK9c3aa8a4
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4f4f5858
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb7308537
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1f11b216
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK86f2def5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc0b50c0c
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3a801d36
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK83e7c286
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKebc8ef65
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK53aa1c44
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbb8b4923
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKeb1e29ba
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfe70c881
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb5ba1a6e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKea545a38
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK35dc4847
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK248b9e9f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKab3d52c5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2282e584
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4bc01919
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2610a8d2
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.877 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK15197343
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6412234
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK71f335f3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2954d035
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK559eadec
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK359a73f6
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKcba112fc
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa999391d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe2d85ed0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3bb5c6b0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2f359ea1
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd07e3013
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa93bd895
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3a544591
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK535f6fe1
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKdabd9170
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK41fe40f5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKab8fcccc
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa3579520
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK41771f5
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6328a220
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd94f0642
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb20caec4
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK68c91648
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2989338d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK140a7bec
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa6278e2f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKed6b58e
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1ef055d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.879 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1fc1700f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4200a797
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd9beee9d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe29f842f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6c1eafe0
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK57cc8ab
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKeea88512
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc7662d94
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK35780a0a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK379dc808
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKff426105
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKb80de7fd
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc14cade3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK9493ef2f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKe247e7f3
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa8b464bb
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK9b9c18a9
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbd1bb227
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK324439fb
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK54448ed2
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK836eb921
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKaf0d2474
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKc057b4fa
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2d5fe32
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa7da7895
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6cc0ac1d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.882 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK80982117
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK69fb28cd
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK1bc83fb8
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa82df3d8
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK3fd7c09d
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKcbfdf0f
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfc561273
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbac80a08
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK2a8c19ea
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfd295e1c
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKbe880830
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd8ea260a
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKd7933280
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK6df1114
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK413b7bde
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKa91ca8bd
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKfe3375ac
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK31a62622
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK99875301
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK22dde385
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKf0800289
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FK4a203b03
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:16.884 [http-nio-8080-exec-2] DatamazeImplicitNamingStrategy - Gerando as FOREIGNKEYs - FK name: FKaeb2ef22
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:17.089 [http-nio-8080-exec-2] Version - HV000001: Hibernate Validator 5.4.3.Final
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:18.174 [http-nio-8080-exec-2] access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@577728f3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table modular_queries drop index UKf83222f
+Hibernate: alter table modular_queries add constraint UKf83222f unique (idEmpresa, tituloTela, campos, nome)
+Hibernate: alter table modular_queries drop index UK9bc82a92
+Hibernate: alter table modular_queries add constraint UK9bc82a92 unique (idEmpresa, query, nome)
+Hibernate: alter table sistema_implementos drop index UK887b20d0
+Hibernate: alter table sistema_implementos add constraint UK887b20d0 unique (nomeCompleto)
+Hibernate: alter table sistema_produtos drop index UK38f8c2bd
+Hibernate: alter table sistema_produtos add constraint UK38f8c2bd unique (nomeCompleto)
+Hibernate: alter table sistema_veiculos drop index UK13ec0b67
+Hibernate: alter table sistema_veiculos add constraint UK13ec0b67 unique (nomeCompleto)
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:20.374 [http-nio-8080-exec-2] QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+Hibernate: select distinct empresapo0_.id as id1_2_, empresapo0_.dataOcorrenciaAlteracao as dataOcor2_2_, empresapo0_.dataOcorrenciaCriacao as dataOcor3_2_, empresapo0_.nomeUsuarioAlteracao as nomeUsua4_2_, empresapo0_.nomeUsuarioCriacao as nomeUsua5_2_, empresapo0_.ativo as ativo6_2_, empresapo0_.bairro as bairro7_2_, empresapo0_.cargoResponsavel as cargoRes8_2_, empresapo0_.cep as cep9_2_, empresapo0_.cidade as cidade10_2_, empresapo0_.cnpj as cnpj11_2_, empresapo0_.codigo as codigo12_2_, empresapo0_.complemento as complem13_2_, empresapo0_.email as email14_2_, empresapo0_.emailResponsavel as emailRe15_2_, empresapo0_.idEmpresaMae as idEmpre32_2_, empresapo0_.estado as estado16_2_, empresapo0_.horaAbertura as horaAbe17_2_, empresapo0_.horaFechamento as horaFec18_2_, empresapo0_.imagem as imagem19_2_, empresapo0_.inscricaoEstadual as inscric20_2_, empresapo0_.inscricaoMunicipal as inscric21_2_, empresapo0_.logradouro as logrado22_2_, empresapo0_.nomeFantasia as nomeFan23_2_, empresapo0_.nomeResponsavel as nomeRes24_2_, empresapo0_.nomeSistema as nomeSis25_2_, empresapo0_.numeroEndereco as numeroE26_2_, empresapo0_.razaoSocial as razaoSo27_2_, empresapo0_.telefone1 as telefon28_2_, empresapo0_.telefone2 as telefon29_2_, empresapo0_.telefone3 as telefon30_2_, empresapo0_.versaoSistema as versaoS31_2_ from modular_empresas empresapo0_ where empresapo0_.codigo=?
+Hibernate: select distinct empresapo0_.id as id1_2_, empresapo0_.dataOcorrenciaAlteracao as dataOcor2_2_, empresapo0_.dataOcorrenciaCriacao as dataOcor3_2_, empresapo0_.nomeUsuarioAlteracao as nomeUsua4_2_, empresapo0_.nomeUsuarioCriacao as nomeUsua5_2_, empresapo0_.ativo as ativo6_2_, empresapo0_.bairro as bairro7_2_, empresapo0_.cargoResponsavel as cargoRes8_2_, empresapo0_.cep as cep9_2_, empresapo0_.cidade as cidade10_2_, empresapo0_.cnpj as cnpj11_2_, empresapo0_.codigo as codigo12_2_, empresapo0_.complemento as complem13_2_, empresapo0_.email as email14_2_, empresapo0_.emailResponsavel as emailRe15_2_, empresapo0_.idEmpresaMae as idEmpre32_2_, empresapo0_.estado as estado16_2_, empresapo0_.horaAbertura as horaAbe17_2_, empresapo0_.horaFechamento as horaFec18_2_, empresapo0_.imagem as imagem19_2_, empresapo0_.inscricaoEstadual as inscric20_2_, empresapo0_.inscricaoMunicipal as inscric21_2_, empresapo0_.logradouro as logrado22_2_, empresapo0_.nomeFantasia as nomeFan23_2_, empresapo0_.nomeResponsavel as nomeRes24_2_, empresapo0_.nomeSistema as nomeSis25_2_, empresapo0_.numeroEndereco as numeroE26_2_, empresapo0_.razaoSocial as razaoSo27_2_, empresapo0_.telefone1 as telefon28_2_, empresapo0_.telefone2 as telefon29_2_, empresapo0_.telefone3 as telefon30_2_, empresapo0_.versaoSistema as versaoS31_2_ from modular_empresas empresapo0_ where empresapo0_.codigo=?
+Hibernate: select distinct funcionari0_.id as id1_4_, funcionari0_.dataOcorrenciaAlteracao as dataOcor2_4_, funcionari0_.dataOcorrenciaCriacao as dataOcor3_4_, funcionari0_.nomeUsuarioAlteracao as nomeUsua4_4_, funcionari0_.nomeUsuarioCriacao as nomeUsua5_4_, funcionari0_.idEmpresa as idEmpre15_4_, funcionari0_.assinaturaEletronicaGerencia as assinatu6_4_, funcionari0_.ativo as ativo7_4_, funcionari0_.codigo as codigo8_4_, funcionari0_.comissao as comissao9_4_, funcionari0_.dataAdmissao as dataAdm10_4_, funcionari0_.dataDemissao as dataDem11_4_, funcionari0_.matricula as matricu12_4_, funcionari0_.percentualDivisaoLucro as percent13_4_, funcionari0_.idPessoaFisica as idPesso16_4_, funcionari0_.salario as salario14_4_, funcionari0_.idUsuario as idUsuar17_4_ from modular_funcionarios funcionari0_ inner join modular_empresas empresapo1_ on funcionari0_.idEmpresa=empresapo1_.id inner join modular_usuarios usuariopo2_ on funcionari0_.idUsuario=usuariopo2_.id inner join modular_empresas empresapo3_ on usuariopo2_.idEmpresa=empresapo3_.id where empresapo1_.id=1 and usuariopo2_.login=? and usuariopo2_.senha=? and usuariopo2_.status=? and empresapo3_.id=1 and empresapo3_.ativo=? and funcionari0_.ativo=?
+Hibernate: select distinct usuariopo0_.id as id1_15_, usuariopo0_.dataOcorrenciaAlteracao as dataOcor2_15_, usuariopo0_.dataOcorrenciaCriacao as dataOcor3_15_, usuariopo0_.nomeUsuarioAlteracao as nomeUsua4_15_, usuariopo0_.nomeUsuarioCriacao as nomeUsua5_15_, usuariopo0_.idEmpresa as idEmpre11_15_, usuariopo0_.email as email6_15_, usuariopo0_.login as login7_15_, usuariopo0_.senha as senha8_15_, usuariopo0_.senhaTemporaria as senhaTem9_15_, usuariopo0_.status as status10_15_, usuariopo0_.idTipoUsuario as idTipoU12_15_ from modular_usuarios usuariopo0_ inner join modular_empresas empresapo1_ on usuariopo0_.idEmpresa=empresapo1_.id where usuariopo0_.login=? and (usuariopo0_.senha=? or usuariopo0_.senhaTemporaria=?) and usuariopo0_.status=? and empresapo1_.id=1 and empresapo1_.ativo=? and (empresapo1_.idEmpresaMae is null)
+Hibernate: select empresapo0_.id as id1_2_0_, empresapo0_.dataOcorrenciaAlteracao as dataOcor2_2_0_, empresapo0_.dataOcorrenciaCriacao as dataOcor3_2_0_, empresapo0_.nomeUsuarioAlteracao as nomeUsua4_2_0_, empresapo0_.nomeUsuarioCriacao as nomeUsua5_2_0_, empresapo0_.ativo as ativo6_2_0_, empresapo0_.bairro as bairro7_2_0_, empresapo0_.cargoResponsavel as cargoRes8_2_0_, empresapo0_.cep as cep9_2_0_, empresapo0_.cidade as cidade10_2_0_, empresapo0_.cnpj as cnpj11_2_0_, empresapo0_.codigo as codigo12_2_0_, empresapo0_.complemento as complem13_2_0_, empresapo0_.email as email14_2_0_, empresapo0_.emailResponsavel as emailRe15_2_0_, empresapo0_.idEmpresaMae as idEmpre32_2_0_, empresapo0_.estado as estado16_2_0_, empresapo0_.horaAbertura as horaAbe17_2_0_, empresapo0_.horaFechamento as horaFec18_2_0_, empresapo0_.imagem as imagem19_2_0_, empresapo0_.inscricaoEstadual as inscric20_2_0_, empresapo0_.inscricaoMunicipal as inscric21_2_0_, empresapo0_.logradouro as logrado22_2_0_, empresapo0_.nomeFantasia as nomeFan23_2_0_, empresapo0_.nomeResponsavel as nomeRes24_2_0_, empresapo0_.nomeSistema as nomeSis25_2_0_, empresapo0_.numeroEndereco as numeroE26_2_0_, empresapo0_.razaoSocial as razaoSo27_2_0_, empresapo0_.telefone1 as telefon28_2_0_, empresapo0_.telefone2 as telefon29_2_0_, empresapo0_.telefone3 as telefon30_2_0_, empresapo0_.versaoSistema as versaoS31_2_0_, empresapo1_.id as id1_2_1_, empresapo1_.dataOcorrenciaAlteracao as dataOcor2_2_1_, empresapo1_.dataOcorrenciaCriacao as dataOcor3_2_1_, empresapo1_.nomeUsuarioAlteracao as nomeUsua4_2_1_, empresapo1_.nomeUsuarioCriacao as nomeUsua5_2_1_, empresapo1_.ativo as ativo6_2_1_, empresapo1_.bairro as bairro7_2_1_, empresapo1_.cargoResponsavel as cargoRes8_2_1_, empresapo1_.cep as cep9_2_1_, empresapo1_.cidade as cidade10_2_1_, empresapo1_.cnpj as cnpj11_2_1_, empresapo1_.codigo as codigo12_2_1_, empresapo1_.complemento as complem13_2_1_, empresapo1_.email as email14_2_1_, empresapo1_.emailResponsavel as emailRe15_2_1_, empresapo1_.idEmpresaMae as idEmpre32_2_1_, empresapo1_.estado as estado16_2_1_, empresapo1_.horaAbertura as horaAbe17_2_1_, empresapo1_.horaFechamento as horaFec18_2_1_, empresapo1_.imagem as imagem19_2_1_, empresapo1_.inscricaoEstadual as inscric20_2_1_, empresapo1_.inscricaoMunicipal as inscric21_2_1_, empresapo1_.logradouro as logrado22_2_1_, empresapo1_.nomeFantasia as nomeFan23_2_1_, empresapo1_.nomeResponsavel as nomeRes24_2_1_, empresapo1_.nomeSistema as nomeSis25_2_1_, empresapo1_.numeroEndereco as numeroE26_2_1_, empresapo1_.razaoSocial as razaoSo27_2_1_, empresapo1_.telefone1 as telefon28_2_1_, empresapo1_.telefone2 as telefon29_2_1_, empresapo1_.telefone3 as telefon30_2_1_, empresapo1_.versaoSistema as versaoS31_2_1_ from modular_empresas empresapo0_ left outer join modular_empresas empresapo1_ on empresapo0_.idEmpresaMae=empresapo1_.id where empresapo0_.id=?
+Hibernate: select tipousuari0_.id as id1_14_0_, tipousuari0_.dataOcorrenciaAlteracao as dataOcor2_14_0_, tipousuari0_.dataOcorrenciaCriacao as dataOcor3_14_0_, tipousuari0_.nomeUsuarioAlteracao as nomeUsua4_14_0_, tipousuari0_.nomeUsuarioCriacao as nomeUsua5_14_0_, tipousuari0_.idEmpresa as idEmpres7_14_0_, tipousuari0_.nome as nome6_14_0_, empresapo1_.id as id1_2_1_, empresapo1_.dataOcorrenciaAlteracao as dataOcor2_2_1_, empresapo1_.dataOcorrenciaCriacao as dataOcor3_2_1_, empresapo1_.nomeUsuarioAlteracao as nomeUsua4_2_1_, empresapo1_.nomeUsuarioCriacao as nomeUsua5_2_1_, empresapo1_.ativo as ativo6_2_1_, empresapo1_.bairro as bairro7_2_1_, empresapo1_.cargoResponsavel as cargoRes8_2_1_, empresapo1_.cep as cep9_2_1_, empresapo1_.cidade as cidade10_2_1_, empresapo1_.cnpj as cnpj11_2_1_, empresapo1_.codigo as codigo12_2_1_, empresapo1_.complemento as complem13_2_1_, empresapo1_.email as email14_2_1_, empresapo1_.emailResponsavel as emailRe15_2_1_, empresapo1_.idEmpresaMae as idEmpre32_2_1_, empresapo1_.estado as estado16_2_1_, empresapo1_.horaAbertura as horaAbe17_2_1_, empresapo1_.horaFechamento as horaFec18_2_1_, empresapo1_.imagem as imagem19_2_1_, empresapo1_.inscricaoEstadual as inscric20_2_1_, empresapo1_.inscricaoMunicipal as inscric21_2_1_, empresapo1_.logradouro as logrado22_2_1_, empresapo1_.nomeFantasia as nomeFan23_2_1_, empresapo1_.nomeResponsavel as nomeRes24_2_1_, empresapo1_.nomeSistema as nomeSis25_2_1_, empresapo1_.numeroEndereco as numeroE26_2_1_, empresapo1_.razaoSocial as razaoSo27_2_1_, empresapo1_.telefone1 as telefon28_2_1_, empresapo1_.telefone2 as telefon29_2_1_, empresapo1_.telefone3 as telefon30_2_1_, empresapo1_.versaoSistema as versaoS31_2_1_, empresapo2_.id as id1_2_2_, empresapo2_.dataOcorrenciaAlteracao as dataOcor2_2_2_, empresapo2_.dataOcorrenciaCriacao as dataOcor3_2_2_, empresapo2_.nomeUsuarioAlteracao as nomeUsua4_2_2_, empresapo2_.nomeUsuarioCriacao as nomeUsua5_2_2_, empresapo2_.ativo as ativo6_2_2_, empresapo2_.bairro as bairro7_2_2_, empresapo2_.cargoResponsavel as cargoRes8_2_2_, empresapo2_.cep as cep9_2_2_, empresapo2_.cidade as cidade10_2_2_, empresapo2_.cnpj as cnpj11_2_2_, empresapo2_.codigo as codigo12_2_2_, empresapo2_.complemento as complem13_2_2_, empresapo2_.email as email14_2_2_, empresapo2_.emailResponsavel as emailRe15_2_2_, empresapo2_.idEmpresaMae as idEmpre32_2_2_, empresapo2_.estado as estado16_2_2_, empresapo2_.horaAbertura as horaAbe17_2_2_, empresapo2_.horaFechamento as horaFec18_2_2_, empresapo2_.imagem as imagem19_2_2_, empresapo2_.inscricaoEstadual as inscric20_2_2_, empresapo2_.inscricaoMunicipal as inscric21_2_2_, empresapo2_.logradouro as logrado22_2_2_, empresapo2_.nomeFantasia as nomeFan23_2_2_, empresapo2_.nomeResponsavel as nomeRes24_2_2_, empresapo2_.nomeSistema as nomeSis25_2_2_, empresapo2_.numeroEndereco as numeroE26_2_2_, empresapo2_.razaoSocial as razaoSo27_2_2_, empresapo2_.telefone1 as telefon28_2_2_, empresapo2_.telefone2 as telefon29_2_2_, empresapo2_.telefone3 as telefon30_2_2_, empresapo2_.versaoSistema as versaoS31_2_2_, permissoes3_.idTipoUsuario as idTipoUs1_8_3_, permissaop4_.id as idPermis2_8_3_, permissaop4_.id as id1_7_4_, permissaop4_.acao as acao2_7_4_, permissaop4_.idTela as idTela3_7_4_, telapo5_.id as id1_13_5_, telapo5_.nome as nome2_13_5_, telapo5_.query as query3_13_5_ from modular_tiposusuario tipousuari0_ left outer join modular_empresas empresapo1_ on tipousuari0_.idEmpresa=empresapo1_.id left outer join modular_empresas empresapo2_ on empresapo1_.idEmpresaMae=empresapo2_.id left outer join modular_permissoestipousuario permissoes3_ on tipousuari0_.id=permissoes3_.idTipoUsuario left outer join modular_permissoes permissaop4_ on permissoes3_.idPermissao=permissaop4_.id left outer join modular_telas telapo5_ on permissaop4_.idTela=telapo5_.id where tipousuari0_.id=?
+Hibernate: select permissoes0_.idUsuario as idUsuari1_9_0_, permissoes0_.idPermissao as idPermis2_9_0_, permissaop1_.id as id1_7_1_, permissaop1_.acao as acao2_7_1_, permissaop1_.idTela as idTela3_7_1_, telapo2_.id as id1_13_2_, telapo2_.nome as nome2_13_2_, telapo2_.query as query3_13_2_ from modular_permissoesusuario permissoes0_ inner join modular_permissoes permissaop1_ on permissoes0_.idPermissao=permissaop1_.id inner join modular_telas telapo2_ on permissaop1_.idTela=telapo2_.id where permissoes0_.idUsuario=?
+Hibernate: select distinct usuariopo0_.id as id1_15_, usuariopo0_.dataOcorrenciaAlteracao as dataOcor2_15_, usuariopo0_.dataOcorrenciaCriacao as dataOcor3_15_, usuariopo0_.nomeUsuarioAlteracao as nomeUsua4_15_, usuariopo0_.nomeUsuarioCriacao as nomeUsua5_15_, usuariopo0_.idEmpresa as idEmpre11_15_, usuariopo0_.email as email6_15_, usuariopo0_.login as login7_15_, usuariopo0_.senha as senha8_15_, usuariopo0_.senhaTemporaria as senhaTem9_15_, usuariopo0_.status as status10_15_, usuariopo0_.idTipoUsuario as idTipoU12_15_ from modular_usuarios usuariopo0_ where usuariopo0_.id=1
+Hibernate: select empresapo0_.id as id1_2_0_, empresapo0_.dataOcorrenciaAlteracao as dataOcor2_2_0_, empresapo0_.dataOcorrenciaCriacao as dataOcor3_2_0_, empresapo0_.nomeUsuarioAlteracao as nomeUsua4_2_0_, empresapo0_.nomeUsuarioCriacao as nomeUsua5_2_0_, empresapo0_.ativo as ativo6_2_0_, empresapo0_.bairro as bairro7_2_0_, empresapo0_.cargoResponsavel as cargoRes8_2_0_, empresapo0_.cep as cep9_2_0_, empresapo0_.cidade as cidade10_2_0_, empresapo0_.cnpj as cnpj11_2_0_, empresapo0_.codigo as codigo12_2_0_, empresapo0_.complemento as complem13_2_0_, empresapo0_.email as email14_2_0_, empresapo0_.emailResponsavel as emailRe15_2_0_, empresapo0_.idEmpresaMae as idEmpre32_2_0_, empresapo0_.estado as estado16_2_0_, empresapo0_.horaAbertura as horaAbe17_2_0_, empresapo0_.horaFechamento as horaFec18_2_0_, empresapo0_.imagem as imagem19_2_0_, empresapo0_.inscricaoEstadual as inscric20_2_0_, empresapo0_.inscricaoMunicipal as inscric21_2_0_, empresapo0_.logradouro as logrado22_2_0_, empresapo0_.nomeFantasia as nomeFan23_2_0_, empresapo0_.nomeResponsavel as nomeRes24_2_0_, empresapo0_.nomeSistema as nomeSis25_2_0_, empresapo0_.numeroEndereco as numeroE26_2_0_, empresapo0_.razaoSocial as razaoSo27_2_0_, empresapo0_.telefone1 as telefon28_2_0_, empresapo0_.telefone2 as telefon29_2_0_, empresapo0_.telefone3 as telefon30_2_0_, empresapo0_.versaoSistema as versaoS31_2_0_, empresapo1_.id as id1_2_1_, empresapo1_.dataOcorrenciaAlteracao as dataOcor2_2_1_, empresapo1_.dataOcorrenciaCriacao as dataOcor3_2_1_, empresapo1_.nomeUsuarioAlteracao as nomeUsua4_2_1_, empresapo1_.nomeUsuarioCriacao as nomeUsua5_2_1_, empresapo1_.ativo as ativo6_2_1_, empresapo1_.bairro as bairro7_2_1_, empresapo1_.cargoResponsavel as cargoRes8_2_1_, empresapo1_.cep as cep9_2_1_, empresapo1_.cidade as cidade10_2_1_, empresapo1_.cnpj as cnpj11_2_1_, empresapo1_.codigo as codigo12_2_1_, empresapo1_.complemento as complem13_2_1_, empresapo1_.email as email14_2_1_, empresapo1_.emailResponsavel as emailRe15_2_1_, empresapo1_.idEmpresaMae as idEmpre32_2_1_, empresapo1_.estado as estado16_2_1_, empresapo1_.horaAbertura as horaAbe17_2_1_, empresapo1_.horaFechamento as horaFec18_2_1_, empresapo1_.imagem as imagem19_2_1_, empresapo1_.inscricaoEstadual as inscric20_2_1_, empresapo1_.inscricaoMunicipal as inscric21_2_1_, empresapo1_.logradouro as logrado22_2_1_, empresapo1_.nomeFantasia as nomeFan23_2_1_, empresapo1_.nomeResponsavel as nomeRes24_2_1_, empresapo1_.nomeSistema as nomeSis25_2_1_, empresapo1_.numeroEndereco as numeroE26_2_1_, empresapo1_.razaoSocial as razaoSo27_2_1_, empresapo1_.telefone1 as telefon28_2_1_, empresapo1_.telefone2 as telefon29_2_1_, empresapo1_.telefone3 as telefon30_2_1_, empresapo1_.versaoSistema as versaoS31_2_1_ from modular_empresas empresapo0_ left outer join modular_empresas empresapo1_ on empresapo0_.idEmpresaMae=empresapo1_.id where empresapo0_.id=?
+Hibernate: select tipousuari0_.id as id1_14_0_, tipousuari0_.dataOcorrenciaAlteracao as dataOcor2_14_0_, tipousuari0_.dataOcorrenciaCriacao as dataOcor3_14_0_, tipousuari0_.nomeUsuarioAlteracao as nomeUsua4_14_0_, tipousuari0_.nomeUsuarioCriacao as nomeUsua5_14_0_, tipousuari0_.idEmpresa as idEmpres7_14_0_, tipousuari0_.nome as nome6_14_0_, empresapo1_.id as id1_2_1_, empresapo1_.dataOcorrenciaAlteracao as dataOcor2_2_1_, empresapo1_.dataOcorrenciaCriacao as dataOcor3_2_1_, empresapo1_.nomeUsuarioAlteracao as nomeUsua4_2_1_, empresapo1_.nomeUsuarioCriacao as nomeUsua5_2_1_, empresapo1_.ativo as ativo6_2_1_, empresapo1_.bairro as bairro7_2_1_, empresapo1_.cargoResponsavel as cargoRes8_2_1_, empresapo1_.cep as cep9_2_1_, empresapo1_.cidade as cidade10_2_1_, empresapo1_.cnpj as cnpj11_2_1_, empresapo1_.codigo as codigo12_2_1_, empresapo1_.complemento as complem13_2_1_, empresapo1_.email as email14_2_1_, empresapo1_.emailResponsavel as emailRe15_2_1_, empresapo1_.idEmpresaMae as idEmpre32_2_1_, empresapo1_.estado as estado16_2_1_, empresapo1_.horaAbertura as horaAbe17_2_1_, empresapo1_.horaFechamento as horaFec18_2_1_, empresapo1_.imagem as imagem19_2_1_, empresapo1_.inscricaoEstadual as inscric20_2_1_, empresapo1_.inscricaoMunicipal as inscric21_2_1_, empresapo1_.logradouro as logrado22_2_1_, empresapo1_.nomeFantasia as nomeFan23_2_1_, empresapo1_.nomeResponsavel as nomeRes24_2_1_, empresapo1_.nomeSistema as nomeSis25_2_1_, empresapo1_.numeroEndereco as numeroE26_2_1_, empresapo1_.razaoSocial as razaoSo27_2_1_, empresapo1_.telefone1 as telefon28_2_1_, empresapo1_.telefone2 as telefon29_2_1_, empresapo1_.telefone3 as telefon30_2_1_, empresapo1_.versaoSistema as versaoS31_2_1_, empresapo2_.id as id1_2_2_, empresapo2_.dataOcorrenciaAlteracao as dataOcor2_2_2_, empresapo2_.dataOcorrenciaCriacao as dataOcor3_2_2_, empresapo2_.nomeUsuarioAlteracao as nomeUsua4_2_2_, empresapo2_.nomeUsuarioCriacao as nomeUsua5_2_2_, empresapo2_.ativo as ativo6_2_2_, empresapo2_.bairro as bairro7_2_2_, empresapo2_.cargoResponsavel as cargoRes8_2_2_, empresapo2_.cep as cep9_2_2_, empresapo2_.cidade as cidade10_2_2_, empresapo2_.cnpj as cnpj11_2_2_, empresapo2_.codigo as codigo12_2_2_, empresapo2_.complemento as complem13_2_2_, empresapo2_.email as email14_2_2_, empresapo2_.emailResponsavel as emailRe15_2_2_, empresapo2_.idEmpresaMae as idEmpre32_2_2_, empresapo2_.estado as estado16_2_2_, empresapo2_.horaAbertura as horaAbe17_2_2_, empresapo2_.horaFechamento as horaFec18_2_2_, empresapo2_.imagem as imagem19_2_2_, empresapo2_.inscricaoEstadual as inscric20_2_2_, empresapo2_.inscricaoMunicipal as inscric21_2_2_, empresapo2_.logradouro as logrado22_2_2_, empresapo2_.nomeFantasia as nomeFan23_2_2_, empresapo2_.nomeResponsavel as nomeRes24_2_2_, empresapo2_.nomeSistema as nomeSis25_2_2_, empresapo2_.numeroEndereco as numeroE26_2_2_, empresapo2_.razaoSocial as razaoSo27_2_2_, empresapo2_.telefone1 as telefon28_2_2_, empresapo2_.telefone2 as telefon29_2_2_, empresapo2_.telefone3 as telefon30_2_2_, empresapo2_.versaoSistema as versaoS31_2_2_, permissoes3_.idTipoUsuario as idTipoUs1_8_3_, permissaop4_.id as idPermis2_8_3_, permissaop4_.id as id1_7_4_, permissaop4_.acao as acao2_7_4_, permissaop4_.idTela as idTela3_7_4_, telapo5_.id as id1_13_5_, telapo5_.nome as nome2_13_5_, telapo5_.query as query3_13_5_ from modular_tiposusuario tipousuari0_ left outer join modular_empresas empresapo1_ on tipousuari0_.idEmpresa=empresapo1_.id left outer join modular_empresas empresapo2_ on empresapo1_.idEmpresaMae=empresapo2_.id left outer join modular_permissoestipousuario permissoes3_ on tipousuari0_.id=permissoes3_.idTipoUsuario left outer join modular_permissoes permissaop4_ on permissoes3_.idPermissao=permissaop4_.id left outer join modular_telas telapo5_ on permissaop4_.idTela=telapo5_.id where tipousuari0_.id=?
+Hibernate: select permissoes0_.idUsuario as idUsuari1_9_0_, permissoes0_.idPermissao as idPermis2_9_0_, permissaop1_.id as id1_7_1_, permissaop1_.acao as acao2_7_1_, permissaop1_.idTela as idTela3_7_1_, telapo2_.id as id1_13_2_, telapo2_.nome as nome2_13_2_, telapo2_.query as query3_13_2_ from modular_permissoesusuario permissoes0_ inner join modular_permissoes permissaop1_ on permissoes0_.idPermissao=permissaop1_.id inner join modular_telas telapo2_ on permissaop1_.idTela=telapo2_.id where permissoes0_.idUsuario=?
+Hibernate: select distinct parametriz0_.id as id1_6_, parametriz0_.idEmpresa as idEmpre22_6_, parametriz0_.bdPassword as bdPasswo2_6_, parametriz0_.bdUser as bdUser3_6_, parametriz0_.chaveAtivacao as chaveAti4_6_, parametriz0_.emailParaTeste as emailPar5_6_, parametriz0_.emailRemetente as emailRem6_6_, parametriz0_.emailServidor as emailSer7_6_, parametriz0_.horarioVerao as horarioV8_6_, parametriz0_.modoTeste as modoTest9_6_, parametriz0_.pathBackupBD as pathBac10_6_, parametriz0_.pathMySQL as pathMyS11_6_, parametriz0_.pathUploadBKPFiles as pathUpl12_6_, parametriz0_.pathUploadFiles as pathUpl13_6_, parametriz0_.portaServidor as portaSe14_6_, parametriz0_.senhaServidor as senhaSe15_6_, parametriz0_.smtpServidor as smtpSer16_6_, parametriz0_.smtpSocketFactoryClass as smtpSoc17_6_, parametriz0_.smtpSocketFactoryPort as smtpSoc18_6_, parametriz0_.smtpSslTrust as smtpSsl19_6_, parametriz0_.smtpStarttls as smtpSta20_6_, parametriz0_.urlContextPath as urlCont21_6_ from modular_parametrizacoes parametriz0_ inner join modular_empresas empresapo1_ on parametriz0_.idEmpresa=empresapo1_.id where empresapo1_.id=1
+Hibernate: select empresapo0_.id as id1_2_0_, empresapo0_.dataOcorrenciaAlteracao as dataOcor2_2_0_, empresapo0_.dataOcorrenciaCriacao as dataOcor3_2_0_, empresapo0_.nomeUsuarioAlteracao as nomeUsua4_2_0_, empresapo0_.nomeUsuarioCriacao as nomeUsua5_2_0_, empresapo0_.ativo as ativo6_2_0_, empresapo0_.bairro as bairro7_2_0_, empresapo0_.cargoResponsavel as cargoRes8_2_0_, empresapo0_.cep as cep9_2_0_, empresapo0_.cidade as cidade10_2_0_, empresapo0_.cnpj as cnpj11_2_0_, empresapo0_.codigo as codigo12_2_0_, empresapo0_.complemento as complem13_2_0_, empresapo0_.email as email14_2_0_, empresapo0_.emailResponsavel as emailRe15_2_0_, empresapo0_.idEmpresaMae as idEmpre32_2_0_, empresapo0_.estado as estado16_2_0_, empresapo0_.horaAbertura as horaAbe17_2_0_, empresapo0_.horaFechamento as horaFec18_2_0_, empresapo0_.imagem as imagem19_2_0_, empresapo0_.inscricaoEstadual as inscric20_2_0_, empresapo0_.inscricaoMunicipal as inscric21_2_0_, empresapo0_.logradouro as logrado22_2_0_, empresapo0_.nomeFantasia as nomeFan23_2_0_, empresapo0_.nomeResponsavel as nomeRes24_2_0_, empresapo0_.nomeSistema as nomeSis25_2_0_, empresapo0_.numeroEndereco as numeroE26_2_0_, empresapo0_.razaoSocial as razaoSo27_2_0_, empresapo0_.telefone1 as telefon28_2_0_, empresapo0_.telefone2 as telefon29_2_0_, empresapo0_.telefone3 as telefon30_2_0_, empresapo0_.versaoSistema as versaoS31_2_0_, empresapo1_.id as id1_2_1_, empresapo1_.dataOcorrenciaAlteracao as dataOcor2_2_1_, empresapo1_.dataOcorrenciaCriacao as dataOcor3_2_1_, empresapo1_.nomeUsuarioAlteracao as nomeUsua4_2_1_, empresapo1_.nomeUsuarioCriacao as nomeUsua5_2_1_, empresapo1_.ativo as ativo6_2_1_, empresapo1_.bairro as bairro7_2_1_, empresapo1_.cargoResponsavel as cargoRes8_2_1_, empresapo1_.cep as cep9_2_1_, empresapo1_.cidade as cidade10_2_1_, empresapo1_.cnpj as cnpj11_2_1_, empresapo1_.codigo as codigo12_2_1_, empresapo1_.complemento as complem13_2_1_, empresapo1_.email as email14_2_1_, empresapo1_.emailResponsavel as emailRe15_2_1_, empresapo1_.idEmpresaMae as idEmpre32_2_1_, empresapo1_.estado as estado16_2_1_, empresapo1_.horaAbertura as horaAbe17_2_1_, empresapo1_.horaFechamento as horaFec18_2_1_, empresapo1_.imagem as imagem19_2_1_, empresapo1_.inscricaoEstadual as inscric20_2_1_, empresapo1_.inscricaoMunicipal as inscric21_2_1_, empresapo1_.logradouro as logrado22_2_1_, empresapo1_.nomeFantasia as nomeFan23_2_1_, empresapo1_.nomeResponsavel as nomeRes24_2_1_, empresapo1_.nomeSistema as nomeSis25_2_1_, empresapo1_.numeroEndereco as numeroE26_2_1_, empresapo1_.razaoSocial as razaoSo27_2_1_, empresapo1_.telefone1 as telefon28_2_1_, empresapo1_.telefone2 as telefon29_2_1_, empresapo1_.telefone3 as telefon30_2_1_, empresapo1_.versaoSistema as versaoS31_2_1_ from modular_empresas empresapo0_ left outer join modular_empresas empresapo1_ on empresapo0_.idEmpresaMae=empresapo1_.id where empresapo0_.id=?
+##################### HORARIO DE VERÃO DESATIVADO #####################
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:27.097 [http-nio-8080-exec-4] AbstractAction - ##################### HORARIO DE VERÃO DESATIVADO #####################
+[E-SAFRA] --> [INFO ] 09/04/2026 12:30:27.097 [http-nio-8080-exec-4] AbstractAction - -Duser.timezone=GMT-3
+12:30:27.097578500
+Hibernate: select distinct parametriz0_.id as id1_6_, parametriz0_.idEmpresa as idEmpre22_6_, parametriz0_.bdPassword as bdPasswo2_6_, parametriz0_.bdUser as bdUser3_6_, parametriz0_.chaveAtivacao as chaveAti4_6_, parametriz0_.emailParaTeste as emailPar5_6_, parametriz0_.emailRemetente as emailRem6_6_, parametriz0_.emailServidor as emailSer7_6_, parametriz0_.horarioVerao as horarioV8_6_, parametriz0_.modoTeste as modoTest9_6_, parametriz0_.pathBackupBD as pathBac10_6_, parametriz0_.pathMySQL as pathMyS11_6_, parametriz0_.pathUploadBKPFiles as pathUpl12_6_, parametriz0_.pathUploadFiles as pathUpl13_6_, parametriz0_.portaServidor as portaSe14_6_, parametriz0_.senhaServidor as senhaSe15_6_, parametriz0_.smtpServidor as smtpSer16_6_, parametriz0_.smtpSocketFactoryClass as smtpSoc17_6_, parametriz0_.smtpSocketFactoryPort as smtpSoc18_6_, parametriz0_.smtpSslTrust as smtpSsl19_6_, parametriz0_.smtpStarttls as smtpSta20_6_, parametriz0_.urlContextPath as urlCont21_6_ from modular_parametrizacoes parametriz0_ inner join modular_empresas empresapo1_ on parametriz0_.idEmpresa=empresapo1_.id where empresapo1_.id=1
+Hibernate: select empresapo0_.id as id1_2_0_, empresapo0_.dataOcorrenciaAlteracao as dataOcor2_2_0_, empresapo0_.dataOcorrenciaCriacao as dataOcor3_2_0_, empresapo0_.nomeUsuarioAlteracao as nomeUsua4_2_0_, empresapo0_.nomeUsuarioCriacao as nomeUsua5_2_0_, empresapo0_.ativo as ativo6_2_0_, empresapo0_.bairro as bairro7_2_0_, empresapo0_.cargoResponsavel as cargoRes8_2_0_, empresapo0_.cep as cep9_2_0_, empresapo0_.cidade as cidade10_2_0_, empresapo0_.cnpj as cnpj11_2_0_, empresapo0_.codigo as codigo12_2_0_, empresapo0_.complemento as complem13_2_0_, empresapo0_.email as email14_2_0_, empresapo0_.emailResponsavel as emailRe15_2_0_, empresapo0_.idEmpresaMae as idEmpre32_2_0_, empresapo0_.estado as estado16_2_0_, empresapo0_.horaAbertura as horaAbe17_2_0_, empresapo0_.horaFechamento as horaFec18_2_0_, empresapo0_.imagem as imagem19_2_0_, empresapo0_.inscricaoEstadual as inscric20_2_0_, empresapo0_.inscricaoMunicipal as inscric21_2_0_, empresapo0_.logradouro as logrado22_2_0_, empresapo0_.nomeFantasia as nomeFan23_2_0_, empresapo0_.nomeResponsavel as nomeRes24_2_0_, empresapo0_.nomeSistema as nomeSis25_2_0_, empresapo0_.numeroEndereco as numeroE26_2_0_, empresapo0_.razaoSocial as razaoSo27_2_0_, empresapo0_.telefone1 as telefon28_2_0_, empresapo0_.telefone2 as telefon29_2_0_, empresapo0_.telefone3 as telefon30_2_0_, empresapo0_.versaoSistema as versaoS31_2_0_, empresapo1_.id as id1_2_1_, empresapo1_.dataOcorrenciaAlteracao as dataOcor2_2_1_, empresapo1_.dataOcorrenciaCriacao as dataOcor3_2_1_, empresapo1_.nomeUsuarioAlteracao as nomeUsua4_2_1_, empresapo1_.nomeUsuarioCriacao as nomeUsua5_2_1_, empresapo1_.ativo as ativo6_2_1_, empresapo1_.bairro as bairro7_2_1_, empresapo1_.cargoResponsavel as cargoRes8_2_1_, empresapo1_.cep as cep9_2_1_, empresapo1_.cidade as cidade10_2_1_, empresapo1_.cnpj as cnpj11_2_1_, empresapo1_.codigo as codigo12_2_1_, empresapo1_.complemento as complem13_2_1_, empresapo1_.email as email14_2_1_, empresapo1_.emailResponsavel as emailRe15_2_1_, empresapo1_.idEmpresaMae as idEmpre32_2_1_, empresapo1_.estado as estado16_2_1_, empresapo1_.horaAbertura as horaAbe17_2_1_, empresapo1_.horaFechamento as horaFec18_2_1_, empresapo1_.imagem as imagem19_2_1_, empresapo1_.inscricaoEstadual as inscric20_2_1_, empresapo1_.inscricaoMunicipal as inscric21_2_1_, empresapo1_.logradouro as logrado22_2_1_, empresapo1_.nomeFantasia as nomeFan23_2_1_, empresapo1_.nomeResponsavel as nomeRes24_2_1_, empresapo1_.nomeSistema as nomeSis25_2_1_, empresapo1_.numeroEndereco as numeroE26_2_1_, empresapo1_.razaoSocial as razaoSo27_2_1_, empresapo1_.telefone1 as telefon28_2_1_, empresapo1_.telefone2 as telefon29_2_1_, empresapo1_.telefone3 as telefon30_2_1_, empresapo1_.versaoSistema as versaoS31_2_1_ from modular_empresas empresapo0_ left outer join modular_empresas empresapo1_ on empresapo0_.idEmpresaMae=empresapo1_.id where empresapo0_.id=?
+33448
+Hibernate: select distinct empresapo0_.id as id1_2_, empresapo0_.dataOcorrenciaAlteracao as dataOcor2_2_, empresapo0_.dataOcorrenciaCriacao as dataOcor3_2_, empresapo0_.nomeUsuarioAlteracao as nomeUsua4_2_, empresapo0_.nomeUsuarioCriacao as nomeUsua5_2_, empresapo0_.ativo as ativo6_2_, empresapo0_.bairro as bairro7_2_, empresapo0_.cargoResponsavel as cargoRes8_2_, empresapo0_.cep as cep9_2_, empresapo0_.cidade as cidade10_2_, empresapo0_.cnpj as cnpj11_2_, empresapo0_.codigo as codigo12_2_, empresapo0_.complemento as complem13_2_, empresapo0_.email as email14_2_, empresapo0_.emailResponsavel as emailRe15_2_, empresapo0_.idEmpresaMae as idEmpre32_2_, empresapo0_.estado as estado16_2_, empresapo0_.horaAbertura as horaAbe17_2_, empresapo0_.horaFechamento as horaFec18_2_, empresapo0_.imagem as imagem19_2_, empresapo0_.inscricaoEstadual as inscric20_2_, empresapo0_.inscricaoMunicipal as inscric21_2_, empresapo0_.logradouro as logrado22_2_, empresapo0_.nomeFantasia as nomeFan23_2_, empresapo0_.nomeResponsavel as nomeRes24_2_, empresapo0_.nomeSistema as nomeSis25_2_, empresapo0_.numeroEndereco as numeroE26_2_, empresapo0_.razaoSocial as razaoSo27_2_, empresapo0_.telefone1 as telefon28_2_, empresapo0_.telefone2 as telefon29_2_, empresapo0_.telefone3 as telefon30_2_, empresapo0_.versaoSistema as versaoS31_2_ from modular_empresas empresapo0_ where 1=1
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.18)
+
+2026-04-09 12:31:00.298  INFO 4148 --- [alina-utility-1] b.c.s.s.BatchDumpDatabaseApplication     : Starting BatchDumpDatabaseApplication v1.0.0 using Java 11.0.23 on SRV-01 with PID 4148 (E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93\webapps\batch-dump-database\WEB-INF\classes started by SERVIÇO LOCAL in E:\agrosystem\AMBIENTE_V2\apache-tomcat-9.0.93)
+2026-04-09 12:31:00.298  INFO 4148 --- [alina-utility-1] b.c.s.s.BatchDumpDatabaseApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-04-09 12:31:01.234  INFO 4148 --- [alina-utility-1] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 904 ms
+2026-04-09 12:31:02.638  INFO 4148 --- [alina-utility-1] b.c.s.s.BatchDumpDatabaseApplication     : Started BatchDumpDatabaseApplication in 2.848 seconds (JVM running for 98.645)
+2026-04-09 12:31:02.638  INFO 4148 --- [alina-utility-1] b.c.s.s.scheduler.BackupScheduler        : Executando backup inicial...
+2026-04-09 12:31:07.287  INFO 4148 --- [alina-utility-1] b.c.src.srcsoftware.service.ZipService   : Compactando arquivo: esafra-backup-db2791767278790436767.sql -> esafra-backup-db2791767278790436767.zip
+2026-04-09 12:31:07.989  INFO 4148 --- [alina-utility-1] b.c.s.s.scheduler.BackupScheduler        : Verificando existencia da pasta OneDrive: [C:\Windows\ServiceProfiles\LocalService/OneDrive/backup-bds]
+2026-04-09 12:31:07.989  INFO 4148 --- [alina-utility-1] b.c.s.s.scheduler.BackupScheduler        : Iniciando upload do arquivo compactado...
+2026-04-09 12:31:07.989  INFO 4148 --- [alina-utility-1] b.c.s.s.scheduler.BackupScheduler        : Backup copiado para a pasta OneDrive: C:\Windows\ServiceProfiles\LocalService\OneDrive\backup-bds\esafra-backup-db2791767278790436767.zip
+2026-04-09 12:31:07.989  INFO 4148 --- [alina-utility-1] b.c.s.s.scheduler.BackupScheduler        : Iniciando upload do arquivo compactado...
+2026-04-09 12:31:07.989  INFO 4148 --- [alina-utility-1] b.c.s.s.scheduler.BackupScheduler        : Backup movido para a pasta LOCAL: C:\backup-bds\esafra-backup-db2791767278790436767.zip
+2026-04-09 12:31:07.989  INFO 4148 --- [alina-utility-1] b.c.s.s.scheduler.BackupScheduler        : Arquivos temporários removidos.

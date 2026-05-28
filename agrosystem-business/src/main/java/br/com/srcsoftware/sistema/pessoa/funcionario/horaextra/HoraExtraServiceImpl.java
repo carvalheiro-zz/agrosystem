@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.log4j.Logger;
 
 import br.com.srcsoftware.connection.HibernateConnection;
@@ -21,8 +23,10 @@ import br.com.srcsoftware.modular.manager.pessoa.funcionario.FuncionarioDAOInter
 import br.com.srcsoftware.modular.manager.pessoa.funcionario.FuncionarioDTO;
 import br.com.srcsoftware.modular.manager.pessoa.funcionario.FuncionarioPO;
 import br.com.srcsoftware.modular.manager.usuario.usuario.UsuarioSessaoPOJO;
+import br.com.srcsoftware.modular.manager.utilidades.Constantes;
 import br.com.srcsoftware.modular.manager.utilidades.DateUtil;
 import br.com.srcsoftware.modular.manager.utilidades.Utilidades;
+import br.com.srcsoftware.sistema.pessoa.HoraExtraReport;
 
 public class HoraExtraServiceImpl implements HoraExtraServiceInterface{
 
@@ -160,7 +164,7 @@ public class HoraExtraServiceImpl implements HoraExtraServiceInterface{
 		try {
 
 			if ( Utilidades.isNuloOuVazio( id ) ) {
-				throw new ApplicationException( "Id não informado!" );
+				throw new ApplicationException( "Id nï¿½o informado!" );
 			}
 
 			HoraExtraPO encontrado = this.daoInterface.filtrarPorId( Long.valueOf( id ) );
@@ -256,9 +260,9 @@ public class HoraExtraServiceImpl implements HoraExtraServiceInterface{
 
 	private void detalharHorasExtra(HoraExtraPO po) {
 		System.out.println("Tipo: " + po.getTipo());
-		// TODO Parei aqui, fazer um método para por essa regra e aplicar os Feriados na regra.
+		// TODO Parei aqui, fazer um mï¿½todo para por essa regra e aplicar os Feriados na regra.
 		// TODO Criar uma tela de cadastro de feriados
-		// TODO Fazer com que as telas de Aplicações de Insumos e Abastecimentos iniciem a pesquisa com a data atual
+		// TODO Fazer com que as telas de Aplicaï¿½ï¿½es de Insumos e Abastecimentos iniciem a pesquisa com a data atual
 		if(HoraExtraDTO.TIPO_LANCAMENTO.equalsIgnoreCase(po.getTipo())) {
 			BigDecimal quantidadeHoras = po.getQuantidadeHoras();
 			BigDecimal quantidade50Porcento = BigDecimal.ZERO;
@@ -268,7 +272,7 @@ public class HoraExtraServiceImpl implements HoraExtraServiceInterface{
 			if( DateUtil.isDomingo(po.getData()) || po.getFeriado().booleanValue() ) {
 				if(quantidadeHoras.compareTo(new BigDecimal("8")) >= 0) {
 					quantidade100Porcento = quantidadeHoras.subtract(new BigDecimal("8"));
-					quantidadeDomingoFeriado = new BigDecimal("1");// Esse campo é em dias
+					quantidadeDomingoFeriado = new BigDecimal("1");// Esse campo ï¿½ em dias
 				}else {
 					quantidade100Porcento = quantidadeHoras;
 				}
@@ -290,5 +294,59 @@ public class HoraExtraServiceImpl implements HoraExtraServiceInterface{
 			//System.out.println("quantidadeDomingoFeriado = " + quantidadeDomingoFeriado);
 			System.out.println("Data = "+ DateUtil.parseLocalDate(po.getData()) +" "+ DateUtil.getDiaSemana(po.getData()) +"\t\t\tHoras = "+quantidadeHoras+"\t\t50% = "+quantidade50Porcento+"\t\t100% = "+quantidade100Porcento+"\t\tDom/Fer. ="+quantidadeDomingoFeriado);
 		}
+	}
+	
+	@Override
+	public void gerarPDF( HttpServletResponse response, HashMap< String, String > camposOrders, HoraExtraDTO dto, String dataInicialParam, String dataFinalParam ) throws ApplicationException {
+
+		try {
+			HoraExtraPO poFilter = this.modelFactory.getPO( HoraExtraPO.class, dto );
+
+			HashMap< String, ArrayList< Object > > camposBetween = new HashMap<>();
+
+			if ( !Utilidades.isNuloOuVazio( dataInicialParam ) && !Utilidades.isNuloOuVazio( dataFinalParam ) ) {
+				camposBetween.put( "data", new ArrayList< Object >( Arrays.asList( LocalDate.parse( dataInicialParam, DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ), LocalDate.parse( dataFinalParam, DateTimeFormatter.ofPattern( "dd/MM/yyyy" ) ) ) ) );
+			}
+
+			List< HoraExtraPO > encontrados = this.daoInterface.filtrar( Paginacao.NAO, camposOrders, camposBetween, poFilter );
+
+			ArrayList< HoraExtraDTO > dtos = new ArrayList<>();
+
+			for ( HoraExtraPO poCorrente : encontrados ) {
+				dtos.add( this.modelFactory.getDTO( HoraExtraDTO.class, poCorrente ) );
+			}
+
+			String versaoSistema = Constantes.VERSAO_SISTEMA;
+
+			HoraExtraReport report = new HoraExtraReport( "pessoa/horaextra", null, versaoSistema );
+
+			report.gerarRelatorio( response, dtos, getCamposPesquisa( dto, dataInicialParam, dataFinalParam ) );
+
+		} catch ( ApplicationException e ) {
+			this.logger.error( e.getMessage(), e );
+			throw e;
+		} catch ( Exception e ) {
+			this.logger.error( "Erro inesperado" + System.lineSeparator() + e.getMessage(), e );
+			throw new ApplicationException( "Erro inesperado" + System.lineSeparator() + e.getMessage().trim(), e );
+		}
+
+	}
+	
+	private String getCamposPesquisa( HoraExtraDTO dto, String dataInicialParam, String dataFinalParam ) {
+		StringBuilder campos = new StringBuilder();
+
+		if ( !Utilidades.isNuloOuVazio( dataInicialParam ) && !Utilidades.isNuloOuVazio( dataFinalParam ) ) {
+			campos.append( "De ".concat( dataInicialParam ).concat( " a " ).concat( dataFinalParam ).concat( " / " ) );
+		}
+		if ( !Utilidades.isNuloOuVazio( dto.getColaborador().getPessoaFisica().getRazaoSocial() ) ) {
+			campos.append( "Colaborador: ".concat( dto.getColaborador().getPessoaFisica().getRazaoSocial() ).concat( " / " ) );
+		}
+
+		if ( !Utilidades.isNuloOuVazio( dto.getTipo()) ) {
+			campos.append( "Tipo: ".concat( dto.getTipo()).concat( " / " ) );
+		}
+		
+
+		return campos.toString();
 	}
 }
